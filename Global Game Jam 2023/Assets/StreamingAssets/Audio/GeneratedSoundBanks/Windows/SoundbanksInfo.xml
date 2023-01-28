@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
 	<RootPaths>
-		<ProjectRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject</ProjectRoot>
-		<SourceFilesRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/.cache/Windows</SourceFilesRoot>
+		<ProjectRoot>../../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject</ProjectRoot>
+		<SourceFilesRoot>../../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/.cache/Windows</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>..</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
@@ -40,5 +40,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7E6B1D87-57B6-25B4-C65C-263E5E2DA056}</FileHash>
+	<FileHash>{7E774636-EF06-EC53-08C9-064ABC8EE2CC}</FileHash>
 </SoundBanksInfo>

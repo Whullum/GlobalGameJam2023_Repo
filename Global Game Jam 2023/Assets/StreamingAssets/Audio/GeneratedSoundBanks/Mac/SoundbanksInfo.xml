@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="145">
 	<RootPaths>
-		<ProjectRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject</ProjectRoot>
-		<SourceFilesRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/.cache/Windows</SourceFilesRoot>
+		<ProjectRoot>../../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject</ProjectRoot>
+		<SourceFilesRoot>../../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/.cache/Mac</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>..</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F56A610C-C7C4-F874-B68B-7ADDF94EBB7A}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -40,5 +40,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7E6B1D87-57B6-25B4-C65C-263E5E2DA056}</FileHash>
+	<FileHash>{D0B10F9C-11C7-055C-8187-73E9F7B5D915}</FileHash>
 </SoundBanksInfo>

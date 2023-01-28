@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PlatformInfo>
-	<Platform Name="Windows" BasePlatform="Windows" Generator="2022.1.1.8100"/>
+	<Platform Name="Mac" BasePlatform="Mac" Generator="2022.1.1.8100"/>
 	<RootPaths>
-		<ProjectRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject</ProjectRoot>
-		<SourceFilesRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/.cache/Windows</SourceFilesRoot>
+		<ProjectRoot>../../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject</ProjectRoot>
+		<SourceFilesRoot>../../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/.cache/Mac</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>..</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DefaultAlign>16</DefaultAlign>
 	<Settings>
@@ -28,5 +28,5 @@
 		<PrintObjectGuid>false</PrintObjectGuid>
 		<PrintObjectPath>false</PrintObjectPath>
 	</Settings>
-	<FileHash>{BC5D33AE-1B64-F829-ABB4-7EE43B39AE03}</FileHash>
+	<FileHash>{C66C89DB-6D5D-4DB3-BD84-561E48F698A7}</FileHash>
 </PlatformInfo>
