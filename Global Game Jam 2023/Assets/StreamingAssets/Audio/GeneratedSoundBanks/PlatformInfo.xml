@@ -2,11 +2,11 @@
 <PlatformInfo>
 	<Platform Name="Windows" BasePlatform="Windows" Generator="2022.1.1.8100"/>
 	<RootPaths>
-		<ProjectRoot>../../../../../../Global Game Jam 2023_WwiseProject</ProjectRoot>
-		<SourceFilesRoot>../../../../../../Global Game Jam 2023_WwiseProject/.cache/Windows</SourceFilesRoot>
+		<ProjectRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject</ProjectRoot>
+		<SourceFilesRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/.cache/Windows</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>../../../../../../Global Game Jam 2023_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DefaultAlign>16</DefaultAlign>
 	<Settings>
@@ -28,5 +28,5 @@
 		<PrintObjectGuid>false</PrintObjectGuid>
 		<PrintObjectPath>false</PrintObjectPath>
 	</Settings>
-	<FileHash>{A6F8318D-56A8-029A-BF84-E224C9891352}</FileHash>
+	<FileHash>{85D4CEE5-976F-31D0-463C-C0354E96661D}</FileHash>
 </PlatformInfo>

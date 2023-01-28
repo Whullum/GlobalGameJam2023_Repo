@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
 	<RootPaths>
-		<ProjectRoot>../../../../../../Global Game Jam 2023_WwiseProject</ProjectRoot>
-		<SourceFilesRoot>../../../../../../Global Game Jam 2023_WwiseProject/.cache/Windows</SourceFilesRoot>
+		<ProjectRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject</ProjectRoot>
+		<SourceFilesRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/.cache/Windows</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>../../../../../../Global Game Jam 2023_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{BFB1D5F2-50FB-AB20-EAAA-0CF2FB292217}">
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{DD11364B-FA99-A34C-E3E2-0D304C422C9A}">
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<Media>
@@ -32,7 +32,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2013398331" Name="Play_TestSFX" DurationType="OneShot" DurationMin="4" DurationMax="4">
+				<Event Id="2013398331" Name="Play_TestSFX" DurationType="OneShot" DurationMin="6.097988" DurationMax="6.097988">
 					<MediaRefs>
 						<MediaRef Id="778083736"/>
 					</MediaRefs>
@@ -40,5 +40,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{527E720C-26F0-BD69-8092-ED4680E67B27}</FileHash>
+	<FileHash>{B0E1274A-B8E4-7424-83D5-1F570866071A}</FileHash>
 </SoundBanksInfo>
