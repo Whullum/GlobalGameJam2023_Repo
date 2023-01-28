@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../../../../../../Global Game Jam 2023_WwiseProject</ProjectRoot>
+		<SourceFilesRoot>../../../../../../Global Game Jam 2023_WwiseProject/.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>../../../../../../Global Game Jam 2023_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{BFB1D5F2-50FB-AB20-EAAA-0CF2FB292217}">
+			<ShortName>TestBank</ShortName>
+			<Path>TestBank.bnk</Path>
+			<Media>
+				<File Id="778083736" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Interactables_HealthBox_Take2.wav</ShortName>
+					<CachePath>SFX/Interactables_HealthBox_Take2_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2013398331" Name="Play_TestSFX" DurationType="OneShot" DurationMin="4" DurationMax="4">
+					<MediaRefs>
+						<MediaRef Id="778083736"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{527E720C-26F0-BD69-8092-ED4680E67B27}</FileHash>
+</SoundBanksInfo>

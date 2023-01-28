@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2013398331	Play_TestSFX			\Default Work Unit\Play_TestSFX	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	778083736	TestSFX	D:\Projects\Global Game Jam 2023\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\Interactables_HealthBox_Take2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\TestSFX		768096
+
