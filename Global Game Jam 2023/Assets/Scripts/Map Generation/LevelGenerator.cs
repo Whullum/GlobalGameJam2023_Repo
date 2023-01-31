@@ -20,12 +20,15 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private int tileFillAmount = 50;
     [Tooltip("Number of times the Cellular Automata Algorithm will iterate on this level.")]
     [Range(1, 100)]
-    [SerializeField] private int CASteps = 50;
+    [SerializeField] private int CASteps = 40;
     [Tooltip("Minimun number of tiles for a region to exits.")]
-    [SerializeField] private int regionSizeThreshold = 50;
+    [SerializeField] private int regionSizeThreshold = 25;
+    [Tooltip("Minimun distance from the player spawn and the level exit.")]
+    [Range(5, 30)]
+    [SerializeField] private int minimunDoorDistance = 25;
     [Tooltip("Size of the passages created between regions.")]
-    [Range(1, 5)]
-    [SerializeField] private int passageCreationRadius = 1;
+    [Range(1, 4)]
+    [SerializeField] private int passageCreationRadius = 2;
     [Tooltip("Seed used for map generation. Leave empty for a random seed.")]
     [SerializeField] private string mapSeed;
     [Tooltip("Generated seed, for visualization purposes only.")]
@@ -271,9 +274,32 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         }
+        float distanceBetweenDoors = GetDistanceBetweenTiles(spawnTile, exitTile);
+
+        // If the distance between the two doors is less than the minimum distance, we calculate again the positions
+        if (distanceBetweenDoors < minimunDoorDistance)
+        {
+            CreateLevelDoors(regions);
+            return;
+        }
+
         // Set the player spawner and level exit position on the newly created map.
         playerSpawner.transform.position = CoordToWorldPoint(spawnTile);
         levelExit.transform.position = CoordToWorldPoint(exitTile);
+    }
+
+    /// <summary>
+    /// Calculates the distance between two tile coordinates.
+    /// </summary>
+    /// <param name="tileA">Tile A.</param>
+    /// <param name="tileB">Tile B.</param>
+    /// <returns>Distance between tiles.</returns>
+    private float GetDistanceBetweenTiles(TileCoord tileA, TileCoord tileB)
+    {
+        Vector3 a = CoordToWorldPoint(tileA);
+        Vector3 b = CoordToWorldPoint(tileB);
+
+        return Vector3.Distance(a, b);
     }
 
     /// <summary>
@@ -467,8 +493,7 @@ public class LevelGenerator : MonoBehaviour
     /// <returns>Vector3 containing the world position.</returns>
     private Vector3 CoordToWorldPoint(TileCoord coordinate)
     {
-        return levelTilemap.CellToWorld(new Vector3Int(coordinate.xCoord, coordinate.yCoord));
-        //return new Vector3(-width / 2 + 0.5f + coordinate.xCoord, 2,-height / 2 + 0.5f + coordinate.yCoord);
+        return levelTilemap.GetCellCenterWorld(new Vector3Int(coordinate.xCoord, coordinate.yCoord));
     }
 
     /// <summary>

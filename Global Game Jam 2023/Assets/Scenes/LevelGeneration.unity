@@ -157,6 +157,7 @@ MonoBehaviour:
   tileFillAmount: 50
   CASteps: 40
   regionSizeThreshold: 25
+  minimunDoorDistance: 25
   passageCreationRadius: 2
   mapSeed: 
   generatedSeed: 0
