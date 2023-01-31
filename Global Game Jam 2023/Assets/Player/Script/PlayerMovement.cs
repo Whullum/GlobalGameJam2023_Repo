@@ -6,7 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     private float vertical;
     private float horizontal;
-    public float speed = 8f;
+    private float speed;
+    public float walkSpeed = 8f;
+    public float runSpeed = 10f;
     private bool isMoving = false;
     Vector2 movement;
     [SerializeField] private Rigidbody2D rb;
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         //Recieves input for each axis
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
+        
 
     }
 
@@ -34,5 +37,16 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
 
         //Debug.Log(rb.position);
+
+        Debug.Log(Input.GetKey(KeyCode.LeftShift));
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = runSpeed;
+        }
+        else
+        {
+            speed = walkSpeed;
+        }
+        Debug.Log(speed);
     }
 }
