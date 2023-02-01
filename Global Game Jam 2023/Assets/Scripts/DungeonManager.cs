@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class DungeonManager : MonoBehaviour
 {
+    /// <summary>
+    /// The current floor the player is.
+    /// </summary>
+    public static int CurrentFloor { get { return currentFloor; } }
+
     private LevelGenerator levelGenerator;
     private float floorTimer = 0;
-    private int currentFloor = 0;
+    private static int currentFloor = 0;
     private int totalFloors;
 
     [Tooltip("Minimum amount of floors the game will have.")]
@@ -15,14 +20,15 @@ public class DungeonManager : MonoBehaviour
     private void Awake()
     {
         levelGenerator = FindObjectOfType<LevelGenerator>();
+        GenerateFloors();
+        NextFloor();
     }
 
     private void OnEnable() => LevelExit.LevelFinished += NextFloor;
 
     private void Start()
     {
-        GenerateFloors();
-        NextFloor();
+
     }
 
     private void OnDisable() => LevelExit.LevelFinished -= NextFloor;
