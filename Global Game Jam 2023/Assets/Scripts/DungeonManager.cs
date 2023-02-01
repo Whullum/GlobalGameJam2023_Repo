@@ -21,14 +21,14 @@ public class DungeonManager : MonoBehaviour
     {
         levelGenerator = FindObjectOfType<LevelGenerator>();
         GenerateFloors();
-        NextFloor();
+        
     }
 
     private void OnEnable() => LevelExit.LevelFinished += NextFloor;
 
     private void Start()
     {
-
+        NextFloor();
     }
 
     private void OnDisable() => LevelExit.LevelFinished -= NextFloor;
