@@ -1,15 +1,21 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.Collections.Generic;
+using System;
 
 public class LevelGenerator : MonoBehaviour
 {
+    /// <summary>
+    /// Invoked when the level finished loading. Returns the array containing level structure and the player spawn position.
+    /// </summary>
+    public static Action<int[,], TileCoord> LevelCreated;
+
     private Grid levelGrid;
     private Tilemap levelTilemap;
     private PlayerSpawner playerSpawner;
     private LevelExit levelExit;
-    // Bidimensional array containing all the tiles of a level
-    private int[,] level;
+    private TileCoord rootsStartTile;
+    private int[,] level;// Bidimensional array containing all the tiles of a level
 
     [Tooltip("Width of the level.")]
     [SerializeField] private int width;
@@ -51,6 +57,7 @@ public class LevelGenerator : MonoBehaviour
         CelullarAutomata(CASteps, false);
         CalculateLevelRegions();
         DrawTilemap();
+        LevelCreated?.Invoke(level, rootsStartTile);
     }
 
     /// <summary>
@@ -75,7 +82,7 @@ public class LevelGenerator : MonoBehaviour
                     if (x == levelMiddle)
                         level[x, y] = 0;
                     else
-                        level[x, y] = Random.Range(0, 100) < tileFillAmount ? 1 : 0;
+                        level[x, y] = UnityEngine.Random.Range(0, 100) < tileFillAmount ? 1 : 0;
                 }
             }
         }
@@ -220,8 +227,8 @@ public class LevelGenerator : MonoBehaviour
     private void CreateLevelDoors(List<Region> regions)
     {
         // We choose different regions if avaliable
-        int rndPlayerSpawnRegion = Random.Range(0, regions.Count);
-        int rndExitRegion = Random.Range(0, regions.Count);
+        int rndPlayerSpawnRegion = UnityEngine.Random.Range(0, regions.Count);
+        int rndExitRegion = UnityEngine.Random.Range(0, regions.Count);
 
         if (rndPlayerSpawnRegion == rndExitRegion && regions.Count > 1)
         {
@@ -237,7 +244,7 @@ public class LevelGenerator : MonoBehaviour
         // Search for a correct player spawn tile
         while (!spawnTileFound)
         {
-            int rndTile = Random.Range(0, regions[rndPlayerSpawnRegion].Tiles.Count);
+            int rndTile = UnityEngine.Random.Range(0, regions[rndPlayerSpawnRegion].Tiles.Count);
             TileCoord selectedTile = regions[rndPlayerSpawnRegion].Tiles[rndTile];
 
             if (level[selectedTile.xCoord, selectedTile.yCoord] == 0)
@@ -256,7 +263,7 @@ public class LevelGenerator : MonoBehaviour
         // Search for a correct player level exit tile
         while (!exitTileFound)
         {
-            int rndTile = Random.Range(0, regions[rndExitRegion].Tiles.Count);
+            int rndTile = UnityEngine.Random.Range(0, regions[rndExitRegion].Tiles.Count);
             TileCoord selectedTile = regions[rndExitRegion].Tiles[rndTile];
 
             if (level[selectedTile.xCoord, selectedTile.yCoord] == 0)
@@ -284,6 +291,7 @@ public class LevelGenerator : MonoBehaviour
         // Set the player spawner and level exit position on the newly created map.
         playerSpawner.transform.position = CoordToWorldPoint(spawnTile);
         levelExit.transform.position = CoordToWorldPoint(exitTile);
+        rootsStartTile = spawnTile;
     }
 
     /// <summary>
@@ -597,5 +605,10 @@ public class LevelGenerator : MonoBehaviour
     private void GenerateNewRandomMap()
     {
         CreateNewLevel();
+    }
+
+    public void UpdateTile(TileCoord tile, Tile newTile)
+    {
+        levelTilemap.SetTile(new Vector3Int(tile.xCoord, tile.yCoord), newTile);
     }
 }
