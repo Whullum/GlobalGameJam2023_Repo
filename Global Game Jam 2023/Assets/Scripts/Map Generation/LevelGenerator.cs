@@ -41,11 +41,9 @@ public class LevelGenerator : MonoBehaviour
         levelExit = FindObjectOfType<LevelExit>();
         levelGrid = GetComponentInChildren<Grid>();
         levelTilemap = GetComponentInChildren<Tilemap>();
-
-        CreateNewLevel();
     }
 
-    private void CreateNewLevel()
+    public void CreateNewLevel()
     {
         levelTilemap.ClearAllTiles();
         generatedSeed = SeedGenerator.GenerateSeed(mapSeed);

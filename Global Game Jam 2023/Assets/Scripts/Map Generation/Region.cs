@@ -4,14 +4,31 @@ using UnityEngine;
 
 public class Region : IComparable<Region>
 {
+    /// <summary>
+    /// All the regions connected to this one.
+    /// </summary>
     public List<Region> ConnectedRegions { get; private set; }
+    /// <summary>
+    /// Tiles surrounding this region.
+    /// </summary>
     public List<TileCoord> BorderTiles { get; private set; }
+    /// <summary>
+    /// All the tiles of this region.
+    /// </summary>
     public List<TileCoord> Tiles { get; private set; }
+    /// <summary>
+    /// Amount of tiles inside this region.
+    /// </summary>
     public int RegionSize { get; private set; }
+    /// <summary>
+    /// Tells if this region has access to the main region.
+    /// </summary>
     public bool IsAccesibleFromMainRegion { get; set; }
+    /// <summary>
+    /// Tells if this region is the main one.
+    /// </summary>
     public bool IsMainRegion { get; set; }
     
-
     public Region() { }
 
     public Region(List<TileCoord> tiles, int[,] level)
@@ -24,6 +41,10 @@ public class Region : IComparable<Region>
         CalculateBorderTiles(level);
     }
 
+    /// <summary>
+    /// Calculates the border tiles of this region.
+    /// </summary>
+    /// <param name="level"></param>
     private void CalculateBorderTiles(int[,] level)
     {
         foreach (TileCoord tile in Tiles)
@@ -43,7 +64,10 @@ public class Region : IComparable<Region>
         }
     }
 
-    public void SetAccesibleFromMainRegion()
+    /// <summary>
+    /// Checks this regions as accesible from main rooms and updates all regions connected to this one to be accesible from main rooms as well.
+    /// </summary>
+    private void SetAccesibleFromMainRegion()
     {
         if (IsAccesibleFromMainRegion) return;
 
@@ -55,22 +79,37 @@ public class Region : IComparable<Region>
         }
     }
 
+    /// <summary>
+    /// Connects two regions together.
+    /// </summary>
+    /// <param name="regionA">First region to connect.</param>
+    /// <param name="regionB">Second region to connect.</param>
     public static void ConnectRegions(Region regionA, Region regionB)
     {
         if (regionA.IsAccesibleFromMainRegion)
-            regionB.IsAccesibleFromMainRegion = true;
+            regionB.SetAccesibleFromMainRegion();
         else if (regionB.IsAccesibleFromMainRegion)
-            regionA.IsAccesibleFromMainRegion = true;
+            regionA.SetAccesibleFromMainRegion();
 
         regionA.ConnectedRegions.Add(regionB);
         regionB.ConnectedRegions.Add(regionA);
     }
 
+    /// <summary>
+    /// Tells if this region is connected to the specified one.
+    /// </summary>
+    /// <param name="region">Region to check if it's connected.</param>
+    /// <returns>If the region is connected.</returns>
     public bool IsConnected(Region region)
     {
         return ConnectedRegions.Contains(region);
     }
 
+    /// <summary>
+    /// Used for sort regions.
+    /// </summary>
+    /// <param name="otherRegion"></param>
+    /// <returns></returns>
     public int CompareTo(Region otherRegion)
     {
         return otherRegion.RegionSize.CompareTo(RegionSize);
