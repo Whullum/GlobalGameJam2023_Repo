@@ -151,6 +151,7 @@ MonoBehaviour:
   runSpeed: 10
   dodgeSpeed: 25
   dodgeCooldown: 10
+  attackTime: 0.5
   rb: {fileID: 5696425636712059772}
 --- !u!1 &6634641546391662354
 GameObject:
@@ -163,6 +164,7 @@ GameObject:
   - component: {fileID: 842218994027212769}
   - component: {fileID: 3573531148031607610}
   - component: {fileID: 1691902640636198529}
+  - component: {fileID: 3544551491448985163}
   m_Layer: 0
   m_Name: HurtBox
   m_TagString: Untagged
@@ -263,3 +265,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3544551491448985163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6634641546391662354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9476239e57c93ee488062164c0e8f7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

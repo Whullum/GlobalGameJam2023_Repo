@@ -31,12 +31,12 @@ public class PlayerController : MonoBehaviour
     {
         //PlayerSpawn();
         HurtBox = gameObject.transform.GetChild(0).gameObject;
-        hurtBoxDistance = HurtBox.transform.position - gameObject.transform.position;
+        //hurtBoxDistance = HurtBox.transform.position - gameObject.transform.position;
 
-        hurtBoxDistance.x = Math.Abs(hurtBoxDistance.x);
-        hurtBoxDistance.y = Math.Abs(hurtBoxDistance.y);
-        hurtBoxDistance.z = Math.Abs(hurtBoxDistance.z);
-        Debug.Log(hurtBoxDistance);
+        //hurtBoxDistance.x = Math.Abs(hurtBoxDistance.x);
+        //hurtBoxDistance.y = Math.Abs(hurtBoxDistance.y);
+        //hurtBoxDistance.z = Math.Abs(hurtBoxDistance.z);
+        //Debug.Log(hurtBoxDistance);
 
     }
 
@@ -133,12 +133,12 @@ public class PlayerController : MonoBehaviour
             
             timeLimit = Time.time + dodgeCooldown;
             dodgeInactive = true;
-            Debug.Log(timeLimit);
+            //Debug.Log(timeLimit);
             
         }
         else if(Time.time < timeLimit && dodgeInactive)
         {
-            Debug.Log(Time.time);
+            //Debug.Log(Time.time);
         }
         else if(dodgeInactive)
         {
@@ -160,12 +160,12 @@ public class PlayerController : MonoBehaviour
 
             attacktimeLimit = Time.time + attackTime;
             attackActive = true;
-            Debug.Log(attacktimeLimit);
+            //Debug.Log(attacktimeLimit);
 
         }
         else if (Time.time < attacktimeLimit && attackActive)
         {
-            Debug.Log(Time.time);
+            //Debug.Log(Time.time);
         }
         else if (attackActive)
         {
