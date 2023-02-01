@@ -14,21 +14,23 @@ public class UI_HubWeaponShopBheavior : MonoBehaviour
 
     private void Start()
     {
-        // Initialize shop values
+        // TODO: Initialize shop values
+        // Update seed counter to current amount of held seeds
+        // Set dialogueNPC text
     }
 
-    public void BuyItem()
+    public void ChangeNPCDialogue(string dialogue)
     {
-
+        dialogueNPC.text = dialogue;
     }
 
-    public void ChangeNPCDialogue()
+    public void UpdateSeedsCounter(int seedsHeld)
     {
-
+        seedsCounter.text = "SEEDS x" + seedsHeld;
     }
 
     public void ExitShop()
     {
-
+        gameObject.SetActive(false);
     }
 }
