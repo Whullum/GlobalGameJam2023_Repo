@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ae05a74b566c24196a9cfbfb6a8182, type: 3}
+  m_Name: HealthUpgrade
+  m_EditorClassIdentifier: 
+  Name: Health Upgrade
+  Description: Let me clean your clothes, they are all dirty, maybe when you put
+    it back on you will feel more refreshed.
+  Upgrades:
+  - Value: 10
+    Cost: 50
+  - Value: 15
+    Cost: 80
+  - Value: 20
+    Cost: 100
