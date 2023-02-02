@@ -368,6 +368,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 367470279226861139, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 96.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 367470279226861139, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50.01
+      objectReference: {fileID: 0}
     - target: {fileID: 367470279905346401, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -475,6 +483,34 @@ PrefabInstance:
     - target: {fileID: 367470279905346405, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 367470280545996460, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 92.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 367470280545996460, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 29.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387823359756979759, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387823359756979759, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387823359756979759, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156321367992362540, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156321367992362540, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
