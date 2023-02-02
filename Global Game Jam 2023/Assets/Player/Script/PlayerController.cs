@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,10 +14,14 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 7f;
     public float dodgeSpeed = 25f;
     public float dodgeCooldown = 10f;
+    public float attackTime = 0.5f;
     private float timeLimit = 0f;
+    private float attacktimeLimit = 0f;
     private float timeDiff = 0f;
     private bool dodgeInactive = false;
+    private bool attackActive = false;
     private GameObject HurtBox;
+    private Vector3 hurtBoxDistance;
 
     Vector2 movement;
     [SerializeField] private Rigidbody2D rb;
@@ -24,7 +30,14 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //PlayerSpawn();
-        HurtBox = GameObject.Find("HurBox");
+        HurtBox = gameObject.transform.GetChild(0).gameObject;
+        //hurtBoxDistance = HurtBox.transform.position - gameObject.transform.position;
+
+        //hurtBoxDistance.x = Math.Abs(hurtBoxDistance.x);
+        //hurtBoxDistance.y = Math.Abs(hurtBoxDistance.y);
+        //hurtBoxDistance.z = Math.Abs(hurtBoxDistance.z);
+        //Debug.Log(hurtBoxDistance);
+
     }
 
     // Update is called once per frame
@@ -42,6 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMovement();
         PlayerDodge();
+        PlayerAttack();
     }
 
     void PlayerSpawn()
@@ -57,7 +71,39 @@ public class PlayerController : MonoBehaviour
         //Moves player from the current position of their RigidBody2D to the next position specified by movement
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
 
-        //HurtBox.transform.RotateAroundLocal(rb.position, 90f);
+        
+        //Debug.Log(movement.y);
+        if(movement.y != 0)
+        {
+            HurtBox.transform.rotation = Quaternion.Euler(0,0,90);  
+            
+        }
+        else if(movement.x != 0)
+        {
+            HurtBox.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
+        if(movement.x > 0)
+        {
+
+            HurtBox.transform.position = new Vector3(gameObject.transform.position.x + 0.39f, gameObject.transform.position.y, HurtBox.transform.position.z);
+        }
+        else if(movement.x < 0)
+        {
+            HurtBox.transform.position = new Vector3(gameObject.transform.position.x - 0.39f, gameObject.transform.position.y, HurtBox.transform.position.z);
+        }
+
+        if (movement.y > 0)
+        {
+            HurtBox.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f, HurtBox.transform.position.z);
+        }
+        else if(movement.y < 0)
+        {
+            HurtBox.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f, HurtBox.transform.position.z);
+        }
+
+
+
         //Debug.Log(rb.position);
 
         //Debug.Log(Input.GetKey(KeyCode.LeftShift));
@@ -78,6 +124,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetAxis("Jump") == 1 && Time.time > timeLimit)
         {
+            Debug.Log("Jump");
             //Debug.Log(Input.GetAxis("Jump"));
             //Debug.Log(Physics2D.Raycast(rb.position, transform.TransformDirection(rb.position + movement), 5));
             //Debug.DrawLine(rb.position, transform.TransformDirection(rb.position + movement), Color.red, 3f);
@@ -86,23 +133,47 @@ public class PlayerController : MonoBehaviour
             
             timeLimit = Time.time + dodgeCooldown;
             dodgeInactive = true;
-            Debug.Log(timeLimit);
+            //Debug.Log(timeLimit);
             
         }
         else if(Time.time < timeLimit && dodgeInactive)
         {
-            Debug.Log(Time.time);
+            //Debug.Log(Time.time);
         }
         else if(dodgeInactive)
         {
             Debug.Log("Cooldown Ended");
             dodgeInactive = false;
+            timeLimit = 0f;
         }
             
     }
 
     void PlayerAttack()
     {
+        //Debug.Log(Input.GetKey(KeyCode.Mouse0));
+        
+        if(Input.GetKey(KeyCode.Mouse0) && Time.time > attacktimeLimit )
+        {
+            
+            HurtBox.SetActive(true);
+
+            attacktimeLimit = Time.time + attackTime;
+            attackActive = true;
+            //Debug.Log(attacktimeLimit);
+
+        }
+        else if (Time.time < attacktimeLimit && attackActive)
+        {
+            //Debug.Log(Time.time);
+        }
+        else if (attackActive)
+        {
+            Debug.Log("Cooldown Ended");
+            HurtBox.SetActive(false);
+            attackActive = false;
+            attacktimeLimit = 0f;
+        }
 
     }
 }

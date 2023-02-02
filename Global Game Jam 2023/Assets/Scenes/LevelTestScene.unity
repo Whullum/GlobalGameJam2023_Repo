@@ -397,7 +397,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 955983129}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1199801316
 MonoBehaviour:
@@ -589,7 +589,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5696425636712059770, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
       propertyPath: runSpeed
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696425636712059770, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
+      propertyPath: walkSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696425636712059770, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
+      propertyPath: dodgeSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696425636712059770, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
+      propertyPath: dodgeCooldown
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}

@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - LevelBoundary
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Roots
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Roots
+    uniqueID: 465671459
+    locked: 0
+  - name: Player
+    uniqueID: 2646563881
     locked: 0
