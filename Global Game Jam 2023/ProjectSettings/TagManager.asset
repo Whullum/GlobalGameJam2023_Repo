@@ -44,6 +44,9 @@ TagManager:
   - name: Roots
     uniqueID: 465671459
     locked: 0
+  - name: Enemy
+    uniqueID: 412858547
+    locked: 0
   - name: Player
     uniqueID: 2646563881
     locked: 0
