@@ -5,35 +5,35 @@ using System.Collections.Generic;
 
 public class RootSystem : MonoBehaviour
 {
-    private LevelGenerator level;
+    private Transform player;
+    private Tilemap rootsTilemap;
     private Coroutine growCoroutine;
     private int[,] growTiles;
     private int tileType = 0;
     private int width;
     private int height;
 
-    [Tooltip("Tile used to represent the roots.")]
-    [SerializeField] private Tile rootTile;
     [Range(0.01f, 3)]
     [Tooltip("Speed of the roots spread.")]
     [SerializeField] private float growStep;
     [Tooltip("Time until the roots start spawning once the level is loaded.")]
     [SerializeField] private float startTime = 3;
+    [Tooltip("Damage dealt to the player when is inside the roots.")]
+    [SerializeField] private int rootsDamage = 5;
+    [Tooltip("Each tick passes player receives damage.")]
+    [SerializeField] private float damageTick = 0.5f;
+    [Tooltip("Tile used to represent the roots.")]
+    [SerializeField] private Tile rootTile;
 
     private void Awake()
     {
-        level = FindObjectOfType<LevelGenerator>();
+        rootsTilemap = GetComponent<Tilemap>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void OnEnable()
-    {
-        LevelGenerator.LevelCreated += StartRootGrowing;
-    }
+    private void OnEnable() => LevelGenerator.LevelCreated += StartRootGrowing;
 
-    private void OnDisable()
-    {
-        LevelGenerator.LevelCreated -= StartRootGrowing;
-    }
+    private void OnDisable() => LevelGenerator.LevelCreated -= StartRootGrowing;
 
     /// <summary>
     /// Sets the level size, tiles and start tile to start propagating the roots.
@@ -45,6 +45,9 @@ public class RootSystem : MonoBehaviour
         this.growTiles = growTiles;
         this.width = growTiles.GetLength(0);
         this.height = growTiles.GetLength(1);
+
+        rootsTilemap.ClearAllTiles();
+        StartCoroutine(DamagePlayer());
 
         if (growCoroutine != null)
             StopCoroutine(growCoroutine);
@@ -68,7 +71,7 @@ public class RootSystem : MonoBehaviour
 
         roots.Enqueue(startTile);
         tileFlags[startTile.xCoord, startTile.yCoord] = 1;
-        level.UpdateTile(startTile, rootTile);
+        UpdateTile(startTile, rootTile);
 
         while (roots.Count > 0)
         {
@@ -86,7 +89,7 @@ public class RootSystem : MonoBehaviour
 
                             roots.Enqueue(newRoot);
                             tileFlags[iX, iY] = 1;
-                            level.UpdateTile(newRoot, rootTile);
+                            UpdateTile(newRoot, rootTile);
                         }
                     }
                 }
@@ -103,5 +106,25 @@ public class RootSystem : MonoBehaviour
     private bool IsInsideLevel(TileCoord coord)
     {
         return (coord.xCoord >= 0 && coord.xCoord <= width && coord.yCoord >= 0 && coord.yCoord <= height);
+    }
+
+    /// <summary>
+    /// Updates the specified tile on the tilemap with a new tile.
+    /// </summary>
+    /// <param name="tile">Position of the tile.</param>
+    /// <param name="newTile">Tile to spawn.</param>
+    private void UpdateTile(TileCoord tile, Tile newTile) => rootsTilemap.SetTile(new Vector3Int(tile.xCoord, tile.yCoord), newTile);
+
+    private IEnumerator DamagePlayer()
+    {
+        // Check if the player position is on top of a root tile.
+        if (rootsTilemap.HasTile(new Vector3Int((int)player.position.x, (int)player.position.y)))
+        {
+            // Code to damage player.
+        }
+
+        yield return new WaitForSeconds(damageTick);
+
+        StartCoroutine(DamagePlayer());
     }
 }

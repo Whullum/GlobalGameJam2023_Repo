@@ -9,6 +9,10 @@ public class LevelGenerator : MonoBehaviour
     /// Invoked when the level finished loading. Returns the array containing level structure and the player spawn position.
     /// </summary>
     public static Action<int[,], TileCoord> LevelCreated;
+    /// <summary>
+    /// When the tilemap is finished drawing, this event is invoked.
+    /// </summary>
+    public static Action<Tilemap> LevelColliderCreated;
 
     private Grid levelGrid;
     private Tilemap levelTilemap;
@@ -189,6 +193,7 @@ public class LevelGenerator : MonoBehaviour
                     levelTilemap.SetTile(new Vector3Int(x, y, 0), tileTest);
             }
         }
+        LevelColliderCreated?.Invoke(levelTilemap);
     }
 
     /// <summary>
@@ -605,10 +610,5 @@ public class LevelGenerator : MonoBehaviour
     private void GenerateNewRandomMap()
     {
         CreateNewLevel();
-    }
-
-    public void UpdateTile(TileCoord tile, Tile newTile)
-    {
-        levelTilemap.SetTile(new Vector3Int(tile.xCoord, tile.yCoord), newTile);
     }
 }
