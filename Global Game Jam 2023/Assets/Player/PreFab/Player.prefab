@@ -185,7 +185,7 @@ MonoBehaviour:
   reflectAbilitySound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 9c0f4e09913ef49459504e48eb6deb17, type: 2}
 --- !u!114 &-7384248525086312778
 MonoBehaviour:
   m_ObjectHideFlags: 0
