@@ -26,6 +26,7 @@ public class RootSystem : MonoBehaviour
     [SerializeField] private float damageTick = 0.5f;
     [Tooltip("Tile used to represent the roots.")]
     [SerializeField] private Tile rootTile;
+    [SerializeField] private AK.Wwise.Event rootAdvancementSound;
 
     private void Awake()
     {
@@ -101,6 +102,12 @@ public class RootSystem : MonoBehaviour
                         }
                     }
                 }
+            }
+
+            // Every 10 growth advancements, a sound will play
+            if (roots.Count % 10 == 0)
+            {
+                rootAdvancementSound.Post(player.gameObject);
             }
             yield return new WaitForSeconds(growStep);
         }

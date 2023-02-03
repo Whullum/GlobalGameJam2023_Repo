@@ -3,7 +3,9 @@ State Group	ID	Name			Wwise Object Path	Notes
 
 State	ID	Name	State Group			Notes
 	748895195	None	Gameplay			
+	779278001	Death	Gameplay			
 	1160234136	Normal	Gameplay			
+	2716678721	Victory	Gameplay			
 	4174463524	Danger	Gameplay			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes

@@ -7,6 +7,9 @@ public class PlayerStat : MonoBehaviour
     // Start is called before the first frame update
     public float maxHealth = 100f;
     private float playerHealth;
+
+    [SerializeField]
+    private PlayerSounds playerSounds;
     void Start()
     {
         playerHealth = maxHealth;
@@ -24,7 +27,7 @@ public class PlayerStat : MonoBehaviour
     public void DealDamage(float damageAmount)
     {
         playerHealth -= damageAmount;
-
+        playerSounds.playerDamagedSound.Post(gameObject);
     }
     public float GetHealth()
     {

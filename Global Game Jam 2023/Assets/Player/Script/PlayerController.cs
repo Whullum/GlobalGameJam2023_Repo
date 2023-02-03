@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     Vector2 movement;
     [SerializeField] private Rigidbody2D rb;
 
+    [SerializeField]
+    private PlayerSounds playerSounds;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -56,10 +59,12 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
+        
         if (movement != Vector2.zero)
             animator.SetBool("isWalking", true);
         else
-            animator.SetBool("isWalking", false);
+           animator.SetBool("isWalking", false);
+        
 
         // Flip sprite renderer depending on movement direction
         if (movement.x > 0)
@@ -153,7 +158,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(timeLimit);
 
             animator.SetTrigger("dodge");
-
+            playerSounds.dodgeAbilitySound.Post(gameObject);
         }
         else if (Time.time < timeLimit && dodgeInactive)
         {
@@ -181,6 +186,7 @@ public class PlayerController : MonoBehaviour
             attackActive = true;
             //Debug.Log(attacktimeLimit);
 
+            playerSounds.playerAttackSound.Post(gameObject);
         }
         else if (Time.time < attacktimeLimit && attackActive)
         {

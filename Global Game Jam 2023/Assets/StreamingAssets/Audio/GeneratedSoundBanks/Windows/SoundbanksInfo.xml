@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2B8ECDAA-1529-DB5E-1EE4-B055E7DFACD1}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6656C55F-2D4E-7AFB-DB22-D8B80A12C924}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -117,6 +117,11 @@
 					<CachePath>SFX/SFX_Player_MeleeAttack_E83431A9.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="917271096" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+				</Custom>
+			</Plugins>
 			<Events>
 				<Event Id="1754227292" Name="Play_Dungeon" DurationType="Infinite">
 					<SwitchContainers>
@@ -188,11 +193,16 @@
 						<MediaRef Id="982906991"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2177193998" Name="Play_SFX_RootsContainer" DurationType="OneShot" DurationMin="2.0697892" DurationMax="2.186947">
+				<Event Id="2177193998" Name="Play_SFX_RootsContainer" DurationType="OneShot" DurationMin="0.7937005" DurationMax="2.600733">
 					<MediaRefs>
 						<MediaRef Id="751312722"/>
 						<MediaRef Id="808662452"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="917271096"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 			</Events>
 			<StateGroups>
@@ -251,7 +261,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{7DAD2F37-BC87-081F-B521-4D338B8D1335}">
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{630CB1BF-0246-59E7-0C93-6816F709818B}">
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<Media>
@@ -352,6 +362,11 @@
 					<CachePath>SFX/UI_Menu_Cancel_73633C98.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="917271096" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+				</Custom>
+			</Plugins>
 			<Events>
 				<Event Id="1754227292" Name="Play_Dungeon" DurationType="Infinite">
 					<SwitchContainers>
@@ -423,11 +438,16 @@
 						<MediaRef Id="982906991"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2177193998" Name="Play_SFX_RootsContainer" DurationType="OneShot" DurationMin="2.0697892" DurationMax="2.186947">
+				<Event Id="2177193998" Name="Play_SFX_RootsContainer" DurationType="OneShot" DurationMin="0.7937005" DurationMax="2.600733">
 					<MediaRefs>
 						<MediaRef Id="751312722"/>
 						<MediaRef Id="808662452"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="917271096"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="2013398331" Name="Play_TestSFX" DurationType="OneShot" DurationMin="4" DurationMax="4">
 					<MediaRefs>
@@ -473,5 +493,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{EE2B3971-AECE-CBEE-400F-B127EE6084B0}</FileHash>
+	<FileHash>{3CD0DA0B-42AF-B36D-F2F0-F7163844EE6D}</FileHash>
 </SoundBanksInfo>

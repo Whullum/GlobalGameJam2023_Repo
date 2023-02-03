@@ -615,7 +615,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: ef4a5aebd9238145b3fba93ba9b54989
     GuidInternal: 
-    m_lastTime: -8585262246613591666
+    m_lastTime: -8585261661802877419
     List:
     - name: Gameplay
       guid: 9396c0d9a487af4ab6fa5263cbc5ead8
@@ -648,6 +648,22 @@ MonoBehaviour:
         - ElementName: Danger
           ObjectType: 8
           guid: 6a87067b5a1f6b4eb22bb4301dc9a9a9
+      - name: Death
+        guid: 2575cf6d54309944a53d02a812859845
+        id: 779278001
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: ef4a5aebd9238145b3fba93ba9b54989
+        - ElementName: Gameplay
+          ObjectType: 9
+          guid: 9396c0d9a487af4ab6fa5263cbc5ead8
+        - ElementName: Death
+          ObjectType: 8
+          guid: 2575cf6d54309944a53d02a812859845
       - name: None
         guid: aa5ab3e18466b54a86ddf4d43e47c917
         id: 748895195
@@ -680,6 +696,22 @@ MonoBehaviour:
         - ElementName: Normal
           ObjectType: 8
           guid: 3b303f53ff13ea40ac1124950c05b262
+      - name: Victory
+        guid: 86ce74abdd29934ebea8ad01c50f731f
+        id: 2716678721
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: ef4a5aebd9238145b3fba93ba9b54989
+        - ElementName: Gameplay
+          ObjectType: 9
+          guid: 9396c0d9a487af4ab6fa5263cbc5ead8
+        - ElementName: Victory
+          ObjectType: 8
+          guid: 86ce74abdd29934ebea8ad01c50f731f
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -712,7 +744,7 @@ MonoBehaviour:
     m_lastTime: -8585267643243355200
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000f0000001000000018000000190000001e0000002000000021000000
+  ExpandedWaapiItemIds: 0500000006000000070000000e0000000f0000001f000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

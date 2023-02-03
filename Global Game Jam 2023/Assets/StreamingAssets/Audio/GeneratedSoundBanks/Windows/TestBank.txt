@@ -24,6 +24,9 @@ State	ID	Name	State Group			Notes
 	2716678721	Victory	Gameplay			
 	4174463524	Danger	Gameplay			
 
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	917271096	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\Environmental_SFX\SFX_RootsContainer\Silence\Silence	
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	140587607	SFX_Player_MeleeAttack_02	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_MeleeAttack_E81D4E3B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_MeleeAttack_Container\SFX_Player_MeleeAttack_02		41792
 	143463664	UI_Menu_Selection	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_Selection_7AC89DD7.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_Selection		51664

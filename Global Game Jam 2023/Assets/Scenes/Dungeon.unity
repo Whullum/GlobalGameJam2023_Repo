@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130899095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -310,6 +310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 424341271}
   - component: {fileID: 424341270}
+  - component: {fileID: 424341272}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -357,6 +358,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &424341272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424341269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16986c94bc4d5c941996bd61373f7b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 963963379961c5248a3c115a413ae5e9, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1001 &522422654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386,7 +411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5696425636712059769, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5696425636712059769, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -416,6 +441,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5696425636712059770, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
+      propertyPath: playerSounds
+      value: 
+      objectReference: {fileID: 522422657}
+    - target: {fileID: 6700865716115679614, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
+      propertyPath: playerSounds
+      value: 
+      objectReference: {fileID: 522422657}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
 --- !u!4 &522422655 stripped
@@ -423,6 +456,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5696425636712059769, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
   m_PrefabInstance: {fileID: 522422654}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &522422656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5696425636712059766, guid: 498c5af60d308ad4bb891fb1c99d65e3, type: 3}
+  m_PrefabInstance: {fileID: 522422654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &522422657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522422656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822394ab8cc90c64baf28406a25dad46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAttackSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9d9f39aff589e7d409deca9ba90fd03c, type: 2}
+  playerDamagedSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 03ff5da8246268146b15590590abb28e, type: 2}
+  dodgeAbilitySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4bb00c43e499d3346b4d294ce967f8de, type: 2}
+  reflectAbilitySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &546244387
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +631,10 @@ MonoBehaviour:
   rootsDamage: 1
   damageTick: 1
   rootTile: {fileID: 11400000, guid: 7c0d4d06b01288946b411bd31383d4b4, type: 2}
+  rootAdvancementSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1703e7a7d8ff50f42be30fb0006e2b39, type: 2}
 --- !u!66 &546244392
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -697,7 +767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786894352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

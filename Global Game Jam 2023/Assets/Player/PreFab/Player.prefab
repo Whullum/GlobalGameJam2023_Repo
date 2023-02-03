@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5696425636712059771}
   - component: {fileID: 5696425636712059770}
   - component: {fileID: 6700865716115679614}
+  - component: {fileID: 4455474052047267247}
+  - component: {fileID: 5666932661244188040}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -78,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: -1359490265, guid: cc8b944bc2945ae4eacac09d73fb2d7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 0.75, y: 0.96875}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -154,6 +156,7 @@ MonoBehaviour:
   dodgeCooldown: 10
   attackTime: 0.5
   rb: {fileID: 5696425636712059772}
+  playerSounds: {fileID: 4455474052047267247}
 --- !u!114 &6700865716115679614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +169,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadd632e8ac75d24e874388cfcc9e0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  playerSounds: {fileID: 4455474052047267247}
+--- !u!114 &4455474052047267247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696425636712059766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822394ab8cc90c64baf28406a25dad46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAttackSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9d9f39aff589e7d409deca9ba90fd03c, type: 2}
+  playerDamagedSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 03ff5da8246268146b15590590abb28e, type: 2}
+  dodgeAbilitySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4bb00c43e499d3346b4d294ce967f8de, type: 2}
+  reflectAbilitySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+--- !u!95 &5666932661244188040
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696425636712059766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4f242dc36d75b042b519f817ef786e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &6634641546391662354
 GameObject:
   m_ObjectHideFlags: 0
