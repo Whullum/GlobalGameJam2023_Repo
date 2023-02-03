@@ -75,6 +75,11 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;
         else
             spriteRenderer.flipX = false;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ResumeGame.instance.OpenPauseMenu();
+        }
     }
 
     private void FixedUpdate()
