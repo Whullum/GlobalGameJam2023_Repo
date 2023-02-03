@@ -38,7 +38,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1411839323" Type="User" Language="SFX">
+		<SoundBank Id="1411839323" Type="User" Language="SFX" Hash="{423F55AF-7436-B3A6-42B2-195FCFF2B22D}">
 			<ShortName>DungeonBank</ShortName>
 			<Path>DungeonBank.bnk</Path>
 			<Media>
@@ -183,7 +183,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="2718747754" Type="User" Language="SFX">
+		<SoundBank Id="2718747754" Type="User" Language="SFX" Hash="{C02172D7-471E-7DD0-C961-A2F6FDEF6B41}">
 			<ShortName>MenuBank</ShortName>
 			<Path>MenuBank.bnk</Path>
 			<Media>
@@ -427,5 +427,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6D1D4DF7-5699-1BD8-44FF-4C6BB5BB0C99}</FileHash>
+	<FileHash>{5F215B7F-DC5C-DB02-DDC6-31CB0122E5A6}</FileHash>
 </SoundBanksInfo>
