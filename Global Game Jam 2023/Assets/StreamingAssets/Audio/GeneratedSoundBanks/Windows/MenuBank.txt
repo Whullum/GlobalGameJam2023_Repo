@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	204465150	Play_UI_Menu_SliderChange			\Default Work Unit\MenuSounds\Play_UI_Menu_SliderChange	
+	1739779019	Play_UI_Menu_Cancel			\Default Work Unit\MenuSounds\Play_UI_Menu_Cancel	
+	2157261217	Play_UI_Menu_Selection			\Default Work Unit\MenuSounds\Play_UI_Menu_Selection	
+	3500366795	Play_UI_Menu_Confirm			\Default Work Unit\MenuSounds\Play_UI_Menu_Confirm	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	143463664	UI_Menu_Selection	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_Selection_7AC89DD7.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_Selection		51664
+	194208035	UI_Menu_Confirm	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_Confirm_C9DB6E99.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_Confirm		409180
+	871264739	UI_Menu_SliderChange	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_SliderChange_EF719CCA.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_SliderChange		77692
+	994177558	UI_Menu_Cancel	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_Cancel_73633C98.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_Cancel		173808
+

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2B8ECDAA-1529-DB5E-1EE4-B055E7DFACD1}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -19,26 +19,413 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="2886307548" Name="MusicBus"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3803850708" Name="SFXBus"/>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="988953028" Name="SFXVolume"/>
+				<GameParameter Id="2346531308" Name="MusicVolume"/>
+				<GameParameter Id="2918011349" Name="MasterVolume"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="89505537" Name="Gameplay">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="1160234136" Name="Normal"/>
+						<State Id="4174463524" Name="Danger"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{BFB1D5F2-50FB-AB20-EAAA-0CF2FB292217}">
+		<SoundBank Id="1411839323" Type="User" Language="SFX">
+			<ShortName>DungeonBank</ShortName>
+			<Path>DungeonBank.bnk</Path>
+			<Media>
+				<File Id="140587607" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Player_MeleeAttack_E81D4E3B.wem</CachePath>
+				</File>
+				<File Id="174293228" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_Dodge.wav</ShortName>
+					<CachePath>SFX/SFX_Player_Dodge_96382564.wem</CachePath>
+				</File>
+				<File Id="257559715" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Overgrowth-Dungeon-theme-1-31-23.wav</ShortName>
+					<CachePath>SFX/Overgrowth-Dungeon-theme-1-31-23_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="272150576" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Enemy_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Enemy_MeleeAttack_99F0A06E.wem</CachePath>
+				</File>
+				<File Id="386929726" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Enemy_Damaged.wav</ShortName>
+					<CachePath>SFX/SFX_Enemy_Damaged_F70F3B31.wem</CachePath>
+				</File>
+				<File Id="473187726" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Overgrowth-danger-theme-1_2-1-23.wav</ShortName>
+					<CachePath>SFX/Overgrowth-danger-theme-1_2-1-23_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="520442661" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Player_MeleeAttack_62017ACD.wem</CachePath>
+				</File>
+				<File Id="541385518" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_Dodge.wav</ShortName>
+					<CachePath>SFX/SFX_Player_Dodge_4FC5F20C.wem</CachePath>
+				</File>
+				<File Id="561077736" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Enemy_Death.wav</ShortName>
+					<CachePath>SFX/SFX_Enemy_Death_649E452E.wem</CachePath>
+				</File>
+				<File Id="626407511" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_Dodge.wav</ShortName>
+					<CachePath>SFX/SFX_Player_Dodge_8182DBA0.wem</CachePath>
+				</File>
+				<File Id="667021677" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Enemy_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Enemy_MeleeAttack_4E9BB00C.wem</CachePath>
+				</File>
+				<File Id="751312722" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_RootAdvancement.wav</ShortName>
+					<CachePath>SFX/SFX_RootAdvancement_5CC545E3.wem</CachePath>
+				</File>
+				<File Id="798180154" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Player_MeleeAttack_037AD70C.wem</CachePath>
+				</File>
+				<File Id="808662452" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_RootAdvancement.wav</ShortName>
+					<CachePath>SFX/SFX_RootAdvancement_54DD1115.wem</CachePath>
+				</File>
+				<File Id="925937710" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_Damaged.wav</ShortName>
+					<CachePath>SFX/SFX_Player_Damaged_97CEB5A5.wem</CachePath>
+				</File>
+				<File Id="982906991" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Player_MeleeAttack_E83431A9.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1754227292" Name="Play_Dungeon" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="89505537" Id="1160234136"/>
+							<MediaRefs>
+								<MediaRef Id="257559715"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="89505537" Id="748895195"/>
+							<MediaRefs>
+								<MediaRef Id="257559715"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="89505537" Id="4174463524"/>
+							<MediaRefs>
+								<MediaRef Id="473187726"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="2216620102" Name="Play_SFX_Enemy_Damaged" DurationType="OneShot" DurationMin="0.19172113" DurationMax="0.19172113">
+					<MediaRefs>
+						<MediaRef Id="386929726"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2078250621" Name="Play_SFX_Enemy_Death" DurationType="OneShot" DurationMin="0.19172113" DurationMax="0.19172113">
+					<MediaRefs>
+						<MediaRef Id="561077736"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1682262311" Name="Play_SFX_Enemy_MeleeAttack_Container" DurationType="OneShot" DurationMin="0.25459877" DurationMax="0.47924474">
+					<MediaRefs>
+						<MediaRef Id="272150576"/>
+						<MediaRef Id="667021677"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1844877881" Name="Play_SFX_Player_Damaged" DurationType="OneShot" DurationMin="0.11764706" DurationMax="0.11764706">
+					<MediaRefs>
+						<MediaRef Id="925937710"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3953012785" Name="Play_SFX_Player_Dodge_Container" DurationType="OneShot" DurationMin="0.27380064" DurationMax="0.38462472">
+					<MediaRefs>
+						<MediaRef Id="174293228"/>
+						<MediaRef Id="541385518"/>
+						<MediaRef Id="626407511"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1421029036" Name="Play_SFX_Player_MeleeAttack_Container" DurationType="OneShot" DurationMin="0.20966958" DurationMax="0.29952797">
+					<MediaRefs>
+						<MediaRef Id="140587607"/>
+						<MediaRef Id="520442661"/>
+						<MediaRef Id="798180154"/>
+						<MediaRef Id="982906991"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2177193998" Name="Play_SFX_RootsContainer" DurationType="OneShot" DurationMin="2.0697892" DurationMax="2.186947">
+					<MediaRefs>
+						<MediaRef Id="751312722"/>
+						<MediaRef Id="808662452"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="89505537" Name="Gameplay">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="1160234136" Name="Normal"/>
+						<State Id="4174463524" Name="Danger"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="2718747754" Type="User" Language="SFX">
+			<ShortName>MenuBank</ShortName>
+			<Path>MenuBank.bnk</Path>
+			<Media>
+				<File Id="143463664" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Menu_Selection.wav</ShortName>
+					<CachePath>SFX/UI_Menu_Selection_7AC89DD7.wem</CachePath>
+				</File>
+				<File Id="194208035" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Menu_Confirm.wav</ShortName>
+					<CachePath>SFX/UI_Menu_Confirm_C9DB6E99.wem</CachePath>
+				</File>
+				<File Id="871264739" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Menu_SliderChange.wav</ShortName>
+					<CachePath>SFX/UI_Menu_SliderChange_EF719CCA.wem</CachePath>
+				</File>
+				<File Id="994177558" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Menu_Cancel.wav</ShortName>
+					<CachePath>SFX/UI_Menu_Cancel_73633C98.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1739779019" Name="Play_UI_Menu_Cancel" DurationType="OneShot" DurationMin="0.90475184" DurationMax="0.90475184">
+					<MediaRefs>
+						<MediaRef Id="994177558"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3500366795" Name="Play_UI_Menu_Confirm" DurationType="OneShot" DurationMin="2.1306357" DurationMax="2.1306357">
+					<MediaRefs>
+						<MediaRef Id="194208035"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2157261217" Name="Play_UI_Menu_Selection" DurationType="OneShot" DurationMin="0.2685951" DurationMax="0.2685951">
+					<MediaRefs>
+						<MediaRef Id="143463664"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="204465150" Name="Play_UI_Menu_SliderChange" DurationType="OneShot" DurationMin="0.40416119" DurationMax="0.40416119">
+					<MediaRefs>
+						<MediaRef Id="871264739"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{3C6CFAE2-4454-A1DB-830F-5A04629336B0}">
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<Media>
+				<File Id="140587607" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Player_MeleeAttack_E81D4E3B.wem</CachePath>
+				</File>
+				<File Id="143463664" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Menu_Selection.wav</ShortName>
+					<CachePath>SFX/UI_Menu_Selection_7AC89DD7.wem</CachePath>
+				</File>
+				<File Id="174293228" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_Dodge.wav</ShortName>
+					<CachePath>SFX/SFX_Player_Dodge_96382564.wem</CachePath>
+				</File>
+				<File Id="194208035" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Menu_Confirm.wav</ShortName>
+					<CachePath>SFX/UI_Menu_Confirm_C9DB6E99.wem</CachePath>
+				</File>
+				<File Id="257559715" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Overgrowth-Dungeon-theme-1-31-23.wav</ShortName>
+					<CachePath>SFX/Overgrowth-Dungeon-theme-1-31-23_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="272150576" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Enemy_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Enemy_MeleeAttack_99F0A06E.wem</CachePath>
+				</File>
+				<File Id="386929726" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Enemy_Damaged.wav</ShortName>
+					<CachePath>SFX/SFX_Enemy_Damaged_F70F3B31.wem</CachePath>
+				</File>
+				<File Id="467198161" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Purchase.wav</ShortName>
+					<CachePath>SFX/UI_Purchase_D98563FD.wem</CachePath>
+				</File>
+				<File Id="473187726" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Overgrowth-danger-theme-1_2-1-23.wav</ShortName>
+					<CachePath>SFX/Overgrowth-danger-theme-1_2-1-23_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="520442661" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Player_MeleeAttack_62017ACD.wem</CachePath>
+				</File>
+				<File Id="541385518" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_Dodge.wav</ShortName>
+					<CachePath>SFX/SFX_Player_Dodge_4FC5F20C.wem</CachePath>
+				</File>
+				<File Id="561077736" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Enemy_Death.wav</ShortName>
+					<CachePath>SFX/SFX_Enemy_Death_649E452E.wem</CachePath>
+				</File>
+				<File Id="626407511" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_Dodge.wav</ShortName>
+					<CachePath>SFX/SFX_Player_Dodge_8182DBA0.wem</CachePath>
+				</File>
+				<File Id="667021677" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Enemy_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Enemy_MeleeAttack_4E9BB00C.wem</CachePath>
+				</File>
+				<File Id="751312722" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_RootAdvancement.wav</ShortName>
+					<CachePath>SFX/SFX_RootAdvancement_5CC545E3.wem</CachePath>
+				</File>
 				<File Id="778083736" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Interactables_HealthBox_Take2.wav</ShortName>
 					<CachePath>SFX/Interactables_HealthBox_Take2_10C4C929.wem</CachePath>
 				</File>
+				<File Id="798180154" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Player_MeleeAttack_037AD70C.wem</CachePath>
+				</File>
+				<File Id="808662452" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_RootAdvancement.wav</ShortName>
+					<CachePath>SFX/SFX_RootAdvancement_54DD1115.wem</CachePath>
+				</File>
+				<File Id="871264739" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Menu_SliderChange.wav</ShortName>
+					<CachePath>SFX/UI_Menu_SliderChange_EF719CCA.wem</CachePath>
+				</File>
+				<File Id="925937710" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_Damaged.wav</ShortName>
+					<CachePath>SFX/SFX_Player_Damaged_97CEB5A5.wem</CachePath>
+				</File>
+				<File Id="982906991" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
+					<CachePath>SFX/SFX_Player_MeleeAttack_E83431A9.wem</CachePath>
+				</File>
+				<File Id="994177558" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Menu_Cancel.wav</ShortName>
+					<CachePath>SFX/UI_Menu_Cancel_73633C98.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="1754227292" Name="Play_Dungeon" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="89505537" Id="1160234136"/>
+							<MediaRefs>
+								<MediaRef Id="257559715"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="89505537" Id="748895195"/>
+							<MediaRefs>
+								<MediaRef Id="257559715"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="89505537" Id="4174463524"/>
+							<MediaRefs>
+								<MediaRef Id="473187726"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="2216620102" Name="Play_SFX_Enemy_Damaged" DurationType="OneShot" DurationMin="0.19172113" DurationMax="0.19172113">
+					<MediaRefs>
+						<MediaRef Id="386929726"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2078250621" Name="Play_SFX_Enemy_Death" DurationType="OneShot" DurationMin="0.19172113" DurationMax="0.19172113">
+					<MediaRefs>
+						<MediaRef Id="561077736"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1682262311" Name="Play_SFX_Enemy_MeleeAttack_Container" DurationType="OneShot" DurationMin="0.25459877" DurationMax="0.47924474">
+					<MediaRefs>
+						<MediaRef Id="272150576"/>
+						<MediaRef Id="667021677"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1844877881" Name="Play_SFX_Player_Damaged" DurationType="OneShot" DurationMin="0.11764706" DurationMax="0.11764706">
+					<MediaRefs>
+						<MediaRef Id="925937710"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3953012785" Name="Play_SFX_Player_Dodge_Container" DurationType="OneShot" DurationMin="0.27380064" DurationMax="0.38462472">
+					<MediaRefs>
+						<MediaRef Id="174293228"/>
+						<MediaRef Id="541385518"/>
+						<MediaRef Id="626407511"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1421029036" Name="Play_SFX_Player_MeleeAttack_Container" DurationType="OneShot" DurationMin="0.20966958" DurationMax="0.29952797">
+					<MediaRefs>
+						<MediaRef Id="140587607"/>
+						<MediaRef Id="520442661"/>
+						<MediaRef Id="798180154"/>
+						<MediaRef Id="982906991"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2177193998" Name="Play_SFX_RootsContainer" DurationType="OneShot" DurationMin="2.0697892" DurationMax="2.186947">
+					<MediaRefs>
+						<MediaRef Id="751312722"/>
+						<MediaRef Id="808662452"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2013398331" Name="Play_TestSFX" DurationType="OneShot" DurationMin="4" DurationMax="4">
 					<MediaRefs>
 						<MediaRef Id="778083736"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1739779019" Name="Play_UI_Menu_Cancel" DurationType="OneShot" DurationMin="0.90475184" DurationMax="0.90475184">
+					<MediaRefs>
+						<MediaRef Id="994177558"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3500366795" Name="Play_UI_Menu_Confirm" DurationType="OneShot" DurationMin="2.1306357" DurationMax="2.1306357">
+					<MediaRefs>
+						<MediaRef Id="194208035"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2157261217" Name="Play_UI_Menu_Selection" DurationType="OneShot" DurationMin="0.2685951" DurationMax="0.2685951">
+					<MediaRefs>
+						<MediaRef Id="143463664"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="204465150" Name="Play_UI_Menu_SliderChange" DurationType="OneShot" DurationMin="0.40416119" DurationMax="0.40416119">
+					<MediaRefs>
+						<MediaRef Id="871264739"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1924313358" Name="Play_UI_Purchase" DurationType="OneShot" DurationMin="0.36305848" DurationMax="0.36305848">
+					<MediaRefs>
+						<MediaRef Id="467198161"/>
+					</MediaRefs>
+				</Event>
 			</Events>
+			<StateGroups>
+				<StateGroup Id="89505537" Name="Gameplay">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="1160234136" Name="Normal"/>
+						<State Id="4174463524" Name="Danger"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{71E94E62-FAC9-025F-6CEE-1BF0F10EE783}</FileHash>
+	<FileHash>{6D1D4DF7-5699-1BD8-44FF-4C6BB5BB0C99}</FileHash>
 </SoundBanksInfo>

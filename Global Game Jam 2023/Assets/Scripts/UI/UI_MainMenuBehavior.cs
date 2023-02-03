@@ -22,6 +22,17 @@ public class UI_MainMenuBehavior : MonoBehaviour
     public Slider musicVolumeSlider;
     public Slider soundEffectVolumeSlider;
 
+    [Header("Wwise Sounds")]
+    public AK.Wwise.Event uiSelection;
+    public AK.Wwise.Event uiConfirm;
+    public AK.Wwise.Event uiSliderChange;
+
+    [Header("Wwise RTPC")]
+    public AK.Wwise.RTPC masterRTPC;
+    public AK.Wwise.RTPC musicRTPC;
+    public AK.Wwise.RTPC sfxRTPC;
+
+
     private Stack<GameObject> canvasStack;
 
     private void Start()
@@ -30,7 +41,7 @@ public class UI_MainMenuBehavior : MonoBehaviour
         canvasStack = new Stack<GameObject>();
         canvasStack.Push(mainMenuCanvas);
 
-        // TODO: Initialize volume slider values based on saved Wwise bus values
+        SetVolumeSliderValues();
     }
 
     public void StartGame()
@@ -67,11 +78,31 @@ public class UI_MainMenuBehavior : MonoBehaviour
         Application.Quit();
     }
 
-    public void VolumeSlidersBehavior()
+    public void VolumeSlidersBehavior(string value)
     {
-        // TODO: Volume slider functionality
-        // Get slider name
-        // Use slider name to get corresponding wwise bus
-        // Change the value of the wwise bus to the value of the slider
+        switch (value)
+        {
+            case "master":
+                masterRTPC.SetGlobalValue(masterVolumeSlider.value);
+                break;
+            case "music":
+                musicRTPC.SetGlobalValue(musicVolumeSlider.value);
+                break;
+            case "sfx":
+                sfxRTPC.SetGlobalValue(soundEffectVolumeSlider.value);
+                break;
+        }
+    }
+
+    public void SetVolumeSliderValues()
+    {
+        masterVolumeSlider.value = masterRTPC.GetValue(gameObject);
+        musicVolumeSlider.value = musicRTPC.GetValue(gameObject);
+        soundEffectVolumeSlider.value = sfxRTPC.GetValue(gameObject);
+    }
+
+    public void PlayHoverSound()
+    {
+        uiSelection.Post(gameObject);
     }
 }
