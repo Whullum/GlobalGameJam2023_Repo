@@ -1,6 +1,48 @@
 Event	ID	Name			Wwise Object Path	Notes
+	204465150	Play_UI_Menu_SliderChange			\Default Work Unit\MenuSounds\Play_UI_Menu_SliderChange	
+	1421029036	Play_SFX_Player_MeleeAttack_Container			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Player_MeleeAttack_Container	
+	1682262311	Play_SFX_Enemy_MeleeAttack_Container			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Enemy_MeleeAttack_Container	
+	1739779019	Play_UI_Menu_Cancel			\Default Work Unit\MenuSounds\Play_UI_Menu_Cancel	
+	1754227292	Play_Dungeon			\Default Work Unit\DungeonSounds\Music\Play_Dungeon	
+	1844877881	Play_SFX_Player_Damaged			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Player_Damaged	
+	1924313358	Play_UI_Purchase			\Default Work Unit\HubSounds\Play_UI_Purchase	
 	2013398331	Play_TestSFX			\Default Work Unit\Play_TestSFX	
+	2078250621	Play_SFX_Enemy_Death			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Enemy_Death	
+	2157261217	Play_UI_Menu_Selection			\Default Work Unit\MenuSounds\Play_UI_Menu_Selection	
+	2177193998	Play_SFX_RootsContainer			\Default Work Unit\DungeonSounds\SFX\Play_SFX_RootsContainer	
+	2216620102	Play_SFX_Enemy_Damaged			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Enemy_Damaged	
+	3500366795	Play_UI_Menu_Confirm			\Default Work Unit\MenuSounds\Play_UI_Menu_Confirm	
+	3953012785	Play_SFX_Player_Dodge_Container			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Player_Dodge_Container	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	89505537	Gameplay			\Default Work Unit\Gameplay	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Gameplay			
+	1160234136	Normal	Gameplay			
+	4174463524	Danger	Gameplay			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	140587607	SFX_Player_MeleeAttack_02	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_MeleeAttack_E81D4E3B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_MeleeAttack_Container\SFX_Player_MeleeAttack_02		41792
+	143463664	UI_Menu_Selection	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_Selection_7AC89DD7.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_Selection		51664
+	174293228	SFX_Player_Dodge_03	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_Dodge_96382564.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_Dodge_Container\SFX_Player_Dodge_03		52668
+	194208035	UI_Menu_Confirm	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_Confirm_C9DB6E99.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_Confirm		409180
+	257559715	Dungeon-Main	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\Overgrowth-Dungeon-theme-1-31-23_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Dungeon\Dungeon-Normal\Dungeon-Main\Dungeon-Main		7799300
+	272150576	SFX_Enemy_MeleeAttack_01	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Enemy_MeleeAttack_99F0A06E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy_SFX\SFX_Enemy_MeleeAttack_Container\SFX_Enemy_MeleeAttack_01		92112
+	386929726	SFX_Enemy_Damaged	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Enemy_Damaged_F70F3B31.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy_SFX\SFX_Enemy_Damaged		36908
+	467198161	UI_Purchase	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Purchase_D98563FD.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Purchase		69804
+	473187726	Danger-Intro	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\Overgrowth-danger-theme-1_2-1-23_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Dungeon\Dungeon-Danger\Danger-Intro\Danger-Intro		8752200
+	520442661	SFX_Player_MeleeAttack_01	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_MeleeAttack_62017ACD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_MeleeAttack_Container\SFX_Player_MeleeAttack_01		40352
+	541385518	SFX_Player_Dodge_01	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_Dodge_4FC5F20C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_Dodge_Container\SFX_Player_Dodge_01		73944
+	561077736	SFX_Enemy_Death	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Enemy_Death_649E452E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy_SFX\SFX_Enemy_Death		36908
+	626407511	SFX_Player_Dodge_02	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_Dodge_8182DBA0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_Dodge_Container\SFX_Player_Dodge_02		67684
+	667021677	SFX_Enemy_MeleeAttack_02	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Enemy_MeleeAttack_4E9BB00C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy_SFX\SFX_Enemy_MeleeAttack_Container\SFX_Enemy_MeleeAttack_02		48976
+	751312722	SFX_RootAdvancement_02	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_RootAdvancement_5CC545E3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Environmental_SFX\SFX_RootsContainer\SFX_RootAdvancement_02		419988
 	778083736	TestSFX	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\Interactables_HealthBox_Take2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\TestSFX		768096
+	798180154	SFX_Player_MeleeAttack_03	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_MeleeAttack_037AD70C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_MeleeAttack_Container\SFX_Player_MeleeAttack_03		57604
+	808662452	SFX_RootAdvancement_01	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_RootAdvancement_54DD1115.wem		\Actor-Mixer Hierarchy\Default Work Unit\Environmental_SFX\SFX_RootsContainer\SFX_RootAdvancement_01		397492
+	871264739	UI_Menu_SliderChange	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_SliderChange_EF719CCA.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_SliderChange		77692
+	925937710	SFX_Player_Damaged	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_Damaged_97CEB5A5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_Damaged		22684
+	982906991	SFX_Player_MeleeAttack_04	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_MeleeAttack_E83431A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_MeleeAttack_Container\SFX_Player_MeleeAttack_04		57604
+	994177558	UI_Menu_Cancel	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_Cancel_73633C98.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_Cancel		173808
 

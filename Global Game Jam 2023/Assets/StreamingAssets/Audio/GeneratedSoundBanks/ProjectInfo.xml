@@ -3,11 +3,11 @@
 	<Project Name="Global Game Jam 2023_WwiseProject" GUID="{4DF20790-3765-4FAA-91B3-CD8B783F0709}" Generator="2022.1.1.8100"/>
 	<CacheRoot>../../../../../../GlobalGameJam2023_WwiseRepo/Global Game Jam 2023_WwiseProject/.cache</CacheRoot>
 	<Platforms>
-		<Platform Name="Mac" GUID="{5FF44F47-7627-444C-9E20-C057584FCF4D}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="."/>
-		<Platform Name="Windows" GUID="{0F3B6490-6187-4CE9-A8D3-252811C20D69}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="."/>
+		<Platform Name="Mac" GUID="{5FF44F47-7627-444C-9E20-C057584FCF4D}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="Mac"/>
+		<Platform Name="Windows" GUID="{0F3B6490-6187-4CE9-A8D3-252811C20D69}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="Windows"/>
 	</Platforms>
 	<Languages>
 		<Language Name="English(US)" Id="684519430" GUID="{55B0B4A3-5B4A-434D-8FF5-5051BE87C249}" Default="true" UseAsStandIn="true"/>
 	</Languages>
-	<FileHash>{CEA7CE4F-7CBE-1448-94FD-ADD7E864DDBF}</FileHash>
+	<FileHash>{54F27DEA-E447-EE6E-C808-1739F9FA08CE}</FileHash>
 </ProjectInfo>
