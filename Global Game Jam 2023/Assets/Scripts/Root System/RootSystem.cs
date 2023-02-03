@@ -8,6 +8,7 @@ public class RootSystem : MonoBehaviour
     private Transform player;
     private Tilemap rootsTilemap;
     private Coroutine growCoroutine;
+    private ParticleSystem rootGrowEffect;
     private int[,] growTiles;
     private int tileType = 0;
     private int width;
@@ -18,9 +19,10 @@ public class RootSystem : MonoBehaviour
     [SerializeField] private float growStep;
     [Tooltip("Time until the roots start spawning once the level is loaded.")]
     [SerializeField] private float startTime = 3;
-    [Tooltip("Damage dealt to the player when is inside the roots.")]
-    [SerializeField] private int rootsDamage = 5;
+    [Tooltip("Damage dealt to the player when is inside the roots. This damage value changes depending on the current floor, so for example if player is on the 5th floor, it receives 5 damage points.")]
+    [SerializeField] private int rootsDamage = 1;
     [Tooltip("Each tick passes player receives damage.")]
+    [Range(0.1f, 5f)]
     [SerializeField] private float damageTick = 0.5f;
     [Tooltip("Tile used to represent the roots.")]
     [SerializeField] private Tile rootTile;
@@ -28,6 +30,7 @@ public class RootSystem : MonoBehaviour
     private void Awake()
     {
         rootsTilemap = GetComponent<Tilemap>();
+        rootGrowEffect= GetComponentInChildren<ParticleSystem>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -45,6 +48,7 @@ public class RootSystem : MonoBehaviour
         this.growTiles = growTiles;
         this.width = growTiles.GetLength(0);
         this.height = growTiles.GetLength(1);
+        damageTick = DungeonManager.CurrentFloor;
 
         rootsTilemap.ClearAllTiles();
         StartCoroutine(DamagePlayer());
@@ -90,6 +94,10 @@ public class RootSystem : MonoBehaviour
                             roots.Enqueue(newRoot);
                             tileFlags[iX, iY] = 1;
                             UpdateTile(newRoot, rootTile);
+
+                            Vector3 pos = rootsTilemap.GetCellCenterWorld(new Vector3Int(iX, iY));
+                            rootGrowEffect.transform.position = pos;
+                            rootGrowEffect.Play();
                         }
                     }
                 }

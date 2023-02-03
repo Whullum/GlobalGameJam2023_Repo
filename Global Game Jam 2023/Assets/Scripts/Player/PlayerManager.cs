@@ -9,8 +9,11 @@ public class PlayerManager : MonoBehaviour
     private bool reflectUnlocked = false;
 
     [Header("Player upgrades")]
+    [Tooltip("ScriptableObject with the attack upgrades.")]
     [SerializeField] private PlayerUpgrade attackUpgrade;
+    [Tooltip("ScriptableObject with the movement upgrades.")]
     [SerializeField] private PlayerUpgrade movementUpgrade;
+    [Tooltip("ScriptableObject with the health upgrades.")]
     [SerializeField] private PlayerUpgrade healthUpgrade;
 
     private void Awake()
@@ -33,22 +36,53 @@ public class PlayerManager : MonoBehaviour
     /// </summary>
     public void UnlockReflectAbility()
     {
-        if(reflectUnlocked) return;
+        if (reflectUnlocked) return;
 
         player.AddComponent<ReflectAbility>();
     }
 
-    public void UpgradeAttack()
+    public void Upgrade(UpgradeType upgradeType)
     {
-        foreach (Upgrade attack in attackUpgrade.Upgrades)
+        PlayerUpgrade playerUpgrades = null;
+
+        switch (upgradeType)
+        {
+            case UpgradeType.Attack:
+                playerUpgrades = attackUpgrade;
+                break;
+            case UpgradeType.Movement:
+                playerUpgrades = movementUpgrade;
+                break;
+            case UpgradeType.Health:
+                playerUpgrades = healthUpgrade;
+                break;
+        }
+
+        foreach (Upgrade upgrade in playerUpgrades.Upgrades)
         {
             // If this upgrade is already unlocked, continue to the next one.
-            if (attack.Unlocked) { continue; }
+            if (upgrade.Unlocked) { continue; }
 
             // Add attack upgrade to player and set this upgrade to be unlocked.
-            attack.Unlocked = true;
+            upgrade.Unlocked = true;
+            playerUpgrades.CurrentUpgrade = upgrade;
             break;
         }
+
+        bool allUpgradesUnlocked = true;
         // We need to check if all the upgrades are bought, so we can display that inside the UI.
+        foreach (Upgrade upgrade in playerUpgrades.Upgrades)
+        {
+            if (!upgrade.Unlocked)
+            {
+                allUpgradesUnlocked = false;
+                playerUpgrades.NextUpgrade = upgrade;
+            }
+        }
+
+        if (allUpgradesUnlocked)
+        {
+            // Disable buy button for this upgrade
+        }
     }
 }
