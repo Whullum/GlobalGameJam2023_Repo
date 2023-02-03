@@ -16,11 +16,20 @@ MonoBehaviour:
   Description: Let me clean your clothes, they are all dirty, maybe when you put
     it back on you will feel more refreshed.
   Upgrades:
-  - Value: 10
+  - Value: 1
     Cost: 50
-    Unlocked: 0
+    Unlocked: 1
   - Value: 15
     Cost: 80
+    Unlocked: 1
+  - Value: 20
+    Cost: 100
+    Unlocked: 0
+  - Value: 20
+    Cost: 100
+    Unlocked: 0
+  - Value: 20
+    Cost: 100
     Unlocked: 0
   - Value: 20
     Cost: 100

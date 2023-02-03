@@ -14,11 +14,10 @@ public class PlayerStat : MonoBehaviour
     public void DealDamage(int damageAmount)
     {
         playerHealth -= damageAmount;
+        UI_PlayerDungeon.Instance.UpdateHealth(0, playerHealth, maxHealth);
 
         if (playerHealth < 1)
-        {
             LevelLoader.RestartGame();
-        }
     }
 
     /// <summary>
@@ -29,5 +28,7 @@ public class PlayerStat : MonoBehaviour
     {
         maxHealth += healthUpgrade;
         playerHealth = maxHealth;
+
+        UI_PlayerDungeon.Instance.UpdateHealth(0, playerHealth, maxHealth);
     }
 }

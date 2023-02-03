@@ -1,25 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UI;
+using System;
 
 public class UI_PlayerDungeon : MonoBehaviour
 {
+    public static UI_PlayerDungeon Instance { get; private set; }
     public TextMeshProUGUI seedsCounterText;
     public TextMeshProUGUI weaponText;
     public TextMeshProUGUI abilityText;
     public TextMeshProUGUI abilityCountdownText;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI levelTimerText;
+    public Slider healthSlider;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+            Destroy(gameObject);
+        else
+            Instance = this;
+    }
 
     /// <summary>
     /// Change the display of the level time
     /// </summary>
     /// <param name="levelTime"> The time to set the text to </param>
-    public void ChangeLevelTime(Time levelTime)
+    public void ChangeLevelTime(float levelTime)
     {
-        levelTimerText.text = levelTime.ToString();
+        var ts = TimeSpan.FromSeconds(levelTime);
+        levelTimerText.text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
     }
 
     /// <summary>
@@ -28,7 +38,7 @@ public class UI_PlayerDungeon : MonoBehaviour
     /// <param name="levelNumber"> The correct level number to display on the text </param>
     public void ChangeLevelText(int levelNumber)
     {
-        levelText.text = "LEVEL " + levelNumber;
+        levelText.text = levelNumber.ToString();
     }
 
     /// <summary>
@@ -44,9 +54,15 @@ public class UI_PlayerDungeon : MonoBehaviour
     /// Changes the time text display of the ability cooldown
     /// </summary>
     /// <param name="cooldownTime">The time to set the display</param>
-    public void ChangeAbilityCooldown(Time cooldownTime)
+    public void ChangeAbilityCooldown(float cooldownTime)
     {
-        abilityCountdownText.text = cooldownTime.ToString();
+        var ts = TimeSpan.FromSeconds(cooldownTime);
+        abilityCountdownText.text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
+    }
+
+    public void SetAbilityText(string text)
+    {
+        abilityCountdownText.text = text;
     }
 
     /// <summary>
@@ -56,5 +72,12 @@ public class UI_PlayerDungeon : MonoBehaviour
     public void ChangeAblityName(string abilityName)
     {
         abilityText.text = abilityName;
+    }
+
+    public void UpdateHealth(int minimum, int current, int maximum)
+    {
+        healthSlider.minValue = minimum;
+        healthSlider.value = current;
+        healthSlider.maxValue= maximum;
     }
 }

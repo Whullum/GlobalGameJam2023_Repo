@@ -25,7 +25,7 @@ public class PlayerSpawner : MonoBehaviour
     public void SpawnPlayer(int[,] level, TileCoord playerSpawn)
     {
         if(player == null) player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log(player);
+
         player.transform.position = transform.position;
     }
 }

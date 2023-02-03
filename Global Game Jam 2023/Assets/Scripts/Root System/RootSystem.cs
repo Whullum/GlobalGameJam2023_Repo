@@ -50,7 +50,7 @@ public class RootSystem : MonoBehaviour
         this.growTiles = growTiles;
         this.width = growTiles.GetLength(0);
         this.height = growTiles.GetLength(1);
-        damageTick = DungeonManager.CurrentFloor;
+        rootsDamage = DungeonManager.CurrentFloor;
 
         rootsTilemap.ClearAllTiles();
         StartCoroutine(DamagePlayer());

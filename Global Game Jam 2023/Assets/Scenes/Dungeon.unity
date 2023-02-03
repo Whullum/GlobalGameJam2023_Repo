@@ -560,9 +560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6194cd3dcba657743abf16bd518f8d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growStep: 1.29
-  startTime: 3
-  rootsDamage: 1
+  growStep: 0.1
+  startTime: 1
+  rootsDamage: 6
   damageTick: 1
   rootTile: {fileID: 11400000, guid: 7c0d4d06b01288946b411bd31383d4b4, type: 2}
 --- !u!66 &546244392
@@ -1169,18 +1169,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_PlayerDungeonUI
       objectReference: {fileID: 0}
-    - target: {fileID: 367470280545996460, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 367470280545996460, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3402457732709518207, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8156321367992362540, guid: 0101fd17ecfbd07448aebaabd9a925f4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1310,7 +1298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyThreshold: 20
   difficultyIncrease: 3
-  spawnerWallet: 1
+  spawnerWallet: 10
   minimumDistanceToPlayer: 10
   enemies:
   - EnemyPrefab: {fileID: 295554924408713750, guid: 1a72f0467eacfcb439d81c0b85e0669d, type: 3}

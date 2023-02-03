@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12242727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 798951626633835667, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+  m_PrefabInstance: {fileID: 731368245491039203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &33818838
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3763d344cd34c2e4fbfbfdd4df4243f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 0}
   attackUpgrade: {fileID: 11400000, guid: 18b61b864c3bcbf4f9c0daad78bb00e2, type: 2}
   movementUpgrade: {fileID: 11400000, guid: d320bb228e39b5348a16f9908c38cf55, type: 2}
   healthUpgrade: {fileID: 11400000, guid: 6fd561bdf0751cc498efb63f80a77e5d, type: 2}
@@ -485,6 +489,11 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!1 &1934314088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6683597851382449804, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+  m_PrefabInstance: {fileID: 731368245491039203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &367470278651492919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -737,6 +746,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: abilityNPC
+      value: 
+      objectReference: {fileID: 12242727}
+    - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: upgradeNPC
+      value: 
+      objectReference: {fileID: 1934314088}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
 --- !u!1001 &7959135081950827415
