@@ -13,6 +13,10 @@ public class UI_HubShopMenu : MonoBehaviour
     public TextMeshProUGUI dialogueNPC;
     public TextMeshProUGUI shopTypeText;
 
+    public GameObject abilitiesShop;
+    public GameObject upgradesShop;
+    public GameObject weaponsShop;
+
     private void Start()
     {
         // TODO: Initialize shop values
@@ -32,11 +36,32 @@ public class UI_HubShopMenu : MonoBehaviour
 
     public void UpdateSeedsCounter(int seedsHeld)
     {
-        seedsCounter.text = "SEEDS x" + seedsHeld;
+        seedsCounter.text = seedsHeld.ToString();
     }
 
     public void ExitShop()
     {
         gameObject.SetActive(false);
+    }
+
+    public void ActivateAbilitiesShop()
+    {
+        abilitiesShop.SetActive(true);
+        upgradesShop.SetActive(false);
+        weaponsShop.SetActive(false);
+    }
+
+    public void ActivateUpgradesShop()
+    {
+        abilitiesShop.SetActive(false);
+        upgradesShop.SetActive(true);
+        weaponsShop.SetActive(false);
+    }
+
+    public void ActivateWeaponsShop()
+    {
+        abilitiesShop.SetActive(false);
+        upgradesShop.SetActive(false);
+        weaponsShop.SetActive(true); ;
     }
 }

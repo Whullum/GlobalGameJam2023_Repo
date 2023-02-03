@@ -16,9 +16,13 @@ MonoBehaviour:
   Description: Ahhh, spedy boy. I can tell you one or two tricks to run faster if
     you want.
   Upgrades:
-  - Value: 0.5
-    Cost: 10
-  - Value: 0.5
-    Cost: 30
   - Value: 1
+    Cost: 10
+    Unlocked: 0
+  - Value: 2
+    Cost: 30
+    Unlocked: 0
+  - Value: 3
     Cost: 60
+    Unlocked: 0
+  AllUpgradesUnlocked: 0

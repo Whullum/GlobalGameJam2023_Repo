@@ -2,5 +2,5 @@ public enum UpgradeType
 {
     Attack,
     Movement,
-    Health
+    Health,
 }

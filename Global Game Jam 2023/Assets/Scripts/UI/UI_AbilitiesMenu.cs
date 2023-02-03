@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class UI_AbilitiesMenu : MonoBehaviour
 {
     public UI_HubShopMenu hubShopMenuScript;
+    private PlayerManager playerManager;
 
     public TextMeshProUGUI dashCostText;
     public TextMeshProUGUI reflectCostText;
@@ -15,25 +13,46 @@ public class UI_AbilitiesMenu : MonoBehaviour
     private bool reflectBought;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        // TODO: Initialize shop values
-        hubShopMenuScript.shopTypeText.text = "Abilities";
+        playerManager = FindObjectOfType<PlayerManager>();
+    }
+
+    private void OnEnable()
+    {
+        hubShopMenuScript.ChangeShopTypeText("Abilities");
+        dashCostText.text = playerManager.DashCost;
+        reflectCostText.text = playerManager.ReflectCost;
+        dashBought = PlayerManager.DashUnlocked;
+        reflectBought= PlayerManager.ReflectUnlocked;
+        UpdateCostValues();
     }
 
     public void BuyDashAbility()
     {
-        // if player has enough seeds, buy ability
-        // dashBought = true;
+        if (dashBought) return;
+
+        dashBought = playerManager.UnlockDashAbility();
+
+        if (dashBought)
+            hubShopMenuScript.UpdateSeedsCounter(SeedWallet.Seeds);
+
+        UpdateCostValues();
     }
 
     public void BuyReflectAbility()
     {
-        // if player has enough seeds, buy ability
-        // reflectBought = true;
+        if (reflectBought) return;
+
+        reflectBought = playerManager.UnlockReflectAbility();
+        
+        if(reflectBought)
+        hubShopMenuScript.UpdateSeedsCounter(SeedWallet.Seeds);
+
+        UpdateCostValues();
     }
 
-    public void UpdateCostValues()
+    private void UpdateCostValues()
     {
         if (reflectBought)
             reflectCostText.text = "Purchased!";

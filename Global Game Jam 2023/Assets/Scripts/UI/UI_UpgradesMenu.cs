@@ -1,24 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class UI_UpgradesMenu : MonoBehaviour
 {
     public UI_HubShopMenu hubShopMenuScript;
+    private PlayerManager playerManager;
 
     [Header("Health")]
     public TextMeshProUGUI healthCurrentText;
     public TextMeshProUGUI healthUpgradeText;
+    public TextMeshProUGUI healthCostText;
 
     [Header("Damage")]
     public TextMeshProUGUI damageCurrentText;
     public TextMeshProUGUI damageUpgradeText;
+    public TextMeshProUGUI damageCostText;
 
     [Header("Move Speed")]
     public TextMeshProUGUI moveSpeedCurrentText;
     public TextMeshProUGUI moveSpeedUpgradeText;
+    public TextMeshProUGUI moveSpeedCostText;
 
 
     // Start is called before the first frame update
@@ -26,8 +27,12 @@ public class UI_UpgradesMenu : MonoBehaviour
     {
         // TODO: Initialize values
         // Display correct current and upgrade values
+        playerManager = FindObjectOfType<PlayerManager>();
+    }
 
-        hubShopMenuScript.shopTypeText.text = "Upgrades";
+    private void OnEnable()
+    {
+        hubShopMenuScript.ChangeShopTypeText("Upgrades");
     }
 
     public void UpdateValues(TextMeshProUGUI currentValueText, TextMeshProUGUI upgradeValueText, int currentValue, int upgradeValue)
@@ -36,18 +41,23 @@ public class UI_UpgradesMenu : MonoBehaviour
         upgradeValueText.text = upgradeValue.ToString();
     }
 
+    public void UpdateCost(TextMeshProUGUI text, int cost)
+    {
+        text.text = cost.ToString();
+    }
+
     public void UpgradeHealth()
     {
-        // TODO: Implement Player Health Upgrading
+        playerManager.Upgrade(UpgradeType.Health);
     }
 
     public void UpgradeDamage()
     {
-        // TODO: Implement Player Damage Upgrading
+        playerManager.Upgrade(UpgradeType.Attack);
     }
 
     public void UpgradeMoveSpeed()
     {
-        // TODO: Implement Player Move Speed Upgrading
+        playerManager.Upgrade(UpgradeType.Movement);
     }
 }

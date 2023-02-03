@@ -4,6 +4,7 @@ using UnityEngine;
 public class ReflectAbility : MonoBehaviour
 {
     private ParticleSystem reflecEffect;
+    private Collider2D reflectCollider;
     private bool canActivate = true;
     private bool reflectProjectiles = false;
 
@@ -17,6 +18,8 @@ public class ReflectAbility : MonoBehaviour
         // Search for the GameObject with the particle system and collider and create new GameObject
         GameObject effect = Instantiate(Resources.Load<GameObject>("Player/Abilities/ReflectAbility"), transform.position, Quaternion.identity);
         effect.transform.parent = transform;
+        reflectCollider = effect.GetComponent<Collider2D>();
+        reflectCollider.enabled = false;
 
         reflecEffect = effect.GetComponent<ParticleSystem>();
     }
@@ -36,12 +39,14 @@ public class ReflectAbility : MonoBehaviour
         if (!canActivate) yield break;
 
         reflectProjectiles = true;
+        reflectCollider.enabled = true;
         canActivate = false;
         reflecEffect.Play();
 
         yield return new WaitForSeconds(activeTime);
 
         reflectProjectiles = false;
+        reflectCollider.enabled = false;
         reflecEffect.Stop();
 
         yield return new WaitForSeconds(cooldown);

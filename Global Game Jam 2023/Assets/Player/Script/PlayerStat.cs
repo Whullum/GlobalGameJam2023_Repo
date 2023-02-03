@@ -1,30 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStat : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float maxHealth = 100f;
-    private float playerHealth;
-
     [SerializeField]
     private PlayerSounds playerSounds;
+    private int playerHealth;
+
+    [SerializeField] private int maxHealth = 100;
+
     void Start()
     {
         playerHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (playerHealth < 1)
-        {
-            this.gameObject.SetActive(false);
-        }
-    }
-
-    public void DealDamage(float damageAmount)
+    public void DealDamage(int damageAmount)
     {
         playerHealth -= damageAmount;
         playerSounds.playerDamagedSound.Post(gameObject);
@@ -37,10 +26,19 @@ public class PlayerStat : MonoBehaviour
         if (playerHealth <= 0)
         {
             MusicManager.instance.deathState.SetValue();
+        if (playerHealth < 1)
+        {
+            LevelLoader.RestartGame();
         }
     }
-    public float GetHealth()
+
+    /// <summary>
+    /// Upgrades the player health.
+    /// </summary>
+    /// <param name="healthUpgrade">Aditional health.</param>
+    public void UpgradeHealth(int healthUpgrade)
     {
-        return playerHealth;
+        maxHealth += healthUpgrade;
+        playerHealth = maxHealth;
     }
 }

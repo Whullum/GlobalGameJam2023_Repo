@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 [CreateAssetMenu(fileName = "New Player Upgrade", menuName = "Player/Upgrade")]
 public class PlayerUpgrade : ScriptableObject
 {
@@ -11,7 +10,7 @@ public class PlayerUpgrade : ScriptableObject
     [TextArea(5,20)]
     public string Description;
     [Tooltip("List containing all the upgrades the player can buy.")]
-    public List<Upgrade> Upgrades = new List<Upgrade>();
+    public Upgrade[] Upgrades;
     /// <summary>
     /// Current unlocked upgrade.
     /// </summary>
@@ -20,4 +19,8 @@ public class PlayerUpgrade : ScriptableObject
     ///  Next upgrade to unlock.
     /// </summary>
     public Upgrade NextUpgrade { get; set; }
+    /// <summary>
+    /// Tells if all the upgrades are unlocked.
+    /// </summary>
+    public bool AllUpgradesUnlocked;
 }

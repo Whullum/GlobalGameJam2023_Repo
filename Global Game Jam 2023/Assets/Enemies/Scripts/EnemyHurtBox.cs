@@ -20,8 +20,7 @@ public class EnemyHurtBox : MonoBehaviour
         if (collision.gameObject.activeSelf != false && collision.name == "Player")
         {
             Debug.Log("Hit");
-            collision.gameObject.transform.GetComponent<PlayerStat>().DealDamage(25f);
-            Debug.Log(collision.gameObject.GetComponent<PlayerStat>().GetHealth());
+            collision.gameObject.transform.GetComponent<PlayerStat>().DealDamage(25);
         }
     }
 }
