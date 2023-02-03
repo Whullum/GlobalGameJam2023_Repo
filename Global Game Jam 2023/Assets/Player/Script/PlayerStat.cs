@@ -26,8 +26,6 @@ public class PlayerStat : MonoBehaviour
         if (playerHealth <= 0)
         {
             MusicManager.instance.deathState.SetValue();
-        if (playerHealth < 1)
-        {
             LevelLoader.RestartGame();
         }
     }
