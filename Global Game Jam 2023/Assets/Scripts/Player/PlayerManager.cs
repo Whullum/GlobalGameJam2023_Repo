@@ -10,9 +10,7 @@ public class PlayerManager : MonoBehaviour
     public static bool DashUnlocked { get; private set; }
     public static bool ReflectUnlocked { get; private set; }
     private UI_UpgradesMenu upgradesUI;
-    private UI_AbilitiesMenu abilitiesUI;
     private UI_HubShopMenu hubShopUI;
-    private static GameObject player;
 
 
     [SerializeField] private GameObject playerPrefab;
@@ -30,17 +28,11 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         upgradesUI = FindObjectOfType<UI_UpgradesMenu>(true);
-        abilitiesUI = FindObjectOfType<UI_AbilitiesMenu>(true);
         hubShopUI = FindObjectOfType<UI_HubShopMenu>(true);
         SeedWallet.CollectSeeds(100000);
         LoadUpgrades();
         DashUnlocked = dashAbility.Unlocked;
         ReflectUnlocked = reflectAbility.Unlocked;
-    }
-
-    private void Start()
-    {
-        UpdateUpgradesUI();
     }
 
     /// <summary>
@@ -128,12 +120,15 @@ public class PlayerManager : MonoBehaviour
                 AttackStat += upgrade.Value;
             }
 
-            if (!upgrade.Unlocked)
+            if (!upgrade.Unlocked || attackUpgrade.AllUpgradesUnlocked)
             {
                 attackUpgrade.NextUpgrade = upgrade;
                 break;
             }
         }
+
+        if (attackUpgrade.CurrentUpgrade == null)
+            attackUpgrade.CurrentUpgrade = new();
 
         lastUpgrade = null;
 
@@ -147,12 +142,15 @@ public class PlayerManager : MonoBehaviour
                 MovementStat += upgrade.Value;
             }
 
-            if (!upgrade.Unlocked)
+            if (!upgrade.Unlocked || movementUpgrade.AllUpgradesUnlocked)
             {
                 movementUpgrade.NextUpgrade = lastUpgrade;
                 break;
             }
         }
+
+        if (movementUpgrade.CurrentUpgrade == null)
+            movementUpgrade.CurrentUpgrade = new();
 
         lastUpgrade = null;
 
@@ -166,15 +164,17 @@ public class PlayerManager : MonoBehaviour
                 HealthStat += upgrade.Value;
             }
 
-            if (!upgrade.Unlocked)
+            if (!upgrade.Unlocked || healthUpgrade.AllUpgradesUnlocked)
             {
                 healthUpgrade.NextUpgrade = lastUpgrade;
                 break;
             }
         }
+        if (healthUpgrade.CurrentUpgrade == null)
+            healthUpgrade.CurrentUpgrade = new();
     }
 
-    private void UpdateUpgradesUI()
+    public void UpdateUpgradesUI()
     {
         hubShopUI.UpdateSeedsCounter(SeedWallet.Seeds);
         upgradesUI.UpdateValues(upgradesUI.damageCurrentText, upgradesUI.damageUpgradeText, attackUpgrade.CurrentUpgrade.Value, attackUpgrade.NextUpgrade.Value);
@@ -183,15 +183,5 @@ public class PlayerManager : MonoBehaviour
         upgradesUI.UpdateCost(upgradesUI.damageCostText, attackUpgrade.NextUpgrade.Cost);
         upgradesUI.UpdateCost(upgradesUI.healthCostText, healthUpgrade.NextUpgrade.Cost);
         upgradesUI.UpdateCost(upgradesUI.moveSpeedCostText, movementUpgrade.NextUpgrade.Cost);
-    }
-
-    private void OnDisable()
-    {
-        attackUpgrade.CurrentUpgrade = null;
-        attackUpgrade.NextUpgrade = null;
-        healthUpgrade.CurrentUpgrade = null;
-        healthUpgrade.NextUpgrade = null;
-        movementUpgrade.CurrentUpgrade = null;
-        movementUpgrade.NextUpgrade = null;
     }
 }
