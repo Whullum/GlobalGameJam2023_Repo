@@ -7,4 +7,6 @@ public class LevelLoader : MonoBehaviour
     {
         SceneManager.LoadScene(levelName);
     }
+
+    public static void RestartGame() => SceneManager.LoadScene("Hub");
 }

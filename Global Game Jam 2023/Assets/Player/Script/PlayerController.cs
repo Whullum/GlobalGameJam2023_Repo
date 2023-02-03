@@ -21,11 +21,23 @@ public class PlayerController : MonoBehaviour
     private bool dodgeInactive = false;
     private bool attackActive = false;
     private GameObject HurtBox;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+    private PlayerStat playerHealth;
+    private PlayerCombat playerCombat;
     private Vector3 hurtBoxDistance;
 
     Vector2 movement;
     [SerializeField] private Rigidbody2D rb;
-    
+
+    private void Awake()
+    {
+        playerHealth = GetComponent<PlayerStat>();
+        playerCombat = GetComponent<PlayerCombat>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,8 +59,17 @@ public class PlayerController : MonoBehaviour
         //Recieves input for each axis
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
-        
 
+        if (movement != Vector2.zero)
+            animator.SetBool("isWalking", true);
+        else
+            animator.SetBool("isWalking", false);
+
+        // Flip sprite renderer depending on movement direction
+        if (movement.x > 0)
+            spriteRenderer.flipX = true;
+        else
+            spriteRenderer.flipX = false;
     }
 
     private void FixedUpdate()
@@ -67,28 +88,28 @@ public class PlayerController : MonoBehaviour
     //Movement
     void PlayerMovement()
     {
-        
+
         //Moves player from the current position of their RigidBody2D to the next position specified by movement
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
 
-        
+
         //Debug.Log(movement.y);
-        if(movement.y != 0)
+        if (movement.y != 0)
         {
-            HurtBox.transform.rotation = Quaternion.Euler(0,0,90);  
-            
+            HurtBox.transform.rotation = Quaternion.Euler(0, 0, 90);
+
         }
-        else if(movement.x != 0)
+        else if (movement.x != 0)
         {
             HurtBox.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if(movement.x > 0)
+        if (movement.x > 0)
         {
 
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x + 0.39f, gameObject.transform.position.y, HurtBox.transform.position.z);
         }
-        else if(movement.x < 0)
+        else if (movement.x < 0)
         {
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x - 0.39f, gameObject.transform.position.y, HurtBox.transform.position.z);
         }
@@ -97,7 +118,7 @@ public class PlayerController : MonoBehaviour
         {
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f, HurtBox.transform.position.z);
         }
-        else if(movement.y < 0)
+        else if (movement.y < 0)
         {
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f, HurtBox.transform.position.z);
         }
@@ -121,7 +142,7 @@ public class PlayerController : MonoBehaviour
     //Dodge
     void PlayerDodge()
     {
-        
+
         if (Input.GetAxis("Jump") == 1 && Time.time > timeLimit)
         {
             Debug.Log("Jump");
@@ -130,32 +151,34 @@ public class PlayerController : MonoBehaviour
             //Debug.DrawLine(rb.position, transform.TransformDirection(rb.position + movement), Color.red, 3f);
 
             rb.MovePosition(rb.position + movement * dodgeSpeed * Time.fixedDeltaTime);
-            
+
             timeLimit = Time.time + dodgeCooldown;
             dodgeInactive = true;
             //Debug.Log(timeLimit);
-            
+
+            animator.SetTrigger("dodge");
+
         }
-        else if(Time.time < timeLimit && dodgeInactive)
+        else if (Time.time < timeLimit && dodgeInactive)
         {
             //Debug.Log(Time.time);
         }
-        else if(dodgeInactive)
+        else if (dodgeInactive)
         {
             Debug.Log("Cooldown Ended");
             dodgeInactive = false;
             timeLimit = 0f;
         }
-            
+
     }
 
     void PlayerAttack()
     {
         //Debug.Log(Input.GetKey(KeyCode.Mouse0));
-        
-        if(Input.GetKey(KeyCode.Mouse0) && Time.time > attacktimeLimit )
+
+        if (Input.GetKey(KeyCode.Mouse0) && Time.time > attacktimeLimit)
         {
-            
+
             HurtBox.SetActive(true);
 
             attacktimeLimit = Time.time + attackTime;
@@ -188,9 +211,11 @@ public class PlayerController : MonoBehaviour
         if (PlayerManager.ReflectUnlocked) 
             gameObject.AddComponent<ReflectAbility>();
 
-        // Add attack value
-        walkSpeed += PlayerManager.movementStat;
-        runSpeed  += PlayerManager.movementStat;
-        // Add health value
+        playerCombat.UpgradeAttack(PlayerManager.AttackStat);
+
+        walkSpeed += PlayerManager.MovementStat;
+        runSpeed  += PlayerManager.MovementStat;
+
+        playerHealth.UpgradeHealth(PlayerManager.HealthStat);
     }
 }
