@@ -11,6 +11,7 @@ public class LevelExit : MonoBehaviour
         {
             // Launch event specifying the plaeyr has reached the end of the level
             LevelFinished?.Invoke();
+            MusicManager.instance.victoryState.SetValue();
         }
     }
 }

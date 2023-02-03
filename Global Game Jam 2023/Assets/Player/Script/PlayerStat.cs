@@ -28,6 +28,16 @@ public class PlayerStat : MonoBehaviour
     {
         playerHealth -= damageAmount;
         playerSounds.playerDamagedSound.Post(gameObject);
+
+        if (playerHealth <= (maxHealth / 10))
+        {
+            MusicManager.instance.dangerState.SetValue();
+        }
+
+        if (playerHealth <= 0)
+        {
+            MusicManager.instance.deathState.SetValue();
+        }
     }
     public float GetHealth()
     {

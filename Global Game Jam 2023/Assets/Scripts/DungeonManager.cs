@@ -21,7 +21,6 @@ public class DungeonManager : MonoBehaviour
     {
         levelGenerator = FindObjectOfType<LevelGenerator>();
         GenerateFloors();
-        
     }
 
     private void OnEnable() => LevelExit.LevelFinished += NextFloor;

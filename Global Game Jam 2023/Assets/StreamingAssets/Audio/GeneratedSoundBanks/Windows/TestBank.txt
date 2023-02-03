@@ -12,6 +12,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2177193998	Play_SFX_RootsContainer			\Default Work Unit\DungeonSounds\SFX\Play_SFX_RootsContainer	
 	2216620102	Play_SFX_Enemy_Damaged			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Enemy_Damaged	
 	3500366795	Play_UI_Menu_Confirm			\Default Work Unit\MenuSounds\Play_UI_Menu_Confirm	
+	3594239982	Stop_Dungeon			\Default Work Unit\DungeonSounds\Music\Stop_Dungeon	
 	3953012785	Play_SFX_Player_Dodge_Container			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Player_Dodge_Container	
 
 State Group	ID	Name			Wwise Object Path	Notes

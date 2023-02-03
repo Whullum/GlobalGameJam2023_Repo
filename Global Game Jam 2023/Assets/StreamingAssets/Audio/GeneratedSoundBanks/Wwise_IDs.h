@@ -27,6 +27,7 @@ namespace AK
         static const AkUniqueID PLAY_UI_MENU_SELECTION = 2157261217U;
         static const AkUniqueID PLAY_UI_MENU_SLIDERCHANGE = 204465150U;
         static const AkUniqueID PLAY_UI_PURCHASE = 1924313358U;
+        static const AkUniqueID STOP_DUNGEON = 3594239982U;
     } // namespace EVENTS
 
     namespace STATES

@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 339284223}
   - component: {fileID: 339284224}
   - component: {fileID: 339284222}
+  - component: {fileID: 339284225}
   m_Layer: 0
   m_Name: Dungeon
   m_TagString: Untagged
@@ -300,6 +301,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimumFloors: 5
   maximumFloors: 10
+--- !u!114 &339284225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339284221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2e821befac43e40a9f2ddafda44d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playDungeonMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5324ebb485889104692bcc97426f0462, type: 2}
+  stopDungeonMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 15abff0b1e08b5a49b1982e96b6a9011, type: 2}
+  normalState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 91f4916c2a755d545a4c89751383964c, type: 2}
+  dangerState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b281b2a7dc49eaf428fbfa1a1b260d89, type: 2}
+  deathState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 74e51d0a41bed9e4aa8c72b69943d7ce, type: 2}
+  victoryState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 765170fdd21ebea40a77297bde582494, type: 2}
 --- !u!1 &424341269
 GameObject:
   m_ObjectHideFlags: 0

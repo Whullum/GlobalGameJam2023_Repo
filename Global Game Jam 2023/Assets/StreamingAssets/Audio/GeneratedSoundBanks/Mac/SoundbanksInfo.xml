@@ -204,6 +204,7 @@
 						</Custom>
 					</PluginRefs>
 				</Event>
+				<Event Id="3594239982" Name="Stop_Dungeon" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<StateGroups>
 				<StateGroup Id="89505537" Name="Gameplay">
@@ -261,7 +262,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{630CB1BF-0246-59E7-0C93-6816F709818B}">
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{B7DB13E8-EDC4-822C-B0F0-5D67DA5E8EDC}">
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<Media>
@@ -479,6 +480,7 @@
 						<MediaRef Id="467198161"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3594239982" Name="Stop_Dungeon" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<StateGroups>
 				<StateGroup Id="89505537" Name="Gameplay">
@@ -493,5 +495,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2EF39BB9-B219-03DA-CE36-5E11ACF6FABA}</FileHash>
+	<FileHash>{5443D40F-094F-A782-041E-B792820A9451}</FileHash>
 </SoundBanksInfo>

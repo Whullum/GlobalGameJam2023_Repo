@@ -156,7 +156,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 3a6f9bc4d38e0b4f835505eb2c02b568
     GuidInternal: 
-    m_lastTime: -8585262246615653541
+    m_lastTime: -8585261607064656244
     List:
     - name: Play_TestSFX
       guid: 25c50e8b0eda5d4bb1983cbec3ccab91
@@ -189,7 +189,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit\DungeonSounds
     guid: b82b98cb1ff8b44094d0fa9c6ce16c11
     GuidInternal: 
-    m_lastTime: -8585262246615643539
+    m_lastTime: -8585261607064546139
     List:
     - name: Music
       guid: 02a74d4fb8b60445933561f2c15738e9
@@ -412,6 +412,29 @@ MonoBehaviour:
         ObjectType: 4
         guid: b4d4c66bb8b5244f88731ff509a94805
       Path: Events\Default Work Unit\DungeonSounds\SFX
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Dungeon
+      guid: 138c278259b96848834ef72b51919b40
+      id: 3594239982
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3a6f9bc4d38e0b4f835505eb2c02b568
+      - ElementName: DungeonSounds
+        ObjectType: 12
+        guid: b82b98cb1ff8b44094d0fa9c6ce16c11
+      - ElementName: Music
+        ObjectType: 4
+        guid: 02a74d4fb8b60445933561f2c15738e9
+      - ElementName: Stop_Dungeon
+        ObjectType: 3
+        guid: 138c278259b96848834ef72b51919b40
+      Path: Events\Default Work Unit\DungeonSounds\Music\Stop_Dungeon
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -744,7 +767,7 @@ MonoBehaviour:
     m_lastTime: -8585267643243355200
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000070000000e0000000f0000001f000000
+  ExpandedWaapiItemIds: 050000000600000007000000080000000b0000000c0000000d0000000e0000000f0000001e0000001f000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
