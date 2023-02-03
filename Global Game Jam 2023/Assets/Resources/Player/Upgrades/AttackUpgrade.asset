@@ -18,7 +18,17 @@ MonoBehaviour:
   Upgrades:
   - Value: 1
     Cost: 10
+    Unlocked: 0
   - Value: 2
     Cost: 20
+    Unlocked: 0
   - Value: 4
     Cost: 50
+    Unlocked: 0
+  - Value: 5
+    Cost: 100
+    Unlocked: 0
+  - Value: 10
+    Cost: 200
+    Unlocked: 0
+  AllUpgradesUnlocked: 0

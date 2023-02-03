@@ -219,7 +219,7 @@ MonoBehaviour:
   rotationSpeed: 1
   searchTick: 0.5
   range: 5
-  fireRate: 0.5
+  fireRate: 4.2
   reloadTime: 0
   attackAngle: 20
   magazineSize: 0
