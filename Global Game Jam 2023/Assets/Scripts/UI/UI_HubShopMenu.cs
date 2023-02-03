@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -16,12 +14,24 @@ public class UI_HubShopMenu : MonoBehaviour
     public GameObject abilitiesShop;
     public GameObject upgradesShop;
     public GameObject weaponsShop;
+    private PlayerManager playerManager;
+
+    [SerializeField] private GameObject upgradeNPC;
+    [SerializeField] private GameObject weaponsNPC;
+    [SerializeField] private GameObject abilityNPC;
+
+    [SerializeField] private int upgradeNPCFloor = 2;
+    [SerializeField] private int weaponNPCFloor = 4;
+    [SerializeField] private int abilityNPCFloor = 6;
 
     private void Start()
     {
+        playerManager = FindObjectOfType<PlayerManager>();
+
         // TODO: Initialize shop values
         // Update seed counter to current amount of held seeds
         // Set dialogueNPC text
+        LoadNPCButtons();
     }
 
     public void ChangeShopTypeText(string shopType)
@@ -56,6 +66,7 @@ public class UI_HubShopMenu : MonoBehaviour
         abilitiesShop.SetActive(false);
         upgradesShop.SetActive(true);
         weaponsShop.SetActive(false);
+        playerManager.UpdateUpgradesUI();
     }
 
     public void ActivateWeaponsShop()
@@ -63,5 +74,23 @@ public class UI_HubShopMenu : MonoBehaviour
         abilitiesShop.SetActive(false);
         upgradesShop.SetActive(false);
         weaponsShop.SetActive(true); ;
+    }
+
+    private void LoadNPCButtons()
+    {
+        if (DungeonManager.CurrentFloor >= upgradeNPCFloor)
+            upgradeNPC.SetActive(true);
+        else
+            upgradeNPC.SetActive(false);
+
+        /*if (DungeonManager.CurrentFloor >= weaponNPCFloor)
+            weaponsNPC.SetActive(true);
+        else
+            weaponsNPC.SetActive(false);*/
+
+        if (DungeonManager.CurrentFloor >= abilityNPCFloor)
+            abilityNPC.SetActive(true);
+        else
+            abilityNPC.SetActive(false);
     }
 }

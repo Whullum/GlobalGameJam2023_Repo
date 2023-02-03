@@ -216,7 +216,6 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void LoadPlayerStats()
     {
-        Debug.Log(PlayerManager.DashUnlocked);
         if (PlayerManager.DashUnlocked)
             gameObject.AddComponent<DashAbility>();
         if (PlayerManager.ReflectUnlocked) 

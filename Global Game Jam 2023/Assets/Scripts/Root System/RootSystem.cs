@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class RootSystem : MonoBehaviour
 {
     private Transform player;
+    private PlayerStat playerHealth;
     private Tilemap rootsTilemap;
     private Coroutine growCoroutine;
     private ParticleSystem rootGrowEffect;
@@ -33,6 +34,7 @@ public class RootSystem : MonoBehaviour
         rootsTilemap = GetComponent<Tilemap>();
         rootGrowEffect= GetComponentInChildren<ParticleSystem>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerHealth = player.GetComponent<PlayerStat>();
     }
 
     private void OnEnable() => LevelGenerator.LevelCreated += StartRootGrowing;
@@ -135,7 +137,7 @@ public class RootSystem : MonoBehaviour
         // Check if the player position is on top of a root tile.
         if (rootsTilemap.HasTile(new Vector3Int((int)player.position.x, (int)player.position.y)))
         {
-            // Code to damage player.
+            playerHealth.DealDamage(rootsDamage);
         }
 
         yield return new WaitForSeconds(damageTick);
