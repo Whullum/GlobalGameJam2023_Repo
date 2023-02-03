@@ -38,8 +38,10 @@ namespace AK
             namespace STATE
             {
                 static const AkUniqueID DANGER = 4174463524U;
+                static const AkUniqueID DEATH = 779278001U;
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID NORMAL = 1160234136U;
+                static const AkUniqueID VICTORY = 2716678721U;
             } // namespace STATE
         } // namespace GAMEPLAY
 
