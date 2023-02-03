@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         //hurtBoxDistance.y = Math.Abs(hurtBoxDistance.y);
         //hurtBoxDistance.z = Math.Abs(hurtBoxDistance.z);
         //Debug.Log(hurtBoxDistance);
-
+        LoadPlayerStats();
     }
 
     // Update is called once per frame
@@ -175,5 +175,22 @@ public class PlayerController : MonoBehaviour
             attacktimeLimit = 0f;
         }
 
+    }
+
+    /// <summary>
+    /// Loads from the PlayerManager all the upgrades, abilities and weapons bought.
+    /// </summary>
+    private void LoadPlayerStats()
+    {
+        Debug.Log(PlayerManager.DashUnlocked);
+        if (PlayerManager.DashUnlocked)
+            gameObject.AddComponent<DashAbility>();
+        if (PlayerManager.ReflectUnlocked) 
+            gameObject.AddComponent<ReflectAbility>();
+
+        // Add attack value
+        walkSpeed += PlayerManager.movementStat;
+        runSpeed  += PlayerManager.movementStat;
+        // Add health value
     }
 }
