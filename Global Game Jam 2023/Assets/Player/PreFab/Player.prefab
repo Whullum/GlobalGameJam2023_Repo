@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5696425636712059772}
   - component: {fileID: 5696425636712059771}
   - component: {fileID: 5696425636712059770}
-  - component: {fileID: 4455474052047267247}
   - component: {fileID: -7384248525086312778}
   - component: {fileID: -4104963445394808508}
+  - component: {fileID: 311305936056774916}
   - component: {fileID: 7159080495128236672}
   m_Layer: 0
   m_Name: Player
@@ -157,35 +157,7 @@ MonoBehaviour:
   dodgeCooldown: 10
   attackTime: 0.5
   rb: {fileID: 5696425636712059772}
-  playerSounds: {fileID: 4455474052047267247}
---- !u!114 &4455474052047267247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5696425636712059766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822394ab8cc90c64baf28406a25dad46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAttackSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9d9f39aff589e7d409deca9ba90fd03c, type: 2}
-  playerDamagedSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 03ff5da8246268146b15590590abb28e, type: 2}
-  dodgeAbilitySound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4bb00c43e499d3346b4d294ce967f8de, type: 2}
-  reflectAbilitySound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9c0f4e09913ef49459504e48eb6deb17, type: 2}
+  playerSounds: {fileID: 0}
 --- !u!114 &-7384248525086312778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +185,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDamage: 25
+--- !u!114 &311305936056774916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696425636712059766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822394ab8cc90c64baf28406a25dad46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAttackSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9d9f39aff589e7d409deca9ba90fd03c, type: 2}
+  playerDamagedSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 20831c7802db44f4faa1941eacdb0174, type: 2}
+  dodgeAbilitySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4bb00c43e499d3346b4d294ce967f8de, type: 2}
+  reflectAbilitySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9c0f4e09913ef49459504e48eb6deb17, type: 2}
 --- !u!95 &7159080495128236672
 Animator:
   serializedVersion: 5
