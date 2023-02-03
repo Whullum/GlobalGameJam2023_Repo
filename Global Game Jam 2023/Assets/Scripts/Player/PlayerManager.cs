@@ -5,8 +5,8 @@ public class PlayerManager : MonoBehaviour
     public string DashCost { get { return dashAbility.Cost.ToString(); } }
     public string ReflectCost { get { return reflectAbility.Cost.ToString(); } }
     public static int AttackStat { get; private set; } = 0;
-    public static int movementStat { get; private set; } = 0;
-    public static int healthStat { get; private set; } = 0;
+    public static int MovementStat { get; private set; } = 0;
+    public static int HealthStat { get; private set; } = 0;
     public static bool DashUnlocked { get; private set; }
     public static bool ReflectUnlocked { get; private set; }
     private UI_UpgradesMenu upgradesUI;
@@ -116,6 +116,9 @@ public class PlayerManager : MonoBehaviour
     private void LoadUpgrades()
     {
         Upgrade lastUpgrade = null;
+        HealthStat = 0;
+        MovementStat = 0;
+        AttackStat = 0;
 
         foreach (Upgrade upgrade in attackUpgrade.Upgrades)
         {
@@ -141,7 +144,7 @@ public class PlayerManager : MonoBehaviour
             if (upgrade.Unlocked)
             {
                 movementUpgrade.CurrentUpgrade = upgrade;
-                movementStat += upgrade.Value;
+                MovementStat += upgrade.Value;
             }
 
             if (!upgrade.Unlocked)
@@ -160,7 +163,7 @@ public class PlayerManager : MonoBehaviour
             if (upgrade.Unlocked)
             {
                 healthUpgrade.CurrentUpgrade = upgrade;
-                healthStat += upgrade.Value;
+                HealthStat += upgrade.Value;
             }
 
             if (!upgrade.Unlocked)

@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private GameObject HurtBox;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private PlayerStat playerHealth;
+    private PlayerCombat playerCombat;
     private Vector3 hurtBoxDistance;
 
     Vector2 movement;
@@ -30,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        playerHealth = GetComponent<PlayerStat>();
+        playerCombat = GetComponent<PlayerCombat>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -207,9 +211,11 @@ public class PlayerController : MonoBehaviour
         if (PlayerManager.ReflectUnlocked) 
             gameObject.AddComponent<ReflectAbility>();
 
-        // Add attack value
-        walkSpeed += PlayerManager.movementStat;
-        runSpeed  += PlayerManager.movementStat;
-        // Add health value
+        playerCombat.UpgradeAttack(PlayerManager.AttackStat);
+
+        walkSpeed += PlayerManager.MovementStat;
+        runSpeed  += PlayerManager.MovementStat;
+
+        playerHealth.UpgradeHealth(PlayerManager.HealthStat);
     }
 }
