@@ -32,13 +32,22 @@ public class UI_MainMenuBehavior : MonoBehaviour
     public AK.Wwise.RTPC musicRTPC;
     public AK.Wwise.RTPC sfxRTPC;
 
+    [Header("Music Events")]
     public AK.Wwise.Event hubMusic;
     public AK.Wwise.Event stopHubMusic;
+
+    [Header("NPC States")]
+    public AK.Wwise.State stateStart;
+    public AK.Wwise.State stateHealth;
+    public AK.Wwise.State stateHealthAbilities;
+    public AK.Wwise.State stateAllNPC;
+    public AK.Wwise.State stateComplete;
 
     private Stack<GameObject> canvasStack;
 
     private void Start()
     {
+        stateStart.SetValue();
         hubMusic.Post(gameObject);
 
         // Set up the canvas stack for functionality

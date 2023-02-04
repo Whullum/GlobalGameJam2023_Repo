@@ -63,6 +63,12 @@ public class LevelGenerator : MonoBehaviour
         CelullarAutomata(CASteps, false);
         CalculateLevelRegions();
         DrawTilemap();
+        levelTilemap.SetTile(
+            new Vector3Int(
+                (int)levelExit.transform.position.x,
+                (int)levelExit.transform.position.y,
+                0), 
+            exitTile);
         LevelCreated?.Invoke(level, rootsStartTile);
     }
 

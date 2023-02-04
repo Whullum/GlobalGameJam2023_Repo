@@ -40,12 +40,17 @@
 				</StateGroup>
 				<StateGroup Id="3675799944" Name="HubStates">
 					<States>
+						<State Id="310699911" Name="D_All_NPC"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="1991916522" Name="B_Health"/>
+						<State Id="2690509493" Name="A_GameStart"/>
+						<State Id="3175816390" Name="GameComplete"/>
+						<State Id="4114684904" Name="C_Health_and_Abilities"/>
 					</States>
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1411839323" Type="User" Language="SFX" Hash="{8FDF0011-3615-1702-3CA4-7AB83D2CCFF5}">
+		<SoundBank Id="1411839323" Type="User" Language="SFX">
 			<ShortName>DungeonBank</ShortName>
 			<Path>DungeonBank.bnk</Path>
 			<Media>
@@ -228,7 +233,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="2718747754" Type="User" Language="SFX" Hash="{C02172D7-471E-7DD0-C961-A2F6FDEF6B41}">
+		<SoundBank Id="2718747754" Type="User" Language="SFX">
 			<ShortName>MenuBank</ShortName>
 			<Path>MenuBank.bnk</Path>
 			<Media>
@@ -272,7 +277,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{222A1C47-3A12-B35A-760C-ADEE6BCE6E67}">
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{DC5224A5-E51C-D1B8-3A07-D87D48C8D431}">
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<Media>
@@ -327,6 +332,10 @@
 				<File Id="520442661" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
 					<CachePath>SFX/SFX_Player_MeleeAttack_62017ACD.wem</CachePath>
+				</File>
+				<File Id="531236920" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>overgrowth-hub-layer-hc-cat-solo.wav</ShortName>
+					<CachePath>SFX/overgrowth-hub-layer-hc-cat-solo_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="541385518" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Player_Dodge.wav</ShortName>
@@ -425,9 +434,28 @@
 				<Event Id="2893555519" Name="Play_Hub" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="3675799944" Id="748895195"/>
+							<SwitchValue GroupType="State" GroupId="3675799944" Id="310699911"/>
 							<MediaRefs>
 								<MediaRef Id="123064219"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="3675799944" Id="2690509493"/>
+							<MediaRefs>
+								<MediaRef Id="123064219"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="3675799944" Id="1991916522"/>
+							<MediaRefs>
+								<MediaRef Id="123064219"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="3675799944" Id="4114684904"/>
+							<MediaRefs>
+								<MediaRef Id="123064219"/>
+								<MediaRef Id="531236920"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -524,11 +552,16 @@
 				</StateGroup>
 				<StateGroup Id="3675799944" Name="HubStates">
 					<States>
+						<State Id="310699911" Name="D_All_NPC"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="1991916522" Name="B_Health"/>
+						<State Id="2690509493" Name="A_GameStart"/>
+						<State Id="3175816390" Name="GameComplete"/>
+						<State Id="4114684904" Name="C_Health_and_Abilities"/>
 					</States>
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8E4C9AF6-36EC-F769-0AE2-F9C8D8A2A67E}</FileHash>
+	<FileHash>{8985387B-8556-EAFE-930B-BF592AC77C29}</FileHash>
 </SoundBanksInfo>

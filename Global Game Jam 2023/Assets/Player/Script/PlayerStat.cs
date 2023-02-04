@@ -19,7 +19,7 @@ public class PlayerStat : MonoBehaviour
         playerSounds.playerDamagedSound.Post(gameObject);
         UI_PlayerDungeon.Instance.UpdateHealth(0, playerHealth, maxHealth);
 
-        if (playerHealth <= (maxHealth / 25))
+        if (playerHealth <= (maxHealth / 2))
         {
             MusicManager.instance.dangerState.SetValue();
         }
