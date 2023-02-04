@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_DUNGEON = 1754227292U;
+        static const AkUniqueID PLAY_HUB = 2893555519U;
         static const AkUniqueID PLAY_SFX_ENEMY_DAMAGED = 2216620102U;
         static const AkUniqueID PLAY_SFX_ENEMY_DEATH = 2078250621U;
         static const AkUniqueID PLAY_SFX_ENEMY_MELEEATTACK_CONTAINER = 1682262311U;
@@ -28,6 +29,7 @@ namespace AK
         static const AkUniqueID PLAY_UI_MENU_SLIDERCHANGE = 204465150U;
         static const AkUniqueID PLAY_UI_PURCHASE = 1924313358U;
         static const AkUniqueID STOP_DUNGEON = 3594239982U;
+        static const AkUniqueID STOP_HUB = 501453453U;
     } // namespace EVENTS
 
     namespace STATES
@@ -45,6 +47,16 @@ namespace AK
                 static const AkUniqueID VICTORY = 2716678721U;
             } // namespace STATE
         } // namespace GAMEPLAY
+
+        namespace HUBSTATES
+        {
+            static const AkUniqueID GROUP = 3675799944U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace HUBSTATES
 
     } // namespace STATES
 

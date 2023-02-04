@@ -156,8 +156,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 3a6f9bc4d38e0b4f835505eb2c02b568
     GuidInternal: 
-    m_lastTime: -8585261607064656244
+    m_lastTime: -8585261408265717214
     List:
+    - name: Play_Hub
+      guid: fa2b27dc0b23024da6fe6e6950a130d4
+      id: 2893555519
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3a6f9bc4d38e0b4f835505eb2c02b568
+      - ElementName: Play_Hub
+        ObjectType: 3
+        guid: fa2b27dc0b23024da6fe6e6950a130d4
+      Path: Events\Default Work Unit\Play_Hub
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_TestSFX
       guid: 25c50e8b0eda5d4bb1983cbec3ccab91
       id: 2013398331
@@ -172,6 +189,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 25c50e8b0eda5d4bb1983cbec3ccab91
       Path: Events\Default Work Unit\Play_TestSFX
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Hub
+      guid: 602a59635956a44c8c59531719e37fa1
+      id: 501453453
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3a6f9bc4d38e0b4f835505eb2c02b568
+      - ElementName: Stop_Hub
+        ObjectType: 3
+        guid: 602a59635956a44c8c59531719e37fa1
+      Path: Events\Default Work Unit\Stop_Hub
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -638,7 +672,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: ef4a5aebd9238145b3fba93ba9b54989
     GuidInternal: 
-    m_lastTime: -8585261661802877419
+    m_lastTime: -8585261407652722010
     List:
     - name: Gameplay
       guid: 9396c0d9a487af4ab6fa5263cbc5ead8
@@ -738,6 +772,40 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: HubStates
+      guid: 4375ebde7532044b961fe5a9b0497006
+      id: 3675799944
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ef4a5aebd9238145b3fba93ba9b54989
+      - ElementName: HubStates
+        ObjectType: 9
+        guid: 4375ebde7532044b961fe5a9b0497006
+      Path: States\Default Work Unit\HubStates
+      values:
+      - name: None
+        guid: 4246926bdd3dd94d8014cc7879ebccf5
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: ef4a5aebd9238145b3fba93ba9b54989
+        - ElementName: HubStates
+          ObjectType: 9
+          guid: 4375ebde7532044b961fe5a9b0497006
+        - ElementName: None
+          ObjectType: 8
+          guid: 4246926bdd3dd94d8014cc7879ebccf5
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
@@ -767,7 +835,7 @@ MonoBehaviour:
     m_lastTime: -8585267643243355200
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 05000000060000000700000008000000090000000b0000000c0000000d0000000e0000000f00000017000000180000001e0000001f00000020000000
+  ExpandedWaapiItemIds: 050000000600000007000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

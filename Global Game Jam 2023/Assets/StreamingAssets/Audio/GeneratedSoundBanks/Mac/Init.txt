@@ -1,5 +1,6 @@
 State Group	ID	Name			Wwise Object Path	Notes
 	89505537	Gameplay			\Default Work Unit\Gameplay	
+	3675799944	HubStates			\Default Work Unit\HubStates	
 
 State	ID	Name	State Group			Notes
 	748895195	None	Gameplay			
@@ -7,6 +8,7 @@ State	ID	Name	State Group			Notes
 	1160234136	Normal	Gameplay			
 	2716678721	Victory	Gameplay			
 	4174463524	Danger	Gameplay			
+	748895195	None	HubStates			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	988953028	SFXVolume			\Default Work Unit\SFXVolume	

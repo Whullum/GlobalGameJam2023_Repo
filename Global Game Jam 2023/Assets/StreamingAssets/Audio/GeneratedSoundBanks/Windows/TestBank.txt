@@ -1,5 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	204465150	Play_UI_Menu_SliderChange			\Default Work Unit\MenuSounds\Play_UI_Menu_SliderChange	
+	501453453	Stop_Hub			\Default Work Unit\Stop_Hub	
 	1421029036	Play_SFX_Player_MeleeAttack_Container			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Player_MeleeAttack_Container	
 	1682262311	Play_SFX_Enemy_MeleeAttack_Container			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Enemy_MeleeAttack_Container	
 	1739779019	Play_UI_Menu_Cancel			\Default Work Unit\MenuSounds\Play_UI_Menu_Cancel	
@@ -11,12 +12,14 @@ Event	ID	Name			Wwise Object Path	Notes
 	2157261217	Play_UI_Menu_Selection			\Default Work Unit\MenuSounds\Play_UI_Menu_Selection	
 	2177193998	Play_SFX_RootsContainer			\Default Work Unit\DungeonSounds\SFX\Play_SFX_RootsContainer	
 	2216620102	Play_SFX_Enemy_Damaged			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Enemy_Damaged	
+	2893555519	Play_Hub			\Default Work Unit\Play_Hub	
 	3500366795	Play_UI_Menu_Confirm			\Default Work Unit\MenuSounds\Play_UI_Menu_Confirm	
 	3594239982	Stop_Dungeon			\Default Work Unit\DungeonSounds\Music\Stop_Dungeon	
 	3953012785	Play_SFX_Player_Dodge_Container			\Default Work Unit\DungeonSounds\SFX\Play_SFX_Player_Dodge_Container	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	89505537	Gameplay			\Default Work Unit\Gameplay	
+	3675799944	HubStates			\Default Work Unit\HubStates	
 
 State	ID	Name	State Group			Notes
 	748895195	None	Gameplay			
@@ -24,17 +27,20 @@ State	ID	Name	State Group			Notes
 	1160234136	Normal	Gameplay			
 	2716678721	Victory	Gameplay			
 	4174463524	Danger	Gameplay			
+	748895195	None	HubStates			
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	917271096	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\Environmental_SFX\SFX_RootsContainer\Silence\Silence	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	123064219	overgrowth-hub-draft-1-layer-1	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\overgrowth-hub-draft-1-layer-1_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Hub\Hub\Hub\overgrowth-hub-draft-1-layer-1		8870496
 	140587607	SFX_Player_MeleeAttack_02	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_MeleeAttack_E81D4E3B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_MeleeAttack_Container\SFX_Player_MeleeAttack_02		41792
 	143463664	UI_Menu_Selection	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_Selection_7AC89DD7.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_Selection		51664
 	174293228	SFX_Player_Dodge_03	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Player_Dodge_96382564.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_SFX\SFX_Player_Dodge_Container\SFX_Player_Dodge_03		52668
 	194208035	UI_Menu_Confirm	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Menu_Confirm_C9DB6E99.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Menu_Confirm		409180
 	257559715	Dungeon-Main	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\Overgrowth-Dungeon-theme-1-31-23_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Dungeon\Dungeon-Normal\Dungeon-Main\Dungeon-Main		7799300
 	272150576	SFX_Enemy_MeleeAttack_01	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Enemy_MeleeAttack_99F0A06E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy_SFX\SFX_Enemy_MeleeAttack_Container\SFX_Enemy_MeleeAttack_01		92112
+	318416832	death-stinger-hit	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\Overgrowth-death-stinger-hit_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Dungeon\Death-Stinger\Overgrowth-death-stinger\death-stinger-hit		1925056
 	386929726	SFX_Enemy_Damaged	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\SFX_Enemy_Damaged_F70F3B31.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemy_SFX\SFX_Enemy_Damaged		36908
 	460321632	Overgrowth-victory-stinger	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\Overgrowth-victory-stinger_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Dungeon\Victory-Stinger\Overgrowth-victory-stinger\Overgrowth-victory-stinger		1853528
 	467198161	UI_Purchase	D:\Projects\Global Game Jam 2023\GlobalGameJam2023_WwiseRepo\Global Game Jam 2023_WwiseProject\.cache\Windows\SFX\UI_Purchase_D98563FD.wem		\Actor-Mixer Hierarchy\Default Work Unit\UIUX_SFX\UI_Purchase		69804

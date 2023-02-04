@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3763d344cd34c2e4fbfbfdd4df4243f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 0}
   attackUpgrade: {fileID: 11400000, guid: 18b61b864c3bcbf4f9c0daad78bb00e2, type: 2}
   movementUpgrade: {fileID: 11400000, guid: d320bb228e39b5348a16f9908c38cf55, type: 2}
   healthUpgrade: {fileID: 11400000, guid: 6fd561bdf0751cc498efb63f80a77e5d, type: 2}
@@ -213,6 +212,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d9f372652bc2b4aa30ba80255e24c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopHubMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 88b0837dfe87e504d919093a3310d370, type: 2}
 --- !u!4 &555953746
 Transform:
   m_ObjectHideFlags: 0
@@ -657,9 +660,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 944043886494581370, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 944043886494581370, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 944043886494581370, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 555953745}
+    - target: {fileID: 944043886494581370, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 513036814}
+    - target: {fileID: 944043886494581370, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 944043886494581370, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StopMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 944043886494581370, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UI_MainMenuBehavior, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 944043886494581370, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2090320508311946690, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: m_Name
       value: UI_HubShop
@@ -761,6 +792,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: hubMusic.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 3113d69d9be7f134994c31ceb3281178, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: stopHubMusic.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 88b0837dfe87e504d919093a3310d370, type: 2}
     - target: {fileID: 5587743125443847644, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

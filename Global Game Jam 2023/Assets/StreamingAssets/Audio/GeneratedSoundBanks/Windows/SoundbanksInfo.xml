@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6656C55F-2D4E-7AFB-DB22-D8B80A12C924}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{BBEE3CEE-FF60-E271-1EE1-999849D96CF7}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -38,6 +38,11 @@
 						<State Id="4174463524" Name="Danger"/>
 					</States>
 				</StateGroup>
+				<StateGroup Id="3675799944" Name="HubStates">
+					<States>
+						<State Id="748895195" Name="None"/>
+					</States>
+				</StateGroup>
 			</StateGroups>
 		</SoundBank>
 		<SoundBank Id="1411839323" Type="User" Language="SFX">
@@ -59,6 +64,10 @@
 				<File Id="272150576" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Enemy_MeleeAttack.wav</ShortName>
 					<CachePath>SFX/SFX_Enemy_MeleeAttack_99F0A06E.wem</CachePath>
+				</File>
+				<File Id="318416832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Overgrowth-death-stinger-hit.wav</ShortName>
+					<CachePath>SFX/Overgrowth-death-stinger-hit_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="386929726" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Enemy_Damaged.wav</ShortName>
@@ -146,6 +155,7 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="89505537" Id="779278001"/>
 							<MediaRefs>
+								<MediaRef Id="318416832"/>
 								<MediaRef Id="828285603"/>
 							</MediaRefs>
 						</SwitchContainer>
@@ -262,10 +272,14 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{B7DB13E8-EDC4-822C-B0F0-5D67DA5E8EDC}">
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{4CF11B38-C51F-0689-0EFD-CF647CB2D9E5}">
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<Media>
+				<File Id="123064219" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>overgrowth-hub-draft-1-layer-1.wav</ShortName>
+					<CachePath>SFX/overgrowth-hub-draft-1-layer-1_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="140587607" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
 					<CachePath>SFX/SFX_Player_MeleeAttack_E81D4E3B.wem</CachePath>
@@ -289,6 +303,10 @@
 				<File Id="272150576" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Enemy_MeleeAttack.wav</ShortName>
 					<CachePath>SFX/SFX_Enemy_MeleeAttack_99F0A06E.wem</CachePath>
+				</File>
+				<File Id="318416832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Overgrowth-death-stinger-hit.wav</ShortName>
+					<CachePath>SFX/Overgrowth-death-stinger-hit_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="386929726" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Enemy_Damaged.wav</ShortName>
@@ -392,6 +410,7 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="89505537" Id="779278001"/>
 							<MediaRefs>
+								<MediaRef Id="318416832"/>
 								<MediaRef Id="828285603"/>
 							</MediaRefs>
 						</SwitchContainer>
@@ -399,6 +418,16 @@
 							<SwitchValue GroupType="State" GroupId="89505537" Id="2716678721"/>
 							<MediaRefs>
 								<MediaRef Id="460321632"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="2893555519" Name="Play_Hub" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="3675799944" Id="748895195"/>
+							<MediaRefs>
+								<MediaRef Id="123064219"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -481,6 +510,7 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="3594239982" Name="Stop_Dungeon" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="501453453" Name="Stop_Hub" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<StateGroups>
 				<StateGroup Id="89505537" Name="Gameplay">
@@ -492,8 +522,13 @@
 						<State Id="4174463524" Name="Danger"/>
 					</States>
 				</StateGroup>
+				<StateGroup Id="3675799944" Name="HubStates">
+					<States>
+						<State Id="748895195" Name="None"/>
+					</States>
+				</StateGroup>
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1AEA759B-2230-70E0-70CD-DBCDE45E4B3A}</FileHash>
+	<FileHash>{B566CE34-9C75-447D-2E81-B0B80AEE0FC0}</FileHash>
 </SoundBanksInfo>

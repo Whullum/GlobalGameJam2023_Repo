@@ -32,11 +32,15 @@ public class UI_MainMenuBehavior : MonoBehaviour
     public AK.Wwise.RTPC musicRTPC;
     public AK.Wwise.RTPC sfxRTPC;
 
+    public AK.Wwise.Event hubMusic;
+    public AK.Wwise.Event stopHubMusic;
 
     private Stack<GameObject> canvasStack;
 
     private void Start()
     {
+        hubMusic.Post(gameObject);
+
         // Set up the canvas stack for functionality
         canvasStack = new Stack<GameObject>();
         canvasStack.Push(mainMenuCanvas);
@@ -44,9 +48,9 @@ public class UI_MainMenuBehavior : MonoBehaviour
         SetVolumeSliderValues();
     }
 
-    public void StartGame()
+    public void StopMusic()
     {
-        // Transition to hub menu scene
+        stopHubMusic.Post(gameObject);
     }
 
     /// <summary>
