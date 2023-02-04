@@ -220,7 +220,7 @@ MonoBehaviour:
   stopHubMusic:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 88b0837dfe87e504d919093a3310d370, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: dd825b6b8ed685b4380f88f585069fa3, type: 2}
 --- !u!4 &555953746
 Transform:
   m_ObjectHideFlags: 0

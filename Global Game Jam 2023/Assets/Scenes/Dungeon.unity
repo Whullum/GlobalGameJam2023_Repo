@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growStep: 0.1
   startTime: 2
-  rootsDamage: 100
+  rootsDamage: 25
   damageTick: 1
   rootTile: {fileID: 11400000, guid: ec829fabc0556574e9a4bd21885205e0, type: 2}
   rootAdvancementSound:
