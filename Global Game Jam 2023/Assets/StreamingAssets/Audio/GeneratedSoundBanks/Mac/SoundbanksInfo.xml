@@ -277,7 +277,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{F8AE52F0-C0D7-E04A-C8CB-4D22BAEAE4EC}">
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{DF248836-73C1-2954-E739-FA89090C1312}">
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<Media>
@@ -301,6 +301,10 @@
 					<ShortName>UI_Menu_Confirm.wav</ShortName>
 					<CachePath>SFX/UI_Menu_Confirm_C9DB6E99.wem</CachePath>
 				</File>
+				<File Id="208958264" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>overgrowth-hub-layer-upgrades_mole.wav</ShortName>
+					<CachePath>SFX/overgrowth-hub-layer-upgrades_mole_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="257559715" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Overgrowth-Dungeon-theme-1-31-23.wav</ShortName>
 					<CachePath>SFX/Overgrowth-Dungeon-theme-1-31-23_D79FB2B7.wem</CachePath>
@@ -317,6 +321,10 @@
 					<ShortName>SFX_Enemy_Damaged.wav</ShortName>
 					<CachePath>SFX/SFX_Enemy_Damaged_F70F3B31.wem</CachePath>
 				</File>
+				<File Id="428035122" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>overgrowth-hub-layer-abilities_cat.wav</ShortName>
+					<CachePath>SFX/overgrowth-hub-layer-abilities_cat_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="460321632" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Overgrowth-victory-stinger.wav</ShortName>
 					<CachePath>SFX/Overgrowth-victory-stinger_D79FB2B7.wem</CachePath>
@@ -332,10 +340,6 @@
 				<File Id="520442661" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Player_MeleeAttack.wav</ShortName>
 					<CachePath>SFX/SFX_Player_MeleeAttack_62017ACD.wem</CachePath>
-				</File>
-				<File Id="531236920" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>overgrowth-hub-layer-hc-cat-solo.wav</ShortName>
-					<CachePath>SFX/overgrowth-hub-layer-hc-cat-solo_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="541385518" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Player_Dodge.wav</ShortName>
@@ -449,13 +453,14 @@
 							<SwitchValue GroupType="State" GroupId="3675799944" Id="1991916522"/>
 							<MediaRefs>
 								<MediaRef Id="123064219"/>
+								<MediaRef Id="208958264"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="3675799944" Id="4114684904"/>
 							<MediaRefs>
 								<MediaRef Id="123064219"/>
-								<MediaRef Id="531236920"/>
+								<MediaRef Id="428035122"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -563,5 +568,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{756C0F5E-B2EE-B403-2F5D-2CAE37F6E8B0}</FileHash>
+	<FileHash>{D5C580DB-2B5F-C086-46A1-636B276627B9}</FileHash>
 </SoundBanksInfo>
