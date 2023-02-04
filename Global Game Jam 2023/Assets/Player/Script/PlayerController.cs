@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
     private void LoadPlayerStats()
     {
         if (PlayerManager.DashUnlocked)
-            gameObject.AddComponent<DashAbility>();
+            gameObject.AddComponent<DodgeAbility>();
         if (PlayerManager.ReflectUnlocked) 
             gameObject.AddComponent<ReflectAbility>();
 

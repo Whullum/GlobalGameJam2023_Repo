@@ -33,7 +33,8 @@ public class DodgeAbility : MonoBehaviour
         
         if (Input.GetButtonUp("Jump") && Time.time > playerControls.GetTimeLimit() && dodgeActive == false)
         {
-
+            UI_PlayerDungeon.Instance.ChangeAblityName("Dodge");
+            UI_PlayerDungeon.Instance.SetAbilityText("Active");
             playerControls.GetAnimator().enabled = false;
             playerControls.GetAnimator().SetTrigger("dodge");
             playerControls.GetAnimator().enabled = true;
@@ -42,7 +43,7 @@ public class DodgeAbility : MonoBehaviour
                 prevSpeed = playerControls.GetSpeed();
                 playerControls.SetSpeed(dodgeSpeed);
                 rb.MovePosition(rb.position + playerControls.GetMovementDirection() * playerControls.GetSpeed() * Time.fixedDeltaTime);
-
+                
                 playerControls.AddToTimeLimit(dodgeCooldown);
                 dodgeActive = true;
             }
@@ -59,6 +60,7 @@ public class DodgeAbility : MonoBehaviour
         else if (Time.time > playerControls.GetTimeLimit() &&  dodgeActive)
         {
             Debug.Log("Cooldown Ended");
+            UI_PlayerDungeon.Instance.SetAbilityText("Avaliable");
             dodgeActive = false;
             playerControls.ResetTimeLimit();
             playerControls.SetSpeed(prevSpeed);
