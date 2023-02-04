@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -41,7 +42,6 @@ public class PlayerController : MonoBehaviour
         //PlayerSpawn();
         HurtBox = gameObject.transform.GetChild(0).gameObject;
         //hurtBoxDistance = HurtBox.transform.position - gameObject.transform.position;
-
         //hurtBoxDistance.x = Math.Abs(hurtBoxDistance.x);
         //hurtBoxDistance.y = Math.Abs(hurtBoxDistance.y);
         //hurtBoxDistance.z = Math.Abs(hurtBoxDistance.z);
