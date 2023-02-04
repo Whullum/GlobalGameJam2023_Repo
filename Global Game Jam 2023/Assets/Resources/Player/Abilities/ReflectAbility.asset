@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Description: Boing! Boing! All projectiles reflected!
   Cost: 500
+  Unlocked: 1

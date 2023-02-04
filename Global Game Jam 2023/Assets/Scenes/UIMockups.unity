@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12242727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 798951626633835667, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+  m_PrefabInstance: {fileID: 731368245491039203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &33818838
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +504,11 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!1 &1934314088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6683597851382449804, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+  m_PrefabInstance: {fileID: 731368245491039203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &367470278651492919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -783,6 +793,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: abilityNPC
+      value: 
+      objectReference: {fileID: 12242727}
+    - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: upgradeNPC
+      value: 
+      objectReference: {fileID: 1934314088}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
 --- !u!1001 &7959135081950827415

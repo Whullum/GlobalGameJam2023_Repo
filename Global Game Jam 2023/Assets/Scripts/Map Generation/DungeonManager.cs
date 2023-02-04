@@ -34,7 +34,9 @@ public class DungeonManager : MonoBehaviour
 
     private void Update()
     {
-        floorTimer += Time.deltaTime;        
+        floorTimer += Time.deltaTime;
+
+        UI_PlayerDungeon.Instance.ChangeLevelTime(floorTimer);
     }
 
     /// <summary>
@@ -54,5 +56,7 @@ public class DungeonManager : MonoBehaviour
             // We are on the last floor so we need to create rules for this floor for being the last one (endgame)
         }
         levelGenerator.CreateNewLevel();
+        floorTimer = 0;
+        UI_PlayerDungeon.Instance.ChangeLevelText(CurrentFloor);
     }
 }

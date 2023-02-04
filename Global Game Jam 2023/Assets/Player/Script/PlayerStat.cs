@@ -26,8 +26,12 @@ public class PlayerStat : MonoBehaviour
         if (playerHealth <= 0)
         {
             MusicManager.instance.deathState.SetValue();
-            LevelLoader.RestartGame();
+        UI_PlayerDungeon.Instance.UpdateHealth(0, playerHealth, maxHealth);
         }
+
+        if (playerHealth < 1)
+            LevelLoader.RestartGame();
+    
     }
 
     /// <summary>
@@ -38,5 +42,7 @@ public class PlayerStat : MonoBehaviour
     {
         maxHealth += healthUpgrade;
         playerHealth = maxHealth;
+
+        UI_PlayerDungeon.Instance.UpdateHealth(0, playerHealth, maxHealth);
     }
 }

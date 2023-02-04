@@ -7,6 +7,7 @@ public class ReflectAbility : MonoBehaviour
     private Collider2D reflectCollider;
     private bool canActivate = true;
     private bool reflectProjectiles = false;
+    private float cooldownTimer;
 
     [Tooltip("Total time deflecting projectiles.")]
     [SerializeField] private float activeTime = 3;
@@ -22,6 +23,12 @@ public class ReflectAbility : MonoBehaviour
         reflectCollider.enabled = false;
 
         reflecEffect = effect.GetComponent<ParticleSystem>();
+    }
+
+    private void Start()
+    {
+        UI_PlayerDungeon.Instance.ChangeAblityName("Reflect");
+        UI_PlayerDungeon.Instance.SetAbilityText("Avaliable");
     }
 
     private void Update()
@@ -42,15 +49,25 @@ public class ReflectAbility : MonoBehaviour
         reflectCollider.enabled = true;
         canActivate = false;
         reflecEffect.Play();
+        UI_PlayerDungeon.Instance.ChangeAblityName("Reflect");
+        UI_PlayerDungeon.Instance.SetAbilityText("Active");
 
         yield return new WaitForSeconds(activeTime);
 
+        cooldownTimer = cooldown;
         reflectProjectiles = false;
         reflectCollider.enabled = false;
         reflecEffect.Stop();
 
-        yield return new WaitForSeconds(cooldown);
-
+        while (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+            UI_PlayerDungeon.Instance.ChangeAbilityCooldown(cooldownTimer);
+            yield return null;
+        }
+        cooldownTimer = 0;
+        UI_PlayerDungeon.Instance.ChangeAbilityCooldown(cooldownTimer);
+        UI_PlayerDungeon.Instance.SetAbilityText("Avaliable");
         canActivate = true;
     }
 
