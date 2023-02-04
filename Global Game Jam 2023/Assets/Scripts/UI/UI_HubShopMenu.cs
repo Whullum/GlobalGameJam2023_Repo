@@ -24,6 +24,13 @@ public class UI_HubShopMenu : MonoBehaviour
     [SerializeField] private int weaponNPCFloor = 4;
     [SerializeField] private int abilityNPCFloor = 6;
 
+    [TextArea(5,20)]
+    [SerializeField] private string upgradesNPCDialogue;
+    [TextArea(5, 20)]
+    [SerializeField] private string abilitiesNPCDialogue;
+    [TextArea(5, 20)]
+    [SerializeField] private string weaponsNPCDialogue;
+
     private void Start()
     {
         playerManager = FindObjectOfType<PlayerManager>();
@@ -59,6 +66,7 @@ public class UI_HubShopMenu : MonoBehaviour
         abilitiesShop.SetActive(true);
         upgradesShop.SetActive(false);
         weaponsShop.SetActive(false);
+        ChangeNPCDialogue(abilitiesNPCDialogue);
     }
 
     public void ActivateUpgradesShop()
@@ -67,13 +75,15 @@ public class UI_HubShopMenu : MonoBehaviour
         upgradesShop.SetActive(true);
         weaponsShop.SetActive(false);
         playerManager.UpdateUpgradesUI();
+        ChangeNPCDialogue(upgradesNPCDialogue);
     }
 
     public void ActivateWeaponsShop()
     {
         abilitiesShop.SetActive(false);
         upgradesShop.SetActive(false);
-        weaponsShop.SetActive(true); ;
+        weaponsShop.SetActive(true);
+        ChangeNPCDialogue(weaponsNPCDialogue);
     }
 
     private void LoadNPCButtons()

@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ae05a74b566c24196a9cfbfb6a8182, type: 3}
   m_Name: AttackUpgrade
   m_EditorClassIdentifier: 
-  Name: Attack Upgrade
-  Description: You like fights, uh? Give me your tool and I'll try to sharpen it
-    more, for a moderated price, of course...
   Upgrades:
   - Value: 1
     Cost: 10

@@ -25,7 +25,15 @@ public class PlayerSpawner : MonoBehaviour
     public void SpawnPlayer(int[,] level, TileCoord playerSpawn)
     {
         if(player == null) player = GameObject.FindGameObjectWithTag("Player");
-
+        UpdatePlayerUIValues();
         player.transform.position = transform.position;
+    }
+
+    private void UpdatePlayerUIValues()
+    {
+        UI_PlayerDungeon.Instance.ChangeWewaponText("No weapon");
+        UI_PlayerDungeon.Instance.ChangeSeedsCount(SeedWallet.Seeds);
+        UI_PlayerDungeon.Instance.ChangeAblityName("No ability");
+        UI_PlayerDungeon.Instance.SetAbilityText("No ability");
     }
 }

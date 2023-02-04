@@ -13,8 +13,16 @@ public class LevelExit : MonoBehaviour
     {
         levelFinishCanvas.SetActive(false);
         gameOverCanvas.SetActive(false);
+    }
 
+    private void OnEnable()
+    {
         GameOver += EnableGameOverUI;
+    }
+
+    private void OnDisable()
+    {
+        GameOver -= EnableGameOverUI;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

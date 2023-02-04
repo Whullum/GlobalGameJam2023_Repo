@@ -61,8 +61,8 @@ public class LevelGenerator : MonoBehaviour
         generatedSeed = SeedGenerator.GenerateSeed(mapSeed);
         InitializeRandomTilemap();
         CelullarAutomata(CASteps, false);
-        DrawTilemap();
         CalculateLevelRegions();
+        DrawTilemap();
         LevelCreated?.Invoke(level, rootsStartTile);
     }
 

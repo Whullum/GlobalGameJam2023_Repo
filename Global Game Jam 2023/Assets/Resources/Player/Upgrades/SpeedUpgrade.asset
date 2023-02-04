@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ae05a74b566c24196a9cfbfb6a8182, type: 3}
   m_Name: SpeedUpgrade
   m_EditorClassIdentifier: 
-  Name: Speed Upgrade
-  Description: Ahhh, spedy boy. I can tell you one or two tricks to run faster if
-    you want.
   Upgrades:
   - Value: 1
     Cost: 10

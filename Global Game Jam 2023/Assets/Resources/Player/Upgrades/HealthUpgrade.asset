@@ -12,26 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ae05a74b566c24196a9cfbfb6a8182, type: 3}
   m_Name: HealthUpgrade
   m_EditorClassIdentifier: 
-  Name: Health Upgrade
-  Description: Let me clean your clothes, they are all dirty, maybe when you put
-    it back on you will feel more refreshed.
   Upgrades:
   - Value: 1
     Cost: 50
-    Unlocked: 1
+    Unlocked: 0
   - Value: 15
     Cost: 80
+    Unlocked: 0
+  - Value: 20
+    Cost: 100
+    Unlocked: 0
+  - Value: 20
+    Cost: 100
+    Unlocked: 0
+  - Value: 20
+    Cost: 100
+    Unlocked: 0
+  - Value: 20
+    Cost: 100
     Unlocked: 1
-  - Value: 20
-    Cost: 100
-    Unlocked: 0
-  - Value: 20
-    Cost: 100
-    Unlocked: 0
-  - Value: 20
-    Cost: 100
-    Unlocked: 0
-  - Value: 20
-    Cost: 100
-    Unlocked: 0
   AllUpgradesUnlocked: 0

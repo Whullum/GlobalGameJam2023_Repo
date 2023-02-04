@@ -32,6 +32,8 @@ public class UI_PlayerDungeon : MonoBehaviour
         levelTimerText.text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
     }
 
+    public void ChangeWewaponText(string weapon) => weaponText.text = weapon;
+
     /// <summary>
     /// Set the text for the level number
     /// </summary>

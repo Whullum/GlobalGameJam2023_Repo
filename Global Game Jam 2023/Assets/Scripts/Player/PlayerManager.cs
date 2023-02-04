@@ -27,7 +27,6 @@ public class PlayerManager : MonoBehaviour
     {
         upgradesUI = FindObjectOfType<UI_UpgradesMenu>(true);
         hubShopUI = FindObjectOfType<UI_HubShopMenu>(true);
-        SeedWallet.CollectSeeds(100000);
         LoadUpgrades();
         DashUnlocked = dashAbility.Unlocked;
         ReflectUnlocked = reflectAbility.Unlocked;
@@ -118,7 +117,14 @@ public class PlayerManager : MonoBehaviour
                 AttackStat += upgrade.Value;
             }
 
-            if (!upgrade.Unlocked || attackUpgrade.AllUpgradesUnlocked)
+            if (attackUpgrade.AllUpgradesUnlocked)
+            {
+                attackUpgrade.CurrentUpgrade = attackUpgrade.Upgrades[attackUpgrade.Upgrades.Length - 1];
+                attackUpgrade.NextUpgrade = attackUpgrade.Upgrades[attackUpgrade.Upgrades.Length - 1];
+                break;
+            }
+
+            if (!upgrade.Unlocked)
             {
                 attackUpgrade.NextUpgrade = upgrade;
                 break;
@@ -140,7 +146,14 @@ public class PlayerManager : MonoBehaviour
                 MovementStat += upgrade.Value;
             }
 
-            if (!upgrade.Unlocked || movementUpgrade.AllUpgradesUnlocked)
+            if (movementUpgrade.AllUpgradesUnlocked)
+            {
+                movementUpgrade.CurrentUpgrade = movementUpgrade.Upgrades[movementUpgrade.Upgrades.Length - 1];
+                movementUpgrade.NextUpgrade = movementUpgrade.Upgrades[movementUpgrade.Upgrades.Length - 1];
+                break;
+            }
+
+            if (!upgrade.Unlocked)
             {
                 movementUpgrade.NextUpgrade = lastUpgrade;
                 break;
@@ -162,7 +175,14 @@ public class PlayerManager : MonoBehaviour
                 HealthStat += upgrade.Value;
             }
 
-            if (!upgrade.Unlocked || healthUpgrade.AllUpgradesUnlocked)
+            if (healthUpgrade.AllUpgradesUnlocked)
+            {
+                healthUpgrade.CurrentUpgrade = healthUpgrade.Upgrades[healthUpgrade.Upgrades.Length - 1];
+                healthUpgrade.NextUpgrade = healthUpgrade.Upgrades[healthUpgrade.Upgrades.Length - 1];
+                break;
+            }
+
+            if (!upgrade.Unlocked)
             {
                 healthUpgrade.NextUpgrade = lastUpgrade;
                 break;

@@ -17,6 +17,7 @@ public class PlayerStat : MonoBehaviour
     {
         playerHealth -= damageAmount;
         playerSounds.playerDamagedSound.Post(gameObject);
+        UI_PlayerDungeon.Instance.UpdateHealth(0, playerHealth, maxHealth);
 
         if (playerHealth <= (maxHealth / 25))
         {
@@ -26,13 +27,10 @@ public class PlayerStat : MonoBehaviour
         if (playerHealth <= 0)
         {
             MusicManager.instance.deathState.SetValue();
-            UI_PlayerDungeon.Instance.UpdateHealth(0, playerHealth, maxHealth);
         }
-
 
         if (playerHealth < 1)
             LevelExit.GameOver?.Invoke();
-    
     }
 
     /// <summary>
