@@ -11,12 +11,14 @@ public class DodgeAbility : MonoBehaviour
     private float prevSpeed;
     PlayerController playerControls;
     Rigidbody2D rb;
+    private TrailRenderer dodgeTrail;
     void Start()
     {
-        
+        dodgeTrail = GetComponentInChildren<TrailRenderer>();
+        dodgeTrail.emitting = false;
+        dodgeTrail.enabled = true;
         playerControls = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
-
     }
 
     // Update is called once per frame
@@ -24,16 +26,14 @@ public class DodgeAbility : MonoBehaviour
     {
         PlayerDodge();
     }
+    ///<summary>
+    ///Allows player to perform a dodge by pressing the space button. 
+    /// </summary>
     void PlayerDodge()
     {
-        ///<summary>
-        ///Allows player to perform a dodge by pressing the space button. 
-        /// </summary>
-        
-        
         if (Input.GetButtonUp("Jump") && Time.time > playerControls.GetTimeLimit() && dodgeActive == false)
         {
-
+            dodgeTrail.emitting = true;
             playerControls.GetAnimator().enabled = false;
             playerControls.GetAnimator().SetTrigger("dodge");
             playerControls.GetAnimator().enabled = true;
@@ -58,6 +58,7 @@ public class DodgeAbility : MonoBehaviour
         }
         else if (Time.time > playerControls.GetTimeLimit() &&  dodgeActive)
         {
+            dodgeTrail.emitting = false;
             Debug.Log("Cooldown Ended");
             dodgeActive = false;
             playerControls.ResetTimeLimit();

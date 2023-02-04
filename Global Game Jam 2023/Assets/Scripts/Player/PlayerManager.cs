@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     public static int HealthStat { get; private set; } = 0;
     public static bool DashUnlocked { get; private set; }
     public static bool ReflectUnlocked { get; private set; }
+    public static bool SwordEquiped { get; private set; }
+    public static bool BowEquiped { get; private set; }
     private UI_UpgradesMenu upgradesUI;
     private UI_HubShopMenu hubShopUI;
 
@@ -25,6 +27,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
+        SeedWallet.CollectSeeds(1000);
         upgradesUI = FindObjectOfType<UI_UpgradesMenu>(true);
         hubShopUI = FindObjectOfType<UI_HubShopMenu>(true);
         LoadUpgrades();

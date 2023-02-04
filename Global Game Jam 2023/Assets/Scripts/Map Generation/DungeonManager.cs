@@ -13,9 +13,9 @@ public class DungeonManager : MonoBehaviour
     private int totalFloors;
 
     [Tooltip("Minimum amount of floors the game will have.")]
-    [SerializeField] private int minimumFloors = 5;
+    [SerializeField] private int minimumFloors = 12;
     [Tooltip("Maximum amount of floors the game will have.")]
-    [SerializeField] private int maximumFloors = 10;
+    [SerializeField] private int maximumFloors = 20;
 
     private void Awake()
     {
