@@ -793,7 +793,9 @@ MonoBehaviour:
   passageCreationRadius: 2
   mapSeed: 
   generatedSeed: 0
-  tileTest: {fileID: 11400000, guid: 2ebe4c51412d25d41b34c8f76e0abfd7, type: 2}
+  tileTest: {fileID: 11400000, guid: 07313be9542b1ba408734826489e31c2, type: 2}
+  normalTile: {fileID: 11400000, guid: 9e6ab444986af0e43a0aee7dc5a58832, type: 2}
+  exitTile: {fileID: 11400000, guid: c9504971fa43db94da182b1cf249bd34, type: 2}
 --- !u!4 &339284223
 Transform:
   m_ObjectHideFlags: 0
@@ -1183,7 +1185,7 @@ MonoBehaviour:
   startTime: 2
   rootsDamage: 100
   damageTick: 1
-  rootTile: {fileID: 11400000, guid: 7c0d4d06b01288946b411bd31383d4b4, type: 2}
+  rootTile: {fileID: 11400000, guid: ec829fabc0556574e9a4bd21885205e0, type: 2}
   rootAdvancementSound:
     idInternal: 0
     valueGuidInternal: 

@@ -43,7 +43,9 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private string mapSeed;
     [Tooltip("Generated seed, for visualization purposes only.")]
     [SerializeField] private int generatedSeed;
-    [SerializeField] private Tile tileTest;
+    [SerializeField] private RuleTile tileTest;
+    [SerializeField] private Tile normalTile;
+    [SerializeField] private Tile exitTile;
 
     private void Awake()
     {
@@ -59,8 +61,8 @@ public class LevelGenerator : MonoBehaviour
         generatedSeed = SeedGenerator.GenerateSeed(mapSeed);
         InitializeRandomTilemap();
         CelullarAutomata(CASteps, false);
-        CalculateLevelRegions();
         DrawTilemap();
+        CalculateLevelRegions();
         LevelCreated?.Invoke(level, rootsStartTile);
     }
 
@@ -191,6 +193,8 @@ public class LevelGenerator : MonoBehaviour
             {
                 if (level[x, y] == 1)
                     levelTilemap.SetTile(new Vector3Int(x, y, 0), tileTest);
+                else
+                    levelTilemap.SetTile(new Vector3Int(x, y, 0), normalTile);
             }
         }
         LevelColliderCreated?.Invoke(levelTilemap);
@@ -296,6 +300,12 @@ public class LevelGenerator : MonoBehaviour
         // Set the player spawner and level exit position on the newly created map.
         playerSpawner.transform.position = CoordToWorldPoint(spawnTile);
         levelExit.transform.position = CoordToWorldPoint(exitTile);
+
+        levelTilemap.SetTile(new Vector3Int(
+            (int)CoordToWorldPoint(exitTile).x, (int)CoordToWorldPoint(exitTile).y, 0), 
+            this.exitTile
+            );
+
         rootsStartTile = spawnTile;
     }
 
