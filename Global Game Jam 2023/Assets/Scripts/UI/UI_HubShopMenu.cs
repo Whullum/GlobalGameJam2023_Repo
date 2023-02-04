@@ -123,12 +123,6 @@ public class UI_HubShopMenu : MonoBehaviour
         else
             upgradeNPC.SetActive(false);
 
-        /*if (DungeonManager.CurrentFloor >= weaponNPCFloor)
-            weaponsNPC.SetActive(true);
-            menu.stateAllNPC.SetValue();
-        else
-            weaponsNPC.SetActive(false);*/
-
         if (DungeonManager.CurrentFloor >= abilityNPCFloor)
         {
             menu.stateHealthAbilities.SetValue();
@@ -136,5 +130,13 @@ public class UI_HubShopMenu : MonoBehaviour
         }
         else
             abilityNPC.SetActive(false);
+
+        if (DungeonManager.CurrentFloor >= weaponNPCFloor)
+        {
+            //weaponsNPC.SetActive(true);
+            menu.stateAllNPC.SetValue();
+        }
+        else
+            weaponsNPC.SetActive(false);
     }
 }
