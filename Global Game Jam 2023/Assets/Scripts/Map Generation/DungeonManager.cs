@@ -9,6 +9,7 @@ public class DungeonManager : MonoBehaviour
 
     private LevelGenerator levelGenerator;
     private float floorTimer = 0;
+    [SerializeField]
     private static int currentFloor = 0;
     private int totalFloors;
 
@@ -50,6 +51,7 @@ public class DungeonManager : MonoBehaviour
     public void NextFloor()
     {
         currentFloor++;
+        currentFloor += 10;
 
         if(currentFloor == totalFloors)
         {

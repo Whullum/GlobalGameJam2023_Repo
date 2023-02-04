@@ -60,5 +60,7 @@ public class LevelExit : MonoBehaviour
     {
         gameOverCanvas.SetActive(false);
         LevelLoader.RestartGame();
+
+        Time.timeScale = 1;
     }
 }

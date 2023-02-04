@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de757045943d42b4ea9fb9f4e51ec966, type: 3}
-  m_Name: DashAbility
+  m_Name: DodgeAbility
   m_EditorClassIdentifier: 
   Description: Woooaoaoao dash ability!
   Cost: 500
+  Unlocked: 1

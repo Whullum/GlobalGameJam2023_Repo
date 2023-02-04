@@ -54,6 +54,11 @@ namespace AK
 
             namespace STATE
             {
+                static const AkUniqueID A_GAMESTART = 2690509493U;
+                static const AkUniqueID B_HEALTH = 1991916522U;
+                static const AkUniqueID C_HEALTH_AND_ABILITIES = 4114684904U;
+                static const AkUniqueID D_ALL_NPC = 310699911U;
+                static const AkUniqueID GAMECOMPLETE = 3175816390U;
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace HUBSTATES

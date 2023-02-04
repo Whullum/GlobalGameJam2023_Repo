@@ -14,6 +14,11 @@ public class UI_HubShopMenu : MonoBehaviour
     public GameObject abilitiesShop;
     public GameObject upgradesShop;
     public GameObject weaponsShop;
+
+    public GameObject abilitiesImage;
+    public GameObject upgradesImage;
+    public GameObject weaponsImage;
+
     private PlayerManager playerManager;
 
     [SerializeField] private GameObject upgradeNPC;
@@ -21,8 +26,8 @@ public class UI_HubShopMenu : MonoBehaviour
     [SerializeField] private GameObject abilityNPC;
 
     [SerializeField] private int upgradeNPCFloor = 2;
-    [SerializeField] private int weaponNPCFloor = 4;
-    [SerializeField] private int abilityNPCFloor = 6;
+    [SerializeField] private int weaponNPCFloor = 6;
+    [SerializeField] private int abilityNPCFloor = 4;
 
     [TextArea(5,20)]
     [SerializeField] private string upgradesNPCDialogue;
@@ -30,6 +35,8 @@ public class UI_HubShopMenu : MonoBehaviour
     [SerializeField] private string abilitiesNPCDialogue;
     [TextArea(5, 20)]
     [SerializeField] private string weaponsNPCDialogue;
+
+    public UI_MainMenuBehavior menu;
 
     private void Start()
     {
@@ -64,43 +71,72 @@ public class UI_HubShopMenu : MonoBehaviour
     public void ActivateAbilitiesShop()
     {
         abilitiesShop.SetActive(true);
+        abilitiesImage.SetActive(true);
+
         upgradesShop.SetActive(false);
+        upgradesImage.SetActive(false);
+
         weaponsShop.SetActive(false);
+        weaponsImage.SetActive(false);
+
         ChangeNPCDialogue(abilitiesNPCDialogue);
     }
 
     public void ActivateUpgradesShop()
     {
         abilitiesShop.SetActive(false);
+        abilitiesImage.SetActive(false);
+
         upgradesShop.SetActive(true);
+        upgradesImage.SetActive(true);
+
         weaponsShop.SetActive(false);
+        weaponsImage.SetActive(false);
+
         playerManager.UpdateUpgradesUI();
         ChangeNPCDialogue(upgradesNPCDialogue);
+
     }
 
     public void ActivateWeaponsShop()
     {
         abilitiesShop.SetActive(false);
+        abilitiesImage.SetActive(false);
+
         upgradesShop.SetActive(false);
+        upgradesImage.SetActive(false);
+
         weaponsShop.SetActive(true);
+        weaponsImage.SetActive(true);
+
         ChangeNPCDialogue(weaponsNPCDialogue);
+        
     }
 
     private void LoadNPCButtons()
     {
         if (DungeonManager.CurrentFloor >= upgradeNPCFloor)
+        {
             upgradeNPC.SetActive(true);
+            menu.stateHealth.SetValue();
+        }
         else
             upgradeNPC.SetActive(false);
 
-        /*if (DungeonManager.CurrentFloor >= weaponNPCFloor)
-            weaponsNPC.SetActive(true);
-        else
-            weaponsNPC.SetActive(false);*/
-
         if (DungeonManager.CurrentFloor >= abilityNPCFloor)
+        {
+            menu.stateHealthAbilities.SetValue();
             abilityNPC.SetActive(true);
+        }
         else
             abilityNPC.SetActive(false);
+
+        if (DungeonManager.CurrentFloor >= weaponNPCFloor)
+        {
+            //weaponsNPC.SetActive(true);
+            menu.stateAllNPC.SetValue();
+        }
+        else
+            weaponsNPC.SetActive(false);
     }
 }

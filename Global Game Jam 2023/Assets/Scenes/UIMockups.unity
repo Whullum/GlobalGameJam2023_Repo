@@ -188,6 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd70c0353f9f764e8e1d81114f25d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &519727084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 731368245990561454, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+  m_PrefabInstance: {fileID: 731368245491039203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &555953744
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +354,11 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!1 &891579598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6403118109223013203, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+  m_PrefabInstance: {fileID: 731368245491039203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &988961085
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +517,11 @@ MonoBehaviour:
 --- !u!1 &1934314088 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6683597851382449804, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+  m_PrefabInstance: {fileID: 731368245491039203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2058374710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6918532715063444355, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
   m_PrefabInstance: {fileID: 731368245491039203}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &367470278651492919
@@ -669,6 +684,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 731368245990561454, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_Name
+      value: Image_Portraits_Upgrades
+      objectReference: {fileID: 0}
+    - target: {fileID: 798951626633835667, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 944043886494581370, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -793,6 +816,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6403118109223013203, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_Name
+      value: Image_Portraits_Weapons
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918532715063444355, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_Name
+      value: Image_Portraits_Abilities
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 513036814}
     - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: abilityNPC
       value: 
@@ -801,6 +836,18 @@ PrefabInstance:
       propertyPath: upgradeNPC
       value: 
       objectReference: {fileID: 1934314088}
+    - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: weaponsImage
+      value: 
+      objectReference: {fileID: 891579598}
+    - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: upgradesImage
+      value: 
+      objectReference: {fileID: 519727084}
+    - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: abilitiesImage
+      value: 
+      objectReference: {fileID: 2058374710}
     - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: weaponNPCFloor
       value: 6
@@ -815,15 +862,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: weaponsNPCDialogue
-      value: Want to cut something?
+      value: My wares are especially pointy today!
       objectReference: {fileID: 0}
     - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: upgradesNPCDialogue
-      value: Here are some upgrades.
+      value: Need some pick me ups for the next run?
       objectReference: {fileID: 0}
     - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: abilitiesNPCDialogue
-      value: Buy new abilities.
+      value: Heyo. Wanna see a cool magic trick?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
@@ -855,6 +902,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 31ddcc0307bc19d448227deed7d40cca, type: 2}
     - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: stateStart.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: d94a41d1bfc17cd4f9ec27920fac166c, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: stateAllNPC.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: cfd68a34a15f76041a7fe01f1d02f890, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: stateHealth.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 267b50382d7765248a6ca4bf8ab6a6a9, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: uiSelection.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 33c0f6bb4dc0a634fb4df454f2475c20, type: 2}
@@ -863,9 +922,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: dd825b6b8ed685b4380f88f585069fa3, type: 2}
     - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: stateComplete.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: d2d98c652af3e1c44b1f2888ca5c38bf, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: uiSliderChange.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: f8cacf2cb50a32445b3cea8632bdcf41, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: stateHealthAbilities.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: a0a3d499e8957ae4db6db6eadbd6b4a9, type: 2}
     - target: {fileID: 5587743125443847644, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1327,5 +1394,6 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 513036814}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 360699071769627648, guid: bf6d4332fd1ad75478aa0750f0d44aef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf6d4332fd1ad75478aa0750f0d44aef, type: 3}
