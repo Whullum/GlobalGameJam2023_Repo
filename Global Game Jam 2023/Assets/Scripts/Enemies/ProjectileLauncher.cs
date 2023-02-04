@@ -46,7 +46,7 @@ public class ProjectileLauncher : MonoBehaviour
         if (!playerInRange) return;
 
         Vector3 playerDirection = playerTarget.position - transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, playerDirection, range, ~LayerMask.GetMask("LevelBoundary", "Roots", "ReflectShield"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, playerDirection, range, ~LayerMask.GetMask("LevelBoundary", "Roots", "ReflectShield", "Projectile"));
 
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {

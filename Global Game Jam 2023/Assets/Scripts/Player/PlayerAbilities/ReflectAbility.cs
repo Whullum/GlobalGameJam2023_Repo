@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class ReflectAbility : MonoBehaviour
 {
-    private ParticleSystem reflecEffect;
+    private SpriteRenderer reflecEffect;
     private Collider2D reflectCollider;
     private bool canActivate = true;
     private bool reflectProjectiles = false;
     private float cooldownTimer;
 
     [Tooltip("Total time deflecting projectiles.")]
-    [SerializeField] private float activeTime = 3;
+    [SerializeField] private float activeTime = 5;
     [Tooltip("Cooldown time between activations.")]
     [SerializeField] private float cooldown = 10;
 
@@ -22,7 +22,7 @@ public class ReflectAbility : MonoBehaviour
         reflectCollider = effect.GetComponent<Collider2D>();
         reflectCollider.enabled = false;
 
-        reflecEffect = effect.GetComponent<ParticleSystem>();
+        reflecEffect = effect.GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -48,7 +48,7 @@ public class ReflectAbility : MonoBehaviour
         reflectProjectiles = true;
         reflectCollider.enabled = true;
         canActivate = false;
-        reflecEffect.Play();
+        reflecEffect.enabled = true;
         UI_PlayerDungeon.Instance.ChangeAblityName("Reflect");
         UI_PlayerDungeon.Instance.SetAbilityText("Active");
 
@@ -57,7 +57,7 @@ public class ReflectAbility : MonoBehaviour
         cooldownTimer = cooldown;
         reflectProjectiles = false;
         reflectCollider.enabled = false;
-        reflecEffect.Stop();
+        reflecEffect.enabled = false;
 
         while (cooldownTimer > 0)
         {
