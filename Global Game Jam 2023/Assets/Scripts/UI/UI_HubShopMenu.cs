@@ -14,6 +14,11 @@ public class UI_HubShopMenu : MonoBehaviour
     public GameObject abilitiesShop;
     public GameObject upgradesShop;
     public GameObject weaponsShop;
+
+    public GameObject abilitiesImage;
+    public GameObject upgradesImage;
+    public GameObject weaponsImage;
+
     private PlayerManager playerManager;
 
     [SerializeField] private GameObject upgradeNPC;
@@ -66,16 +71,28 @@ public class UI_HubShopMenu : MonoBehaviour
     public void ActivateAbilitiesShop()
     {
         abilitiesShop.SetActive(true);
+        abilitiesImage.SetActive(true);
+
         upgradesShop.SetActive(false);
+        upgradesImage.SetActive(false);
+
         weaponsShop.SetActive(false);
+        weaponsImage.SetActive(false);
+
         ChangeNPCDialogue(abilitiesNPCDialogue);
     }
 
     public void ActivateUpgradesShop()
     {
         abilitiesShop.SetActive(false);
+        abilitiesImage.SetActive(false);
+
         upgradesShop.SetActive(true);
+        upgradesImage.SetActive(true);
+
         weaponsShop.SetActive(false);
+        weaponsImage.SetActive(false);
+
         playerManager.UpdateUpgradesUI();
         ChangeNPCDialogue(upgradesNPCDialogue);
 
@@ -84,8 +101,14 @@ public class UI_HubShopMenu : MonoBehaviour
     public void ActivateWeaponsShop()
     {
         abilitiesShop.SetActive(false);
+        abilitiesImage.SetActive(false);
+
         upgradesShop.SetActive(false);
+        upgradesImage.SetActive(false);
+
         weaponsShop.SetActive(true);
+        weaponsImage.SetActive(true);
+
         ChangeNPCDialogue(weaponsNPCDialogue);
         
     }
