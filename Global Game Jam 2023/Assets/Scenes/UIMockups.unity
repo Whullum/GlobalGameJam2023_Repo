@@ -811,13 +811,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: sfxRTPC.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 532f939298f97bd4faa8661e6e890a21, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: hubMusic.WwiseObjectReference
       value: 
-      objectReference: {fileID: 11400000, guid: 3113d69d9be7f134994c31ceb3281178, type: 2}
+      objectReference: {fileID: 11400000, guid: c410345f61964de428489dcb862a9702, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: musicRTPC.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: de4ac6a06d5cef74fa4e95b84e637745, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: uiConfirm.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 63f141e7a75d9e544baefbdd545bc3d6, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: masterRTPC.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 31ddcc0307bc19d448227deed7d40cca, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: uiSelection.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 33c0f6bb4dc0a634fb4df454f2475c20, type: 2}
     - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: stopHubMusic.WwiseObjectReference
       value: 
-      objectReference: {fileID: 11400000, guid: 88b0837dfe87e504d919093a3310d370, type: 2}
+      objectReference: {fileID: 11400000, guid: dd825b6b8ed685b4380f88f585069fa3, type: 2}
+    - target: {fileID: 5587743125443847593, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: uiSliderChange.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: f8cacf2cb50a32445b3cea8632bdcf41, type: 2}
     - target: {fileID: 5587743125443847644, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

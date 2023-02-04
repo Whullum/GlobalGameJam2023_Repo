@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Victory
   id: 2716678721
   guid: AB74CE86-29DD-4E93-BEA8-AD01C50F731F
-  WwiseStateGroupReference: {fileID: 11400000, guid: ed238d0055650b548878e15321f7a96b, type: 2}
+  WwiseStateGroupReference: {fileID: 11400000, guid: 5062212aa7ff61d479d536f0bb417f7c, type: 2}

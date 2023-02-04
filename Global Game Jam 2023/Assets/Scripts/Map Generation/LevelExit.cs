@@ -4,12 +4,17 @@ using UnityEngine;
 public class LevelExit : MonoBehaviour
 {
     public static Action LevelFinished;
+    public static Action GameOver;
 
     [SerializeField] private GameObject levelFinishCanvas;
+    [SerializeField] private GameObject gameOverCanvas;
 
     private void Awake()
     {
         levelFinishCanvas.SetActive(false);
+        gameOverCanvas.SetActive(false);
+
+        GameOver += EnableGameOverUI;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,7 +22,9 @@ public class LevelExit : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             MusicManager.instance.victoryState.SetValue();
-            levelFinishCanvas.SetActive(true); 
+            levelFinishCanvas.SetActive(true);
+
+            Time.timeScale = 0;
         }
     }
 
@@ -26,8 +33,24 @@ public class LevelExit : MonoBehaviour
     /// </summary>
     public void LoadNextlevel()
     {
-        levelFinishCanvas.SetActive(false);
         // Launch event specifying the player has reached the end of the level
         LevelFinished?.Invoke();
+        MusicManager.instance.normalState.SetValue();
+
+        levelFinishCanvas.SetActive(false);
+
+        Time.timeScale = 1;
+    }
+
+    public void EnableGameOverUI()
+    {
+        gameOverCanvas.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void BackToTown()
+    {
+        gameOverCanvas.SetActive(false);
+        LevelLoader.RestartGame();
     }
 }

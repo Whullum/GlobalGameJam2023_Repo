@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Normal
   id: 1160234136
   guid: 533F303B-13FF-40EA-AC11-24950C05B262
-  WwiseStateGroupReference: {fileID: 11400000, guid: ed238d0055650b548878e15321f7a96b, type: 2}
+  WwiseStateGroupReference: {fileID: 11400000, guid: 5062212aa7ff61d479d536f0bb417f7c, type: 2}

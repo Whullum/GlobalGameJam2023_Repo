@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Danger
   id: 4174463524
   guid: 7B06876A-1F5A-4E6B-B22B-B4301DC9A9A9
-  WwiseStateGroupReference: {fileID: 11400000, guid: ed238d0055650b548878e15321f7a96b, type: 2}
+  WwiseStateGroupReference: {fileID: 11400000, guid: 5062212aa7ff61d479d536f0bb417f7c, type: 2}
