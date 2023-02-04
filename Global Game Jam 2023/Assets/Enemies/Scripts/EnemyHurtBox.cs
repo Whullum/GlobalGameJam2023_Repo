@@ -17,9 +17,9 @@ public class EnemyHurtBox : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.activeSelf != false && collision.name == "Player")
+        if (collision.gameObject.activeSelf != false && collision.tag == "Player")
         {
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
             collision.gameObject.transform.GetComponent<PlayerStat>().DealDamage(25);
         }
     }
