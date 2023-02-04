@@ -4,16 +4,15 @@ public class PlayerController : MonoBehaviour
 {
     private float vertical;
     private float horizontal;
-    private float speed;
+    
     public float walkSpeed = 5f;
     public float runSpeed = 7f;
-    public float dodgeSpeed = 25f;
-    public float dodgeCooldown = 10f;
+    private float speed;
     public float attackTime = 0.5f;
     private float timeLimit = 0f;
     private float attacktimeLimit = 0f;
     private float timeDiff = 0f;
-    private bool dodgeInactive = false;
+    
     private bool attackActive = false;
     private GameObject HurtBox;
     private Animator animator;
@@ -22,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private PlayerCombat playerCombat;
     private Vector3 hurtBoxDistance;
 
-    Vector2 movement;
+    Vector2 movementDirection;
     [SerializeField] private Rigidbody2D rb;
 
     [SerializeField]
@@ -47,6 +46,7 @@ public class PlayerController : MonoBehaviour
         //hurtBoxDistance.y = Math.Abs(hurtBoxDistance.y);
         //hurtBoxDistance.z = Math.Abs(hurtBoxDistance.z);
         //Debug.Log(hurtBoxDistance);
+        speed = walkSpeed;
         LoadPlayerStats();
     }
 
@@ -55,18 +55,17 @@ public class PlayerController : MonoBehaviour
     {
         //Handling Input
         //Recieves input for each axis
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
+        movementDirection.x = Input.GetAxis("Horizontal");
+        movementDirection.y = Input.GetAxis("Vertical");
 
-        
-        if (movement != Vector2.zero)
+        if (movementDirection != Vector2.zero)
             animator.SetBool("isWalking", true);
         else
            animator.SetBool("isWalking", false);
         
 
         // Flip sprite renderer depending on movement direction
-        if (movement.x > 0)
+        if (movementDirection.x > 0)
             spriteRenderer.flipX = true;
         else
             spriteRenderer.flipX = false;
@@ -80,7 +79,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerMovement();
-        PlayerDodge();
+        
         PlayerAttack();
     }
 
@@ -95,35 +94,35 @@ public class PlayerController : MonoBehaviour
     {
 
         //Moves player from the current position of their RigidBody2D to the next position specified by movement
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movementDirection * speed * Time.fixedDeltaTime);
 
 
         //Debug.Log(movement.y);
-        if (movement.y != 0)
+        if (movementDirection.y != 0)
         {
             HurtBox.transform.rotation = Quaternion.Euler(0, 0, 90);
 
         }
-        else if (movement.x != 0)
+        else if (movementDirection.x != 0)
         {
             HurtBox.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if (movement.x > 0)
+        if (movementDirection.x > 0)
         {
 
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x + 0.39f, gameObject.transform.position.y, HurtBox.transform.position.z);
         }
-        else if (movement.x < 0)
+        else if (movementDirection.x < 0)
         {
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x - 0.39f, gameObject.transform.position.y, HurtBox.transform.position.z);
         }
 
-        if (movement.y > 0)
+        if (movementDirection.y > 0)
         {
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f, HurtBox.transform.position.z);
         }
-        else if (movement.y < 0)
+        else if (movementDirection.y < 0)
         {
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f, HurtBox.transform.position.z);
         }
@@ -137,45 +136,14 @@ public class PlayerController : MonoBehaviour
         {
             speed = runSpeed;
         }
-        else
+        else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = walkSpeed;
         }
-        //Debug.Log(speed);
+        Debug.Log(speed);
     }
 
-    //Dodge
-    void PlayerDodge()
-    {
-
-        if (Input.GetAxis("Jump") == 1 && Time.time > timeLimit)
-        {
-            Debug.Log("Jump");
-            //Debug.Log(Input.GetAxis("Jump"));
-            //Debug.Log(Physics2D.Raycast(rb.position, transform.TransformDirection(rb.position + movement), 5));
-            //Debug.DrawLine(rb.position, transform.TransformDirection(rb.position + movement), Color.red, 3f);
-
-            rb.MovePosition(rb.position + movement * dodgeSpeed * Time.fixedDeltaTime);
-
-            timeLimit = Time.time + dodgeCooldown;
-            dodgeInactive = true;
-            //Debug.Log(timeLimit);
-
-            animator.SetTrigger("dodge");
-            playerSounds.dodgeAbilitySound.Post(gameObject);
-        }
-        else if (Time.time < timeLimit && dodgeInactive)
-        {
-            //Debug.Log(Time.time);
-        }
-        else if (dodgeInactive)
-        {
-            Debug.Log("Cooldown Ended");
-            dodgeInactive = false;
-            timeLimit = 0f;
-        }
-
-    }
+    
 
     void PlayerAttack()
     {
@@ -222,5 +190,47 @@ public class PlayerController : MonoBehaviour
         runSpeed  += PlayerManager.MovementStat;
 
         playerHealth.UpgradeHealth(PlayerManager.HealthStat);
+    }
+
+    public float GetTimeLimit()
+    {
+        return timeLimit;
+    }
+
+    public void ResetTimeLimit()
+    {
+        timeLimit = 0f;
+    }
+
+    public void AddToTimeLimit(float number)
+    {
+        timeLimit = Time.time + number;
+    }
+
+    public Animator GetAnimator()
+    {
+        Debug.Log("Animator Got!");
+        return animator;
+    }
+
+    public Vector2 GetMovementDirection()
+    {
+        Debug.Log("movement got");
+        return movementDirection;
+    }
+
+    public Rigidbody2D GetRigidbody()
+    {
+        return rb;
+    }
+
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
+
+    public float GetSpeed()
+    {
+        return speed;
     }
 }
