@@ -25,6 +25,15 @@ public class ProjectileController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Reflect")) return;
 
+        GetComponent<Animator>().SetTrigger("ProjectileDestroyed");
+        rBody.velocity= Vector3.zero;
+        
+        Debug.Log("acacac");
+    }
+
+    public void DestroyProjectile()
+    {
+        Debug.Log("Destroy");
         Destroy(gameObject);
     }
 }
