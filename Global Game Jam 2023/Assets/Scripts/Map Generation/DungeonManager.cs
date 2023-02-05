@@ -60,7 +60,7 @@ public class DungeonManager : MonoBehaviour
     /// </summary>
     public void NextFloor()
     {
-        currentFloor+=50;
+        currentFloor++;
 
         UI_PlayerDungeon.Instance.ChangeLevelText(CurrentFloor);
 
