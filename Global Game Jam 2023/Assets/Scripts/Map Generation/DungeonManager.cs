@@ -29,6 +29,7 @@ public class DungeonManager : MonoBehaviour
 
     private void Start()
     {
+        currentFloor = 0;
         NextFloor();
     }
 
@@ -56,20 +57,20 @@ public class DungeonManager : MonoBehaviour
     public void NextFloor()
     {
         currentFloor++;
-        currentFloor += 10;
 
-        if(currentFloor == totalFloors)
+        UI_PlayerDungeon.Instance.ChangeLevelText(CurrentFloor);
+
+        if (currentFloor >= totalFloors)
         {
             // We are on the last floor so we need to create rules for this floor for being the last one (endgame)
-            levelGenerator.CreateNewLevel();
+            levelGenerator.CreateLastLevel();
             floorTimer = 0;
-            UI_PlayerDungeon.Instance.ChangeLevelText(CurrentFloor);
         }
         else if(currentFloor < totalFloors)
         {
             levelGenerator.CreateNewLevel();
             floorTimer = 0;
-            UI_PlayerDungeon.Instance.ChangeLevelText(CurrentFloor);
+            
         }else
         {
             Debug.Log("Stopped Generating Levels");

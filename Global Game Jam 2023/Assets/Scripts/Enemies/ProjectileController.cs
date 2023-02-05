@@ -5,6 +5,7 @@ public class ProjectileController : MonoBehaviour
     private Rigidbody2D rBody;
 
     [SerializeField] private float projectileSpeed;
+    [SerializeField] private int projectileDamage = 10;
 
     private void Awake()
     {
@@ -25,15 +26,15 @@ public class ProjectileController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Reflect")) return;
 
+        if (collision.gameObject.tag == "Player")
+            collision.gameObject.GetComponent<PlayerStat>().DealDamage(projectileDamage);
+
         GetComponent<Animator>().SetTrigger("ProjectileDestroyed");
-        rBody.velocity= Vector3.zero;
-        
-        Debug.Log("acacac");
+        rBody.velocity = Vector3.zero;
     }
 
     public void DestroyProjectile()
     {
-        Debug.Log("Destroy");
         Destroy(gameObject);
     }
 }

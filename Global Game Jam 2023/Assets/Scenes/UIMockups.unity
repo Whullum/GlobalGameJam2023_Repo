@@ -157,6 +157,8 @@ MonoBehaviour:
   healthUpgrade: {fileID: 11400000, guid: 6fd561bdf0751cc498efb63f80a77e5d, type: 2}
   dashAbility: {fileID: 11400000, guid: ebc90d8a41126664a9cda21fc8260e65, type: 2}
   reflectAbility: {fileID: 11400000, guid: 2d75d4c17a78a5b45a7d020f0a14e0d4, type: 2}
+  sword: {fileID: 11400000, guid: 679003700af7c5a4e8138b9fdd6ad730, type: 2}
+  bow: {fileID: 11400000, guid: 311a10bca2c3b3d478bcfaf45dea1c20, type: 2}
 --- !u!4 &33818840
 Transform:
   m_ObjectHideFlags: 0
@@ -804,10 +806,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2663585410839518303, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_Name
+      value: Button_Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2857345390635665359, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyBow
+      objectReference: {fileID: 0}
     - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: menu
       value: 
       objectReference: {fileID: 513036814}
+    - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: weaponNPCFloor
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
 --- !u!1001 &7959135081950827415

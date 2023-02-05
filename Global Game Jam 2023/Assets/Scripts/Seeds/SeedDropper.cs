@@ -9,16 +9,9 @@ public class SeedDropper : MonoBehaviour
     [SerializeField] private int maxSeedDrop = 20;
     [SerializeField] private float seedDropForce = 5f;
 
-    private void Start()
-    {
-        Invoke("DropSeeds", 2f);
-    }
-
     public void DropSeeds()
     {
         int seedsToDrop  = Random.Range(minSeedDrop, maxSeedDrop + 1);
-        
-
 
         for (int i = 0; i < seedsToDrop; i++)
         {

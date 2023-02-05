@@ -50,6 +50,13 @@ public class EnemyStats : MonoBehaviour
         //Debug.Log("Enemy Hit!");
         
         enemyHealth -= damageAmount;
+
+        if(enemyHealth <= 0)
+        {
+            GetComponent<SeedDropper>().DropSeeds();
+            Destroy(gameObject);
+        }
+
         Debug.Log(enemyHealth);
 
     }

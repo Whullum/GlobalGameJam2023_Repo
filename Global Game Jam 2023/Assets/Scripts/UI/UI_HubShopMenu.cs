@@ -46,6 +46,7 @@ public class UI_HubShopMenu : MonoBehaviour
         // Update seed counter to current amount of held seeds
         // Set dialogueNPC text
         LoadNPCButtons();
+        UpdateSeedsCounter(SeedWallet.Seeds);
     }
 
     public void ChangeShopTypeText(string shopType)
@@ -80,6 +81,7 @@ public class UI_HubShopMenu : MonoBehaviour
         weaponsImage.SetActive(false);
 
         ChangeNPCDialogue(abilitiesNPCDialogue);
+        UpdateSeedsCounter(SeedWallet.Seeds);
     }
 
     public void ActivateUpgradesShop()
@@ -95,7 +97,7 @@ public class UI_HubShopMenu : MonoBehaviour
 
         playerManager.UpdateUpgradesUI();
         ChangeNPCDialogue(upgradesNPCDialogue);
-
+        UpdateSeedsCounter(SeedWallet.Seeds);
     }
 
     public void ActivateWeaponsShop()
@@ -110,7 +112,7 @@ public class UI_HubShopMenu : MonoBehaviour
         weaponsImage.SetActive(true);
 
         ChangeNPCDialogue(weaponsNPCDialogue);
-        
+        UpdateSeedsCounter(SeedWallet.Seeds);
     }
 
     private void LoadNPCButtons()
@@ -133,7 +135,7 @@ public class UI_HubShopMenu : MonoBehaviour
 
         if (DungeonManager.CurrentFloor >= weaponNPCFloor)
         {
-            //weaponsNPC.SetActive(true);
+            weaponsNPC.SetActive(true);
             menu.stateAllNPC.SetValue();
         }
         else

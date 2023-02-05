@@ -12,6 +12,7 @@ public class UI_PlayerDungeon : MonoBehaviour
     public TextMeshProUGUI abilityCountdownText;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI levelTimerText;
+    public Image equipedWeapon;
     public Slider healthSlider;
 
     private void Awake()
@@ -30,6 +31,11 @@ public class UI_PlayerDungeon : MonoBehaviour
     {
         var ts = TimeSpan.FromSeconds(levelTime);
         levelTimerText.text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
+    }
+
+    public void SetEquipedWeapon(Sprite weapon)
+    {
+        equipedWeapon.sprite = weapon;
     }
 
     public void ChangeWewaponText(string weapon) => weaponText.text = weapon;

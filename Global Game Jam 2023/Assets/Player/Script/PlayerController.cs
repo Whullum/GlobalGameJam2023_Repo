@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static bool BowEquiped { get ; private set; }
     private float vertical;
     private float horizontal;
     
@@ -12,8 +13,8 @@ public class PlayerController : MonoBehaviour
     public float attackTime = 0.5f;
     private float timeLimit = 0f;
     private float attacktimeLimit = 0f;
-    
-    
+    private float lastMovementDirection = 0;
+    private bool swordEquiped;
     private bool attackActive = false;
     private GameObject HurtBox;
     private Animator animator;
@@ -23,8 +24,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 hurtBoxDistance;
 
     Vector2 movementDirection;
+    [SerializeField] private SpriteRenderer swordRenderer;
     [SerializeField] private Rigidbody2D rb;
-
+    [SerializeField] private Sprite swordWeapon;
+    [SerializeField] private Sprite bowWeapon;
     [SerializeField]
     private PlayerSounds playerSounds;
 
@@ -62,10 +65,11 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isWalking", true);
         else
            animator.SetBool("isWalking", false);
-        
 
+        if (movementDirection.x != 0)
+            lastMovementDirection = movementDirection.x;
         // Flip sprite renderer depending on movement direction
-        if (movementDirection.x > 0)
+        if (lastMovementDirection > 0)
             spriteRenderer.flipX = true;
         else
             spriteRenderer.flipX = false;
@@ -74,6 +78,8 @@ public class PlayerController : MonoBehaviour
         {
             ResumeGame.instance.OpenPauseMenu();
         }
+
+        EquipWeapon();
     }
 
     private void FixedUpdate()
@@ -83,10 +89,22 @@ public class PlayerController : MonoBehaviour
         PlayerAttack();
     }
 
-    void PlayerSpawn()
+    private void EquipWeapon()
     {
-        Grid tiles = GameObject.Find("LevelGenerator").GetComponentInChildren<Grid>();
-        Debug.Log(tiles);
+        if(Input.GetKeyDown(KeyCode.Alpha1) && PlayerManager.SwordUnlocked)
+        {
+            swordEquiped = true;
+            BowEquiped= false;
+            UI_PlayerDungeon.Instance.SetEquipedWeapon(swordWeapon);
+            UI_PlayerDungeon.Instance.ChangeWewaponText("Sword");
+        } 
+        else if(Input.GetKeyDown(KeyCode.Alpha2) && PlayerManager.BowUnlocked)
+        {
+            swordEquiped = false;
+            BowEquiped = true;
+            UI_PlayerDungeon.Instance.SetEquipedWeapon(bowWeapon);
+            UI_PlayerDungeon.Instance.ChangeWewaponText("Bow");
+        }
     }
 
     //Movement
@@ -110,20 +128,25 @@ public class PlayerController : MonoBehaviour
 
         if (movementDirection.x > 0)
         {
-
+            swordRenderer.flipX= true;
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x + 0.39f, gameObject.transform.position.y, HurtBox.transform.position.z);
         }
         else if (movementDirection.x < 0)
         {
+            swordRenderer.flipX = false;
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x - 0.39f, gameObject.transform.position.y, HurtBox.transform.position.z);
         }
 
         if (movementDirection.y > 0)
         {
+            swordRenderer.flipY = true;
+            swordRenderer.flipX = true;
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f, HurtBox.transform.position.z);
         }
         else if (movementDirection.y < 0)
         {
+            swordRenderer.flipY = false;
+            swordRenderer.flipX = false;
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f, HurtBox.transform.position.z);
         }
 
@@ -149,7 +172,7 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log(Input.GetKey(KeyCode.Mouse0));
 
-        if (Input.GetKey(KeyCode.Mouse0) && Time.time > attacktimeLimit)
+        if (Input.GetKey(KeyCode.Mouse0) && Time.time > attacktimeLimit && PlayerManager.SwordUnlocked && swordEquiped)
         {
 
             HurtBox.SetActive(true);
@@ -183,6 +206,26 @@ public class PlayerController : MonoBehaviour
             gameObject.AddComponent<DodgeAbility>();
         if (PlayerManager.ReflectUnlocked) 
             gameObject.AddComponent<ReflectAbility>();
+        if(PlayerManager.BowUnlocked)
+        {
+            GameObject bow = Instantiate(Resources.Load<GameObject>("Player/Weapons/Bow"));
+            bow.transform.parent = transform;
+            Debug.Log("test");
+        }
+
+        if (PlayerManager.BowUnlocked)
+        {
+            BowEquiped = true;
+            UI_PlayerDungeon.Instance.SetEquipedWeapon(bowWeapon);
+            UI_PlayerDungeon.Instance.ChangeWewaponText("Bow");
+        }
+
+        if (PlayerManager.SwordUnlocked)
+        {
+            swordEquiped = true;
+            UI_PlayerDungeon.Instance.SetEquipedWeapon(swordWeapon);
+            UI_PlayerDungeon.Instance.ChangeWewaponText("Sword");
+        }
 
         playerCombat.UpgradeAttack(PlayerManager.AttackStat);
 

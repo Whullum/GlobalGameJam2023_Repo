@@ -4,15 +4,18 @@ public class PlayerManager : MonoBehaviour
 {
     public string DashCost { get { return dashAbility.Cost.ToString(); } }
     public string ReflectCost { get { return reflectAbility.Cost.ToString(); } }
+    public string SwordCost { get { return sword.Cost.ToString(); } }
+    public string BowCost { get { return bow.Cost.ToString(); } }
     public static int AttackStat { get; private set; } = 0;
     public static int MovementStat { get; private set; } = 0;
     public static int HealthStat { get; private set; } = 0;
     public static bool DashUnlocked { get; private set; }
     public static bool ReflectUnlocked { get; private set; }
-    public static bool SwordEquiped { get; private set; }
-    public static bool BowEquiped { get; private set; }
+    public static bool SwordUnlocked { get; private set; }
+    public static bool BowUnlocked { get; private set; }
     private UI_UpgradesMenu upgradesUI;
     private UI_HubShopMenu hubShopUI;
+    private UI_WeaponsMenu weaponsUI;
 
     [Header("Player Upgrades")]
     [Tooltip("ScriptableObject with the attack upgrades.")]
@@ -24,12 +27,16 @@ public class PlayerManager : MonoBehaviour
     [Header("Player Abilities")]
     [SerializeField] private Ability dashAbility;
     [SerializeField] private Ability reflectAbility;
+    [Header("Player Weapons")]
+    [SerializeField] private Weapon sword;
+    [SerializeField] private Weapon bow;
 
     private void Awake()
     {
         SeedWallet.CollectSeeds(1000);
         upgradesUI = FindObjectOfType<UI_UpgradesMenu>(true);
         hubShopUI = FindObjectOfType<UI_HubShopMenu>(true);
+        weaponsUI = FindObjectOfType<UI_WeaponsMenu>(true);
         LoadUpgrades();
         DashUnlocked = dashAbility.Unlocked;
         ReflectUnlocked = reflectAbility.Unlocked;
@@ -60,6 +67,30 @@ public class PlayerManager : MonoBehaviour
         {
             ReflectUnlocked = true;
             reflectAbility.Unlocked = true;
+            return true;
+        }
+        return false;
+    }
+
+    public bool UnlockSword()
+    {
+        if (SwordUnlocked) return true;
+        if (SeedWallet.SpendSeeds(reflectAbility.Cost))
+        {
+            SwordUnlocked = true;
+            sword.Unlocked = true;
+            return true;
+        }
+        return false;
+    }
+
+    public bool UnlockBow()
+    {
+        if (BowUnlocked) return true;
+        if (SeedWallet.SpendSeeds(reflectAbility.Cost))
+        {
+            BowUnlocked = true;
+            bow.Unlocked = true;
             return true;
         }
         return false;

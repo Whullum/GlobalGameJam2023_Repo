@@ -72,6 +72,20 @@ public class LevelGenerator : MonoBehaviour
         LevelCreated?.Invoke(level, rootsStartTile);
     }
 
+    public void CreateLastLevel()
+    {
+        levelTilemap.ClearAllTiles();
+        generatedSeed = SeedGenerator.GenerateSeed(mapSeed);
+        InitializeRandomTilemap();
+        CelullarAutomata(CASteps, false);
+        CalculateLevelRegions();
+        DrawTilemap();
+
+        GameObject finalBoss = Instantiate(Resources.Load<GameObject>("FinalBoss"));
+        finalBoss.transform.position = new Vector3(levelExit.transform.position.x, levelExit.transform.position.y);
+        LevelCreated?.Invoke(level, rootsStartTile);
+    }
+
     /// <summary>
     /// Initializes the tilemap with random noise.
     /// </summary>

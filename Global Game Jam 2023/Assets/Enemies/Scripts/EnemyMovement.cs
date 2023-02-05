@@ -37,12 +37,7 @@ public class EnemyMovement : MonoBehaviour
     {
         movementDirection = RandomDirection();
         Vector3 target = transform.position;
-        
-        if(Vector3.Distance(transform.position, player.transform.position) < playerDetectionRange)
-        {
-            Debug.Log(Vector3.Distance(transform.position, player.transform.position));
-        }
-        Debug.Log(Vector3.Distance(transform.position, player.transform.position));
+
         if (enemyBehavior == Behavior.passive)
         {
             

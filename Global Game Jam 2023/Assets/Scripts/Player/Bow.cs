@@ -13,7 +13,7 @@ public class Bow : MonoBehaviour
     {
         Aim();
 
-        if (Input.GetMouseButtonDown(0))
+        if (PlayerController.BowEquiped && Input.GetMouseButtonDown(0))
             ShootArrow();
 
         shootTimer -= Time.deltaTime * shootRate;

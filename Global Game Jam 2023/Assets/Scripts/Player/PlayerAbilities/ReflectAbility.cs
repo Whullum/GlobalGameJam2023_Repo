@@ -33,7 +33,7 @@ public class ReflectAbility : MonoBehaviour
 
     private void Update()
     {
-        if (canActivate && Input.GetKeyDown(KeyCode.Alpha1))
+        if (canActivate && Input.GetKeyDown(KeyCode.Q))
             StartCoroutine(ActivateReflect());
     }
 
