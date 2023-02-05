@@ -2248,7 +2248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2090320508311946694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2358,7 +2358,7 @@ MonoBehaviour:
   weaponsNPC: {fileID: 6482183917050815210}
   abilityNPC: {fileID: 798951626633835667}
   upgradeNPCFloor: 2
-  weaponNPCFloor: 0
+  weaponNPCFloor: 6
   abilityNPCFloor: 4
   upgradesNPCDialogue: Need some pick me ups for the next run?
   abilitiesNPCDialogue: Heyo. Wanna see a cool magic trick?
@@ -2592,7 +2592,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 154.38, y: 29.86}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5728805618975559841
 CanvasRenderer:

@@ -403,6 +403,9 @@ MonoBehaviour:
   rb: {fileID: 5696425636712059772}
   swordWeapon: {fileID: 21300000, guid: e24eeda66003aab42b2be1d5e06447a4, type: 3}
   bowWeapon: {fileID: 21300000, guid: c511e95909ee23e489fcb991a27d5eba, type: 3}
+  noWeapon: {fileID: 21300000, guid: d05baddebc57bd64993e806a7ca5cd20, type: 3}
+  reflectAbility: {fileID: 21300000, guid: decc75dd588d6df4eba2b4231d41bf29, type: 3}
+  dodgeAbility: {fileID: 21300000, guid: 1ce8fbeaabd40314494f9f14b316a451, type: 3}
   playerSounds: {fileID: 311305936056774916}
 --- !u!114 &-7384248525086312778
 MonoBehaviour:

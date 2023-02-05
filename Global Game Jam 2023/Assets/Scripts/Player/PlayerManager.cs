@@ -15,7 +15,6 @@ public class PlayerManager : MonoBehaviour
     public static bool BowUnlocked { get; private set; }
     private UI_UpgradesMenu upgradesUI;
     private UI_HubShopMenu hubShopUI;
-    private UI_WeaponsMenu weaponsUI;
 
     [Header("Player Upgrades")]
     [Tooltip("ScriptableObject with the attack upgrades.")]
@@ -35,7 +34,6 @@ public class PlayerManager : MonoBehaviour
     {
         upgradesUI = FindObjectOfType<UI_UpgradesMenu>(true);
         hubShopUI = FindObjectOfType<UI_HubShopMenu>(true);
-        weaponsUI = FindObjectOfType<UI_WeaponsMenu>(true);
         LoadUpgrades();
         DashUnlocked = dashAbility.Unlocked;
         ReflectUnlocked = reflectAbility.Unlocked;

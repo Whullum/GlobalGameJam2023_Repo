@@ -13,6 +13,7 @@ public class UI_PlayerDungeon : MonoBehaviour
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI levelTimerText;
     public Image equipedWeapon;
+    public Image activeAbility;
     public Slider healthSlider;
 
     private void Awake()
@@ -36,6 +37,11 @@ public class UI_PlayerDungeon : MonoBehaviour
     public void SetEquipedWeapon(Sprite weapon)
     {
         equipedWeapon.sprite = weapon;
+    }
+
+    public void SetActiveAbility(Sprite ability)
+    {
+        activeAbility.sprite = ability;
     }
 
     public void ChangeWewaponText(string weapon) => weaponText.text = weapon;
