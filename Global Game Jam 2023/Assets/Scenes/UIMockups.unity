@@ -380,17 +380,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &834494434 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4169215830721805538, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
-  m_PrefabInstance: {fileID: 731368245491039203}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &988961085
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,25 +691,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 513036814}
-    - target: {fileID: 1814717591372110085, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 834494434}
-    - target: {fileID: 1814717591372110085, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 555953745}
-    - target: {fileID: 1814717591372110085, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 513036814}
     - target: {fileID: 2090320508311946690, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: m_Name
       value: UI_HubShop
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090320508311946690, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2090320508311946694, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: m_Pivot.x
@@ -806,22 +779,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2663585410839518303, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
-      propertyPath: m_Name
-      value: Button_Gun
-      objectReference: {fileID: 0}
-    - target: {fileID: 2857345390635665359, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyBow
-      objectReference: {fileID: 0}
     - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: menu
       value: 
       objectReference: {fileID: 513036814}
-    - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
-      propertyPath: weaponNPCFloor
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
 --- !u!1001 &7959135081950827415
@@ -841,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 417308202514212782, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 313.31
       objectReference: {fileID: 0}
     - target: {fileID: 417308202514212782, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -885,7 +846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2466364347887020743, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 213.86
       objectReference: {fileID: 0}
     - target: {fileID: 2466364347887020743, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -949,7 +910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4065590227038797179, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 345.96
       objectReference: {fileID: 0}
     - target: {fileID: 4065590227038797179, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -989,7 +950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5236422719329291679, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 186.25
       objectReference: {fileID: 0}
     - target: {fileID: 5236422719329291679, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1033,7 +994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5614009327705191169, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 332.82
       objectReference: {fileID: 0}
     - target: {fileID: 5614009327705191169, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1055,6 +1016,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5818647966461627901, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
+      propertyPath: m_text
+      value: Khalil Clay
+      objectReference: {fileID: 0}
     - target: {fileID: 6698604822035726658, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1065,7 +1030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6698604822035726658, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 202.01
       objectReference: {fileID: 0}
     - target: {fileID: 6698604822035726658, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1085,7 +1050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773419519760502506, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 275.55
       objectReference: {fileID: 0}
     - target: {fileID: 7773419519760502506, guid: 953e6c561407e2348b30039b48d0582d, type: 3}
       propertyPath: m_SizeDelta.y

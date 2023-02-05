@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30212b5bd041aab49a90a60b89cb56f9, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  Cost: 200
-  Unlocked: 0
+  Cost: 10
+  Unlocked: 1

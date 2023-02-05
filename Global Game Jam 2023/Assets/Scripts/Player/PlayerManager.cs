@@ -15,7 +15,6 @@ public class PlayerManager : MonoBehaviour
     public static bool BowUnlocked { get; private set; }
     private UI_UpgradesMenu upgradesUI;
     private UI_HubShopMenu hubShopUI;
-    private UI_WeaponsMenu weaponsUI;
 
     [Header("Player Upgrades")]
     [Tooltip("ScriptableObject with the attack upgrades.")]
@@ -33,10 +32,8 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        SeedWallet.CollectSeeds(1000);
         upgradesUI = FindObjectOfType<UI_UpgradesMenu>(true);
         hubShopUI = FindObjectOfType<UI_HubShopMenu>(true);
-        weaponsUI = FindObjectOfType<UI_WeaponsMenu>(true);
         LoadUpgrades();
         DashUnlocked = dashAbility.Unlocked;
         ReflectUnlocked = reflectAbility.Unlocked;
@@ -75,7 +72,7 @@ public class PlayerManager : MonoBehaviour
     public bool UnlockSword()
     {
         if (SwordUnlocked) return true;
-        if (SeedWallet.SpendSeeds(reflectAbility.Cost))
+        if (SeedWallet.SpendSeeds(sword.Cost))
         {
             SwordUnlocked = true;
             sword.Unlocked = true;
@@ -87,7 +84,7 @@ public class PlayerManager : MonoBehaviour
     public bool UnlockBow()
     {
         if (BowUnlocked) return true;
-        if (SeedWallet.SpendSeeds(reflectAbility.Cost))
+        if (SeedWallet.SpendSeeds(bow.Cost))
         {
             BowUnlocked = true;
             bow.Unlocked = true;

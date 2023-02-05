@@ -13,6 +13,7 @@ public class UI_PlayerDungeon : MonoBehaviour
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI levelTimerText;
     public Image equipedWeapon;
+    public Image activeAbility;
     public Slider healthSlider;
 
     private void Awake()
@@ -38,6 +39,11 @@ public class UI_PlayerDungeon : MonoBehaviour
         equipedWeapon.sprite = weapon;
     }
 
+    public void SetActiveAbility(Sprite ability)
+    {
+        activeAbility.sprite = ability;
+    }
+
     public void ChangeWewaponText(string weapon) => weaponText.text = weapon;
 
     /// <summary>
@@ -55,7 +61,7 @@ public class UI_PlayerDungeon : MonoBehaviour
     /// <param name="seedCount">The number to set the seeds to</param>
     public void ChangeSeedsCount(int seedCount)
     {
-        seedsCounterText.text = "SEEDS x" + seedCount;
+        seedsCounterText.text = seedCount.ToString();
     }
 
     /// <summary>

@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Sprite swordWeapon;
     [SerializeField] private Sprite bowWeapon;
+    [SerializeField] private Sprite noWeapon;
+    [SerializeField] private Sprite reflectAbility;
+    [SerializeField] private Sprite dodgeAbility;
     [SerializeField]
     private PlayerSounds playerSounds;
 
@@ -104,6 +107,16 @@ public class PlayerController : MonoBehaviour
             BowEquiped = true;
             UI_PlayerDungeon.Instance.SetEquipedWeapon(bowWeapon);
             UI_PlayerDungeon.Instance.ChangeWewaponText("Bow");
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q) && PlayerManager.ReflectUnlocked)
+        {
+            UI_PlayerDungeon.Instance.SetActiveAbility(reflectAbility);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && PlayerManager.DashUnlocked)
+        {
+            UI_PlayerDungeon.Instance.SetActiveAbility(dodgeAbility);
         }
     }
 
@@ -203,21 +216,20 @@ public class PlayerController : MonoBehaviour
     private void LoadPlayerStats()
     {
         if (PlayerManager.DashUnlocked)
+        {
             gameObject.AddComponent<DodgeAbility>();
-        if (PlayerManager.ReflectUnlocked) 
+        }
+            
+        if (PlayerManager.ReflectUnlocked)
+        {
             gameObject.AddComponent<ReflectAbility>();
+        }
+            
         if(PlayerManager.BowUnlocked)
         {
             GameObject bow = Instantiate(Resources.Load<GameObject>("Player/Weapons/Bow"));
             bow.transform.parent = transform;
             Debug.Log("test");
-        }
-
-        if (PlayerManager.BowUnlocked)
-        {
-            BowEquiped = true;
-            UI_PlayerDungeon.Instance.SetEquipedWeapon(bowWeapon);
-            UI_PlayerDungeon.Instance.ChangeWewaponText("Bow");
         }
 
         if (PlayerManager.SwordUnlocked)
@@ -226,6 +238,18 @@ public class PlayerController : MonoBehaviour
             UI_PlayerDungeon.Instance.SetEquipedWeapon(swordWeapon);
             UI_PlayerDungeon.Instance.ChangeWewaponText("Sword");
         }
+        else if (PlayerManager.BowUnlocked)
+        {
+            BowEquiped = true;
+            UI_PlayerDungeon.Instance.SetEquipedWeapon(bowWeapon);
+            UI_PlayerDungeon.Instance.ChangeWewaponText("Bow");
+        }
+        else
+        {
+            UI_PlayerDungeon.Instance.SetEquipedWeapon(noWeapon);
+            UI_PlayerDungeon.Instance.ChangeWewaponText("No weapon");
+        }
+
 
         playerCombat.UpgradeAttack(PlayerManager.AttackStat);
 
