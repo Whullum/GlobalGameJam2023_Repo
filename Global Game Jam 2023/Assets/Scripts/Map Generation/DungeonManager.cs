@@ -61,6 +61,7 @@ public class DungeonManager : MonoBehaviour
     public void NextFloor()
     {
         currentFloor++;
+        SeedWallet.RewardSeeds(80 * currentFloor, 100 * currentFloor);
 
         UI_PlayerDungeon.Instance.ChangeLevelText(CurrentFloor);
 
