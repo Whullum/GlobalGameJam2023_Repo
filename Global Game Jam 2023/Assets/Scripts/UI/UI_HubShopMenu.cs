@@ -47,6 +47,8 @@ public class UI_HubShopMenu : MonoBehaviour
         // Set dialogueNPC text
         LoadNPCButtons();
         UpdateSeedsCounter(SeedWallet.Seeds);
+
+        Time.timeScale = 1;
     }
 
     public void ChangeShopTypeText(string shopType)
@@ -117,7 +119,7 @@ public class UI_HubShopMenu : MonoBehaviour
 
     private void LoadNPCButtons()
     {
-        if (DungeonManager.CurrentFloor >= upgradeNPCFloor)
+        if (DungeonManager.mostFloorsCleared >= upgradeNPCFloor)
         {
             upgradeNPC.SetActive(true);
             menu.stateHealth.SetValue();
@@ -125,7 +127,7 @@ public class UI_HubShopMenu : MonoBehaviour
         else
             upgradeNPC.SetActive(false);
 
-        if (DungeonManager.CurrentFloor >= abilityNPCFloor)
+        if (DungeonManager.mostFloorsCleared >= abilityNPCFloor)
         {
             menu.stateHealthAbilities.SetValue();
             abilityNPC.SetActive(true);
@@ -133,12 +135,15 @@ public class UI_HubShopMenu : MonoBehaviour
         else
             abilityNPC.SetActive(false);
 
-        if (DungeonManager.CurrentFloor >= weaponNPCFloor)
+        if (DungeonManager.mostFloorsCleared >= weaponNPCFloor)
         {
             weaponsNPC.SetActive(true);
             menu.stateAllNPC.SetValue();
         }
         else
             weaponsNPC.SetActive(false);
+
+        if (DungeonManager.GameComplete)
+            menu.stateComplete.SetValue();
     }
 }

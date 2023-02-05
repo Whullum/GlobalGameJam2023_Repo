@@ -277,7 +277,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{C719BA98-8195-284E-D3C5-B172FC1EFBEB}">
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{A19FEA48-CDB5-B7E3-8E8A-6799458963CB}">
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<Media>
@@ -357,6 +357,10 @@
 					<ShortName>SFX_Enemy_MeleeAttack.wav</ShortName>
 					<CachePath>SFX/SFX_Enemy_MeleeAttack_4E9BB00C.wem</CachePath>
 				</File>
+				<File Id="686215969" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>overgrowth-hub-all-npcs--layer-update.wav</ShortName>
+					<CachePath>SFX/overgrowth-hub-all-npcs--layer-update_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="751312722" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_RootAdvancement.wav</ShortName>
 					<CachePath>SFX/SFX_RootAdvancement_5CC545E3.wem</CachePath>
@@ -377,9 +381,9 @@
 					<ShortName>Overgrowth-death-stinger.wav</ShortName>
 					<CachePath>SFX/Overgrowth-death-stinger_D79FB2B7.wem</CachePath>
 				</File>
-				<File Id="842842477" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>overgrowth-hub-layer-all-npcs.wav</ShortName>
-					<CachePath>SFX/overgrowth-hub-layer-all-npcs_D79FB2B7.wem</CachePath>
+				<File Id="835695503" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>overgrowth-game-victory.wav</ShortName>
+					<CachePath>SFX/overgrowth-game-victory_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="871264739" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Menu_SliderChange.wav</ShortName>
@@ -445,7 +449,7 @@
 							<SwitchValue GroupType="State" GroupId="3675799944" Id="310699911"/>
 							<MediaRefs>
 								<MediaRef Id="123064219"/>
-								<MediaRef Id="842842477"/>
+								<MediaRef Id="686215969"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -469,9 +473,9 @@
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="3675799944" Id="748895195"/>
+							<SwitchValue GroupType="State" GroupId="3675799944" Id="3175816390"/>
 							<MediaRefs>
-								<MediaRef Id="123064219"/>
+								<MediaRef Id="835695503"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -579,5 +583,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{499DFB81-461A-7246-24E9-D67E815B1AF7}</FileHash>
+	<FileHash>{8A351E2F-1C86-D54A-6282-BBD01C8D6EA5}</FileHash>
 </SoundBanksInfo>

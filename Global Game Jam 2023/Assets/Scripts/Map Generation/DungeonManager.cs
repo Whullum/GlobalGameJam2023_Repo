@@ -8,10 +8,15 @@ public class DungeonManager : MonoBehaviour
     /// </summary>
     public static int CurrentFloor { get { return currentFloor; } }
 
+    private static bool gameComplete = false;
+    public static bool GameComplete { get { return gameComplete; } set { gameComplete = value; } }
+
     private LevelGenerator levelGenerator;
     private float floorTimer = 0;
-    [SerializeField]
+
     private static int currentFloor = 0;
+    public static int mostFloorsCleared = 0;
+
     private int totalFloors;
     private bool floorGenerationEnded = false;
     [Tooltip("Minimum amount of floors the game will have.")]
@@ -57,6 +62,7 @@ public class DungeonManager : MonoBehaviour
     public void NextFloor()
     {
         currentFloor++;
+        SeedWallet.RewardSeeds(30 * currentFloor, 50 * currentFloor);
 
         UI_PlayerDungeon.Instance.ChangeLevelText(CurrentFloor);
 
@@ -75,7 +81,9 @@ public class DungeonManager : MonoBehaviour
         {
             Debug.Log("Stopped Generating Levels");
         }
-        
+
+        if (currentFloor > mostFloorsCleared)
+            mostFloorsCleared = currentFloor;
     }
 
     public bool FloorGenerationStatus()

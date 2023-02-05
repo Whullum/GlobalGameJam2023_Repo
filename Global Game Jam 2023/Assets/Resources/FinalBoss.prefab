@@ -121,6 +121,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winningUI: {fileID: 7172775534133027866}
+  winningMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c410345f61964de428489dcb862a9702, type: 2}
+  stopWinningMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: dd825b6b8ed685b4380f88f585069fa3, type: 2}
+  completeState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d2d98c652af3e1c44b1f2888ca5c38bf, type: 2}
 --- !u!61 &7593717714138396320
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -244,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2911844815023284108, guid: fcbe255562213f04fa9ca96e48035b1e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5874962356285732882, guid: fcbe255562213f04fa9ca96e48035b1e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
