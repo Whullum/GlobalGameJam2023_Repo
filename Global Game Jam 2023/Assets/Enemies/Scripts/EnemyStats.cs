@@ -65,7 +65,7 @@ public class EnemyStats : MonoBehaviour
             //Debug.Log(EnemyController.GetDistanceFromTarget());
             if (EnemyController.GetDistanceFromTarget() < 0.85f && Time.time > attacktimeLimit)
             {
-                //Debug.Log("ATTACKING");
+                Debug.Log("ATTACKING");
                 HurtBox.SetActive(true);
 
                 attacktimeLimit = Time.time + attackTime;
