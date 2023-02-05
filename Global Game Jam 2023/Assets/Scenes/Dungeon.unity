@@ -460,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372970443855340602, guid: bf6d4332fd1ad75478aa0750f0d44aef, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8353103363660236760, guid: bf6d4332fd1ad75478aa0750f0d44aef, type: 3}
       propertyPath: pauseMenu
@@ -580,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8911326540900471498, guid: bf6d4332fd1ad75478aa0750f0d44aef, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8911326540900471499, guid: bf6d4332fd1ad75478aa0750f0d44aef, type: 3}
       propertyPath: m_SizeDelta.x

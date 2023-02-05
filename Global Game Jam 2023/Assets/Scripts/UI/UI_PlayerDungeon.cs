@@ -55,7 +55,7 @@ public class UI_PlayerDungeon : MonoBehaviour
     /// <param name="seedCount">The number to set the seeds to</param>
     public void ChangeSeedsCount(int seedCount)
     {
-        seedsCounterText.text = "SEEDS x" + seedCount;
+        seedsCounterText.text = seedCount.ToString();
     }
 
     /// <summary>
