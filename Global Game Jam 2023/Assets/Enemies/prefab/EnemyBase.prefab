@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 1342728519064821939}
   - component: {fileID: 6459963109194536645}
   - component: {fileID: 8222043176835780815}
+  - component: {fileID: 4435144943219404056}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: Enemy
@@ -243,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   attackTime: 0.5
+  enemyType: 0
 --- !u!114 &6459963109194536645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  playerDetectionRange: 10
 --- !u!50 &8222043176835780815
 Rigidbody2D:
   serializedVersion: 4
@@ -271,9 +274,31 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4435144943219404056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4897245511664498080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6438027e71130241aa511c120e990d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 7000177696626432668, guid: e292e98232c09a9469445f183170e016, type: 3}
+  shootPoint: {fileID: 4318257743191517026}
+  rotationSpeed: 1
+  searchTick: 0.5
+  range: 5
+  fireRate: 0
+  reloadTime: 0
+  attackAngle: 20
+  magazineSize: 0
+  needReload: 0

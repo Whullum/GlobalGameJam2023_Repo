@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     public float maxHealth = 100f;
     private float enemyHealth;
@@ -12,14 +13,26 @@ public class EnemyStats : MonoBehaviour
     public float attackTime = 0.5f;
     GameObject HurtBox;
     EnemyMovement EnemyController;
+    public EnemyType enemyType = EnemyType.melee;
 
     void Start()
     {
         enemyHealth = maxHealth;
         HurtBox = transform.GetChild(0).gameObject;
         EnemyController = GetComponent<EnemyMovement>();
+
+        if(enemyType == EnemyType.melee)
+        {
+            Debug.Log("Melee");
+        }else if(enemyType == EnemyType.ranged)
+        {
+            Debug.Log("Ranged");
+            
+            
+        }
     }
 
+    
     // Update is called once per frame
     void Update()
     {
@@ -47,30 +60,33 @@ public class EnemyStats : MonoBehaviour
 
     void EnemyAttack()
     {
+        if(enemyType == EnemyType.melee)
+        { 
+            //Debug.Log(EnemyController.GetDistanceFromTarget());
+            if (EnemyController.GetDistanceFromTarget() < 0.85f && Time.time > attacktimeLimit)
+            {
+                //Debug.Log("ATTACKING");
+                HurtBox.SetActive(true);
+
+                attacktimeLimit = Time.time + attackTime;
+                attackActive = true;
+                //Debug.Log(attacktimeLimit);
+
+
+            }
+            else if (Time.time < attacktimeLimit && attackActive)
+            {
+                //Debug.Log(Time.time);
+            }
+            else if (attackActive)
+            {
+                Debug.Log("Cooldown Ended");
+                HurtBox.SetActive(false);
+                attackActive = false;
+                attacktimeLimit = 0f;
+            }
+        }
         
-        //Debug.Log(EnemyController.GetDistanceFromTarget());
-        if (EnemyController.GetDistanceFromTarget() < 0.85f && Time.time > attacktimeLimit)
-        {
-            //Debug.Log("ATTACKING");
-            HurtBox.SetActive(true);
-
-            attacktimeLimit = Time.time + attackTime;
-            attackActive = true;
-            //Debug.Log(attacktimeLimit);
-
-            
-        }
-        else if (Time.time < attacktimeLimit && attackActive)
-        {
-            //Debug.Log(Time.time);
-        }
-        else if (attackActive)
-        {
-            Debug.Log("Cooldown Ended");
-            HurtBox.SetActive(false);
-            attackActive = false;
-            attacktimeLimit = 0f;
-        }
 
     }
 }

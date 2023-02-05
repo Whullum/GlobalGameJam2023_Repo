@@ -14,6 +14,8 @@ public class EnemyMovement : MonoBehaviour
     GameObject HurtBox;
     Rigidbody2D rb;
     private float distanceFromTarget;
+    EnemyType enemyType;
+    [SerializeField] float playerDetectionRange = 20f;
     void Start()
     {
         HurtBox = gameObject.transform.GetChild(0).gameObject;
@@ -22,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
 
-
+        enemyType = GetComponent<EnemyStats>().enemyType;
     }
     enum Behavior
     {
@@ -35,10 +37,13 @@ public class EnemyMovement : MonoBehaviour
     {
         movementDirection = RandomDirection();
         Vector3 target = transform.position;
-        //Debug.DrawLine(transform.position, transform.TransformDirection(transform.position + RandomDirection()), Color.red, 6f);
-        //Debug.Log(Physics2D.Raycast(gameObject.transform.position, transform.TransformDirection(gameObject.transform.position + RandomDirection()), 5));
-
-        if(enemyBehavior == Behavior.passive)
+        
+        if(Vector3.Distance(transform.position, player.transform.position) < playerDetectionRange)
+        {
+            Debug.Log(Vector3.Distance(transform.position, player.transform.position));
+        }
+        Debug.Log(Vector3.Distance(transform.position, player.transform.position));
+        if (enemyBehavior == Behavior.passive)
         {
             
             if (transform.position != target)
@@ -53,7 +58,7 @@ public class EnemyMovement : MonoBehaviour
         else if(enemyBehavior == Behavior.chase)
         {
 
-        }else if(enemyBehavior == Behavior.attack)
+        }else if(enemyBehavior == Behavior.attack && Vector3.Distance(transform.position, player.transform.position) < playerDetectionRange)
         {
             target = player.transform.position;
             if(Vector3.Distance(transform.position, target) > 0.82)
@@ -65,40 +70,47 @@ public class EnemyMovement : MonoBehaviour
             }
             
         }
+        if(enemyType == EnemyType.melee)
+        {
+            Vector3 direction = transform.TransformDirection(target);
+            //Debug.Log(direction);
+            //target is to the right
+            if (direction.x > direction.y && target.x > transform.position.x)
+            {
+                //Debug.Log("Right");
+                HurtBox.transform.rotation = Quaternion.Euler(0, 0, 0);
+                HurtBox.transform.position = new Vector3(gameObject.transform.position.x + 0.75f, gameObject.transform.position.y, HurtBox.transform.position.z);
+            }
+            //target is to the left
+            else if (direction.x < direction.y && target.x < transform.position.x)
+            {
+                //Debug.Log("Left");
+                HurtBox.transform.rotation = Quaternion.Euler(0, 0, 0);
+                HurtBox.transform.position = new Vector3(gameObject.transform.position.x - 0.75f, gameObject.transform.position.y, HurtBox.transform.position.z);
+            }
 
-        Vector3 direction = transform.TransformDirection(target);
-        //Debug.Log(direction);
-        //target is to the right
-        if (direction.x > direction.y && target.x > transform.position.x) 
-        {
-            //Debug.Log("Right");
-            HurtBox.transform.rotation = Quaternion.Euler(0, 0, 0);
-            HurtBox.transform.position = new Vector3(gameObject.transform.position.x + 0.75f, gameObject.transform.position.y , HurtBox.transform.position.z);
-        }
-        //target is to the left
-        else if (direction.x < direction.y && target.x < transform.position.x)
-        {
-            //Debug.Log("Left");
-            HurtBox.transform.rotation = Quaternion.Euler(0, 0, 0);
-            HurtBox.transform.position = new Vector3(gameObject.transform.position.x - 0.75f, gameObject.transform.position.y , HurtBox.transform.position.z);
-        }
+            //target is above
+            else if (direction.x < direction.y && target.y > transform.position.y)
+            {
+                //Debug.Log("Above");
+                HurtBox.transform.rotation = Quaternion.Euler(0, 0, 90);
+                HurtBox.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.75f, HurtBox.transform.position.z);
 
-        //target is above
-        else if (direction.x < direction.y && target.y > transform.position.y)
+            }
+            //target is below
+            else if (direction.x > direction.y && target.y < transform.position.y)
+            {
+                //Debug.Log("Below");
+                HurtBox.transform.rotation = Quaternion.Euler(0, 0, 90);
+                HurtBox.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.75f, HurtBox.transform.position.z);
+
+            }
+        }
+        else if(enemyType == EnemyType.ranged)
         {
-            //Debug.Log("Above");
-            HurtBox.transform.rotation = Quaternion.Euler(0, 0, 90);
-            HurtBox.transform.position = new Vector3(gameObject.transform.position.x , gameObject.transform.position.y + 0.75f, HurtBox.transform.position.z);
             
         }
-        //target is below
-        else if (direction.x > direction.y && target.y < transform.position.y)
-        {
-            //Debug.Log("Below");
-            HurtBox.transform.rotation = Quaternion.Euler(0, 0, 90);
-            HurtBox.transform.position = new Vector3(gameObject.transform.position.x , gameObject.transform.position.y - 0.75f, HurtBox.transform.position.z);
-            
-        }
+        
         
     }
 
