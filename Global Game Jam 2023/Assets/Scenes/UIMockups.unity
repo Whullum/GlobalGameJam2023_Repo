@@ -683,6 +683,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 382684384078540771, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 154.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 382684384078540771, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 29.86
+      objectReference: {fileID: 0}
     - target: {fileID: 944043886494581370, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -694,6 +702,10 @@ PrefabInstance:
     - target: {fileID: 2090320508311946690, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: m_Name
       value: UI_HubShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090320508311946690, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2090320508311946694, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: m_Pivot.x
@@ -779,10 +791,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6881008498417285712, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c89090101719b9f4a80b2bc7931ed486, type: 3}
     - target: {fileID: 8301507234957244943, guid: 214de85b2934cb14db8f3932e2337dc8, type: 3}
       propertyPath: menu
       value: 
