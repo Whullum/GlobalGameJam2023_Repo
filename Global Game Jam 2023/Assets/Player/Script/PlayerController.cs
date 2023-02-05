@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float attackTime = 0.5f;
     private float timeLimit = 0f;
     private float attacktimeLimit = 0f;
-    private float timeDiff = 0f;
+    
     
     private bool attackActive = false;
     private GameObject HurtBox;
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         {
             speed = walkSpeed;
         }
-        Debug.Log(speed);
+        //Debug.Log(speed);
     }
 
     

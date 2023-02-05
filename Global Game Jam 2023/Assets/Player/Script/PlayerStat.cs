@@ -23,6 +23,7 @@ public class PlayerStat : MonoBehaviour
 
     public void DealDamage(int damageAmount)
     {
+        Debug.Log("Hit");
         playerHealth -= damageAmount;
         playerSounds.playerDamagedSound.Post(gameObject);
         UI_PlayerDungeon.Instance.UpdateHealth(0, playerHealth, maxHealth);

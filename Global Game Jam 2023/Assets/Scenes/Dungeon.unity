@@ -869,7 +869,7 @@ Transform:
   - {fileID: 1965063993}
   - {fileID: 1080743448}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &339284224
 MonoBehaviour:
@@ -2825,12 +2825,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyThreshold: 20
   difficultyIncrease: 3
-  spawnerWallet: 10
+  spawnerWallet: 38
   minimumDistanceToPlayer: 10
   enemies:
-  - EnemyPrefab: {fileID: 295554924408713750, guid: 1a72f0467eacfcb439d81c0b85e0669d, type: 3}
+  - EnemyPrefab: {fileID: 4897245511664498080, guid: 6bc73a48739feb743b97eb63aacf4778, type: 3}
     SpawnCost: 1
-  - EnemyPrefab: {fileID: 536687927069062328, guid: 6fc2c3a5279858d4d8cc23c3e3c564e5, type: 3}
+  - EnemyPrefab: {fileID: 4897245511664498080, guid: 6bc73a48739feb743b97eb63aacf4778, type: 3}
     SpawnCost: 2
 --- !u!4 &1850856466
 Transform:
@@ -2845,7 +2845,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1965063993 stripped
 Transform:

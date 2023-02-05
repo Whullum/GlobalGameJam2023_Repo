@@ -6,7 +6,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.activeSelf != false && collision.name == "Pawn")
+        if(collision.gameObject.activeSelf != false && collision.tag == "Enemy")
         {
             Debug.Log("Hit");
             collision.gameObject.transform.GetComponent<EnemyStats>().DealDamage(playerDamage);
