@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccf73b07ff42d043b4ded1082adf050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winningUI: {fileID: 182340258033727507}
+  winningUI: {fileID: 7172775534133027866}
   winningMusic:
     idInternal: 0
     valueGuidInternal: 

@@ -11,6 +11,14 @@ public class FinalBoss : MonoBehaviour
     {
         if(collision.collider.CompareTag("Player"))
         {
+            MusicManager.instance.stopDungeonMusic.Post(MusicManager.instance.gameObject);
+
+            DungeonManager.GameComplete = true;
+            winningUI.SetActive(true);
+
+            completeState.SetValue();
+            winningMusic.Post(gameObject);
+
             EndGame();
         }
     }
@@ -20,18 +28,12 @@ public class FinalBoss : MonoBehaviour
         GetComponent<Animator>().SetTrigger("BossDeath");
         Invoke("ActivateVictoryScreen", 3f);
 
-        MusicManager.instance.stopDungeonMusic.Post(MusicManager.instance.gameObject);
+
     }
 
     private void ActivateVictoryScreen()
     {
-        stopWinningMusic.Post(gameObject);
 
-        DungeonManager.GameComplete = true;
-        winningUI.SetActive(true);
-
-        completeState.SetValue();
-        winningMusic.Post(gameObject);
 
         Time.timeScale = 0;
     }
