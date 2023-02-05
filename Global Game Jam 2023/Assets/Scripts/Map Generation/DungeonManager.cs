@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DungeonManager : MonoBehaviour
@@ -11,7 +12,7 @@ public class DungeonManager : MonoBehaviour
     private float floorTimer = 0;
     private static int currentFloor = 0;
     private int totalFloors;
-
+    private bool floorGenerationEnded = false;
     [Tooltip("Minimum amount of floors the game will have.")]
     [SerializeField] private int minimumFloors = 5;
     [Tooltip("Maximum amount of floors the game will have.")]
@@ -34,9 +35,13 @@ public class DungeonManager : MonoBehaviour
 
     private void Update()
     {
-        floorTimer += Time.deltaTime;
+        if(floorGenerationEnded == false)
+        {
+            floorTimer += Time.deltaTime;
 
-        UI_PlayerDungeon.Instance.ChangeLevelTime(floorTimer);
+            UI_PlayerDungeon.Instance.ChangeLevelTime(floorTimer);
+        }
+        
     }
 
     /// <summary>
@@ -54,9 +59,25 @@ public class DungeonManager : MonoBehaviour
         if(currentFloor == totalFloors)
         {
             // We are on the last floor so we need to create rules for this floor for being the last one (endgame)
+            levelGenerator.CreateNewLevel();
+            floorTimer = 0;
+            UI_PlayerDungeon.Instance.ChangeLevelText(CurrentFloor);
         }
-        levelGenerator.CreateNewLevel();
-        floorTimer = 0;
-        UI_PlayerDungeon.Instance.ChangeLevelText(CurrentFloor);
+        else if(currentFloor < totalFloors)
+        {
+            levelGenerator.CreateNewLevel();
+            floorTimer = 0;
+            UI_PlayerDungeon.Instance.ChangeLevelText(CurrentFloor);
+        }else
+        {
+            Debug.Log("Stopped Generating Levels");
+        }
+        
     }
+
+    public bool FloorGenerationStatus()
+    {
+        return floorGenerationEnded;
+    }
+    
 }
