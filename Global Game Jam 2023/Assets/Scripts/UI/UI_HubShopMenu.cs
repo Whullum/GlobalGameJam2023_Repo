@@ -47,6 +47,8 @@ public class UI_HubShopMenu : MonoBehaviour
         // Set dialogueNPC text
         LoadNPCButtons();
         UpdateSeedsCounter(SeedWallet.Seeds);
+
+        Time.timeScale = 1;
     }
 
     public void ChangeShopTypeText(string shopType)
@@ -140,5 +142,8 @@ public class UI_HubShopMenu : MonoBehaviour
         }
         else
             weaponsNPC.SetActive(false);
+
+        if (DungeonManager.GameComplete)
+            menu.stateComplete.SetValue();
     }
 }

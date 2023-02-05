@@ -121,6 +121,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winningUI: {fileID: 182340258033727507}
+  winningMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c410345f61964de428489dcb862a9702, type: 2}
+  stopWinningMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: dd825b6b8ed685b4380f88f585069fa3, type: 2}
+  completeState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d2d98c652af3e1c44b1f2888ca5c38bf, type: 2}
 --- !u!61 &7593717714138396320
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -241,6 +255,10 @@ PrefabInstance:
     - target: {fileID: 4589325797889593398, guid: 7f2fd5be4545d94419eba488b3a671c2, type: 3}
       propertyPath: m_Name
       value: WinningUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589325797889593398, guid: 7f2fd5be4545d94419eba488b3a671c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f2fd5be4545d94419eba488b3a671c2, type: 3}
