@@ -15,6 +15,7 @@ public class DungeonManager : MonoBehaviour
     private float floorTimer = 0;
 
     private static int currentFloor = 0;
+    public static int mostFloorsCleared = 0;
 
     private int totalFloors;
     private bool floorGenerationEnded = false;
@@ -80,7 +81,9 @@ public class DungeonManager : MonoBehaviour
         {
             Debug.Log("Stopped Generating Levels");
         }
-        
+
+        if (currentFloor > mostFloorsCleared)
+            mostFloorsCleared = currentFloor;
     }
 
     public bool FloorGenerationStatus()
