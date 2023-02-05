@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 10
-  projectileDamage: 0
+  projectileDamage: 5
 --- !u!96 &642601230422786006
 TrailRenderer:
   serializedVersion: 2

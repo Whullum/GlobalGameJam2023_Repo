@@ -29,4 +29,9 @@ public class SeedWallet
 
         return true;
     }
+
+    public static void RewardSeeds(int lowAmount, int highAmount)
+    {
+        seeds += Random.Range(lowAmount, highAmount);
+    }
 }

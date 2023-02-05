@@ -34,10 +34,6 @@ State	ID	Name	State Group			Notes
 	3175816390	GameComplete	HubStates			
 	4114684904	C_Health_and_Abilities	HubStates			
 
-Custom State	ID	Name	State Group	Owner		Notes
-	146775040	A_GameStart	HubStates	\Interactive Music Hierarchy\Default Work Unit\Hub\HealthAbilities\Hub\HealthAbilities-Layer		
-	352987160	B_Health	HubStates	\Interactive Music Hierarchy\Default Work Unit\Hub\HealthAbilities\Hub\HealthAbilities-Layer		
-
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	917271096	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\Environmental_SFX\SFX_RootsContainer\Silence\Silence	
 
