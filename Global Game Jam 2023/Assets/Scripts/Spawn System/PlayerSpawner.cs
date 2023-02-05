@@ -31,7 +31,6 @@ public class PlayerSpawner : MonoBehaviour
 
     private void UpdatePlayerUIValues()
     {
-        UI_PlayerDungeon.Instance.ChangeWewaponText("No weapon");
         UI_PlayerDungeon.Instance.ChangeSeedsCount(SeedWallet.Seeds);
         UI_PlayerDungeon.Instance.ChangeAblityName("No ability");
         UI_PlayerDungeon.Instance.SetAbilityText("No ability");

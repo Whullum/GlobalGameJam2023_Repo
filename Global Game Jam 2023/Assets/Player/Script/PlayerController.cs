@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static bool BowEquiped { get ; private set; }
+    public static bool BowEquiped { get; private set; }
     private float vertical;
     private float horizontal;
-    
+
     public float walkSpeed = 5f;
     public float runSpeed = 7f;
     private float speed;
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         if (movementDirection != Vector2.zero)
             animator.SetBool("isWalking", true);
         else
-           animator.SetBool("isWalking", false);
+            animator.SetBool("isWalking", false);
 
         if (movementDirection.x != 0)
             lastMovementDirection = movementDirection.x;
@@ -88,20 +88,20 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerMovement();
-        
+
         PlayerAttack();
     }
 
     private void EquipWeapon()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1) && PlayerManager.SwordUnlocked)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && PlayerManager.SwordUnlocked)
         {
             swordEquiped = true;
-            BowEquiped= false;
+            BowEquiped = false;
             UI_PlayerDungeon.Instance.SetEquipedWeapon(swordWeapon);
             UI_PlayerDungeon.Instance.ChangeWewaponText("Sword");
-        } 
-        else if(Input.GetKeyDown(KeyCode.Alpha2) && PlayerManager.BowUnlocked)
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerManager.BowUnlocked)
         {
             swordEquiped = false;
             BowEquiped = true;
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
             UI_PlayerDungeon.Instance.ChangeWewaponText("Bow");
         }
 
-        if(Input.GetKeyDown(KeyCode.Q) && PlayerManager.ReflectUnlocked)
+        if (Input.GetKeyDown(KeyCode.Q) && PlayerManager.ReflectUnlocked)
         {
             UI_PlayerDungeon.Instance.SetActiveAbility(reflectAbility);
         }
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
 
         if (movementDirection.x > 0)
         {
-            swordRenderer.flipX= true;
+            swordRenderer.flipX = true;
             HurtBox.transform.position = new Vector3(gameObject.transform.position.x + 0.39f, gameObject.transform.position.y, HurtBox.transform.position.z);
         }
         else if (movementDirection.x < 0)
@@ -172,14 +172,14 @@ public class PlayerController : MonoBehaviour
         {
             speed = runSpeed;
         }
-        else if(Input.GetKeyUp(KeyCode.LeftShift))
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = walkSpeed;
         }
         //Debug.Log(speed);
     }
 
-    
+
 
     void PlayerAttack()
     {
@@ -218,43 +218,49 @@ public class PlayerController : MonoBehaviour
         if (PlayerManager.DashUnlocked)
         {
             gameObject.AddComponent<DodgeAbility>();
+            UI_PlayerDungeon.Instance.SetActiveAbility(dodgeAbility);
+            UI_PlayerDungeon.Instance.SetAbilityText("Avaliable");
         }
-            
+
         if (PlayerManager.ReflectUnlocked)
         {
             gameObject.AddComponent<ReflectAbility>();
+            UI_PlayerDungeon.Instance.SetActiveAbility(reflectAbility);
+            UI_PlayerDungeon.Instance.SetAbilityText("Avaliable");
         }
-            
-        if(PlayerManager.BowUnlocked)
+
+        if (PlayerManager.BowUnlocked)
         {
             GameObject bow = Instantiate(Resources.Load<GameObject>("Player/Weapons/Bow"));
             bow.transform.parent = transform;
-            Debug.Log("test");
+        }
+
+        if (!PlayerManager.BowUnlocked && !PlayerManager.SwordUnlocked)
+        {
+            UI_PlayerDungeon.Instance.SetEquipedWeapon(noWeapon);
+            UI_PlayerDungeon.Instance.ChangeWewaponText("No weapon");
         }
 
         if (PlayerManager.SwordUnlocked)
         {
             swordEquiped = true;
+            BowEquiped = false;
             UI_PlayerDungeon.Instance.SetEquipedWeapon(swordWeapon);
             UI_PlayerDungeon.Instance.ChangeWewaponText("Sword");
         }
         else if (PlayerManager.BowUnlocked)
         {
+            swordEquiped = false;
             BowEquiped = true;
             UI_PlayerDungeon.Instance.SetEquipedWeapon(bowWeapon);
             UI_PlayerDungeon.Instance.ChangeWewaponText("Bow");
-        }
-        else
-        {
-            UI_PlayerDungeon.Instance.SetEquipedWeapon(noWeapon);
-            UI_PlayerDungeon.Instance.ChangeWewaponText("No weapon");
         }
 
 
         playerCombat.UpgradeAttack(PlayerManager.AttackStat);
 
         walkSpeed += PlayerManager.MovementStat;
-        runSpeed  += PlayerManager.MovementStat;
+        runSpeed += PlayerManager.MovementStat;
 
         playerHealth.UpgradeHealth(PlayerManager.HealthStat);
     }
